@@ -1,0 +1,49 @@
+$primary-color: "white";
+$accent-color: #7fffd4;
+$dark-primary-color: #272727;
+
+@import "./components/header";
+@import "./components/about";
+@import "./components/skills";
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  color: $dark-primary-color;
+}
+
+h1 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.arrow {
+  @include flexCenter();
+
+  img {
+    z-index: 200;
+    width: 100px;
+    height: auto;
+  }
+}
