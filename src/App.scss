@@ -5,6 +5,7 @@ $dark-primary-color: #272727;
 @import "./components/header";
 @import "./components/about";
 @import "./components/skills";
+@import "./components/education";
 
 @mixin flexCenter {
   display: flex;

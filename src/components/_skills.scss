@@ -33,45 +33,52 @@
     }
   }
   .languangeChart {
-    @include flexCenter();
     padding: 5px;
     height: 100%;
-    justify-content: flex-start;
 
     .tooltiptext {
-      opacity: 0;
-      padding: 15px 0;
-      position: absolute;
-      top: 0;
-      transition: all 0.2s ease-in-out;
-    }
-
-    div {
-      width: 100%;
-      height: 20%;
-      border-radius: 20px;
+      height: 40%;
       display: flex;
       justify-content: flex-start;
-      box-shadow: 1px 1px 1px 1px;
+      align-items: flex-end;
+
+      span {
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+        font-size: 70%;
+      }
+    }
+
+    .bar {
+      height: 60%;
 
       div {
-        height: 100%;
+        width: 100%;
+        height: 33%;
         border-radius: 20px;
-        box-shadow: none;
+        display: flex;
+        justify-content: flex-start;
+        box-shadow: 1px 1px 1px 1px;
 
-        .chart {
-          width: 0%;
+        div {
           height: 100%;
           border-radius: 20px;
           box-shadow: none;
-          transition: all 1s ease-in-out;
+
+          .chart {
+            width: 0%;
+            height: 100%;
+            border-radius: 20px;
+            box-shadow: none;
+            transition: all 1s ease-in-out;
+          }
         }
       }
     }
   }
 
-  &:hover .languangeChart .tooltiptext {
-    opacity: 1;
+  &:hover .languangeChart .tooltiptext span {
+    opacity: 1 !important;
   }
 }
 

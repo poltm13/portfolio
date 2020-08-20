@@ -348,34 +348,37 @@ header h1 {
 }
 
 .skill .languangeChart {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding: 5px;
   height: 100%;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
 }
 
 .skill .languangeChart .tooltiptext {
-  opacity: 0;
-  padding: 15px 0;
-  position: absolute;
-  top: 0;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-.skill .languangeChart div {
+.skill .languangeChart .tooltiptext span {
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  font-size: 70%;
+}
+
+.skill .languangeChart .bar {
+  height: 60%;
+}
+
+.skill .languangeChart .bar div {
   width: 100%;
-  height: 20%;
+  height: 33%;
   border-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -387,14 +390,14 @@ header h1 {
           box-shadow: 1px 1px 1px 1px;
 }
 
-.skill .languangeChart div div {
+.skill .languangeChart .bar div div {
   height: 100%;
   border-radius: 20px;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.skill .languangeChart div div .chart {
+.skill .languangeChart .bar div div .chart {
   width: 0%;
   height: 100%;
   border-radius: 20px;
@@ -404,12 +407,21 @@ header h1 {
   transition: all 1s ease-in-out;
 }
 
-.skill:hover .languangeChart .tooltiptext {
-  opacity: 1;
+.skill:hover .languangeChart .tooltiptext span {
+  opacity: 1 !important;
 }
 
 .revealed {
   width: 100% !important;
+}
+
+.education {
+  padding: 50px;
+  padding-bottom: 0;
+}
+
+.education h1 {
+  margin-bottom: 20px;
 }
 
 html {

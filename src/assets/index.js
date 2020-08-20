@@ -28,7 +28,7 @@ export const skillLogos = [
     color: "#1A989E",
     name: "Arduino",
   },
-  { src: require("./charts.png"), skill: "100%", color: "#7fffd4", name: "😎" },
+  { src: require("./charts.png"), skill: "100%", color: "#7fffd4", name: " " },
 ];
 
 export const skillLogosObj = {

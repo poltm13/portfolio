@@ -8,15 +8,17 @@ export default function Skill(props) {
         <img alt=" " src={props.src} />
       </Col>
       <Col xs={8} className="languangeChart">
-        <span class="tooltiptext">
-          {props.name + "  (" + props.skill + ")"}
-        </span>
-        <div>
-          <div style={{ width: props.skill }}>
-            <div
-              className="chart"
-              style={{ backgroundColor: props.color }}
-            ></div>
+        <div className="tooltiptext">
+          <span>{props.name + "  (" + props.skill + ")"}</span>
+        </div>
+        <div className="bar">
+          <div>
+            <div style={{ width: props.skill }}>
+              <div
+                className="chart"
+                style={{ backgroundColor: props.color }}
+              ></div>
+            </div>
           </div>
         </div>
       </Col>

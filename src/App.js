@@ -5,6 +5,7 @@ import ArrowUp from "./components/ArrowUp";
 import Header from "./components/Header";
 import About from "./components/About";
 import Skills from "./components/Skills";
+import Education from "./components/Education";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
       <About />
 
       <Skills />
+
+      <Education />
 
       <ArrowUp />
     </>
