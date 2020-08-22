@@ -8,7 +8,7 @@ import Skills from "./components/Skills";
 import Education from "./components/Education";
 
 function App() {
-  const hide = true;
+  const hide = false;
 
   return (
     <>
