@@ -37,16 +37,10 @@ export default function Education() {
               <img alt=" " src={education.santoangel} />
             </Col>
             <h3>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+              I have lived in Gavà, Barcelona, almost my entire life. During
+              this period of time I studied secondary and first year of high
+              school at Col·legi Santo Angel, where I made most of my current
+              friends.
             </h3>
           </Row>
           <Row className="secondContent">
@@ -58,16 +52,13 @@ export default function Education() {
               <img alt=" " id="utpLogo" src={education.utp} />
             </Col>
             <h3>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+              In 2014 I had to move to Panamá and there I finished my high
+              school studies in a bilingual school called Colegio Anglo
+              Mexicano. <br /> After graduating from high school and passing an
+              entrance test, I took a semester of degree in Electromechanical
+              Engineering at the UTP, but in the end I opted for moving back to
+              Spain earlier than I thought to prepare for Spanish University
+              Access Tests.
             </h3>
           </Row>
           <Row className="thirdContent">
@@ -87,7 +78,10 @@ export default function Education() {
               popularised in the 1960s with the release of Letraset sheets
               containing Lorem Ipsum passages, and more recently with desktop
               publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+              Lorem Ipsum. Lorem ipsum dolor sit, amet consectetur adipisicing
+              elit. Sed quam quasi in culpa distinctio aliquid, saepe optio nam,
+              omnis harum voluptatibus. Laborum corporis modi laudantium eius
+              debitis nesciunt suscipit vel?
             </h3>
           </Row>
         </div>

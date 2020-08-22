@@ -498,8 +498,8 @@ header h1 {
   height: 100%;
   background: -webkit-gradient(linear, left top, right top, color-stop(70%, #7fffd4), to(#272727));
   background: linear-gradient(to right, #7fffd4 70%, #272727 100%);
-  -webkit-transition: all 0.8s ease-in-out;
-  transition: all 0.8s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   position: absolute;
 }
 
@@ -528,14 +528,14 @@ header h1 {
           transform: scale(0);
   -webkit-transform-origin: center bottom;
           transform-origin: center bottom;
-  -webkit-transition: all 0.7s ease-in-out;
-  transition: all 0.7s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   position: absolute;
   top: 0;
   width: 80vw;
   max-width: 1200px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, #7fffd4), to(white));
-  background: linear-gradient(180deg, #7fffd4 70%, white 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#7fffd4), to(white));
+  background: linear-gradient(180deg, #7fffd4 0%, white 100%);
   padding: 20px;
   -webkit-box-shadow: 0px 3px 1px 1px;
           box-shadow: 0px 3px 1px 1px;
@@ -626,8 +626,8 @@ header h1 {
 .education .timeline .third:checked ~ .content .thirdContent {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: all 0.7s ease-in-out 0.7s;
-  transition: all 0.7s ease-in-out 0.7s;
+  -webkit-transition: all 0.5s ease-in-out 0.5s;
+  transition: all 0.5s ease-in-out 0.5s;
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
   z-index: 3;

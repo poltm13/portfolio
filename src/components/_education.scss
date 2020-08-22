@@ -65,7 +65,7 @@
             $accent 70%,
             $dark-primary 100%
           );
-          transition: all 0.8s ease-in-out;
+          transition: all 1s ease-in-out;
           position: absolute;
         }
       }
@@ -82,12 +82,12 @@
       .thirdContent {
         transform: scale(0);
         transform-origin: center bottom;
-        transition: all 0.7s ease-in-out;
+        transition: all 0.5s ease-in-out;
         position: absolute;
         top: 0;
         width: 80vw;
         max-width: 1200px;
-        background: linear-gradient(180deg, $accent 70%, white 100%);
+        background: linear-gradient(180deg, $accent 0%, white 100%);
         padding: 20px;
         box-shadow: 0px 3px 1px 1px;
         border-radius: 20px;
@@ -148,7 +148,7 @@
     .second:checked ~ .content .secondContent,
     .third:checked ~ .content .thirdContent {
       transform: scale(1);
-      transition: all 0.7s ease-in-out 0.7s;
+      transition: all 0.5s ease-in-out 0.5s;
       transform-origin: bottom;
       z-index: 3;
     }
