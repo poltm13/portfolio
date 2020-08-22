@@ -52,7 +52,7 @@
 header {
   height: 100vh;
   width: 100%;
-  background-color: $accent-color;
+  background-color: $accent;
   transition: all 1s ease-in-out;
   position: fixed;
   top: 0;
@@ -82,7 +82,7 @@ header {
 .sticky {
   height: 110px;
   flex-direction: row;
-  background-color: $dark-primary-color;
+  background-color: $dark-primary;
 
   img {
     width: 100px;
@@ -92,7 +92,7 @@ header {
   }
 
   h1 {
-    color: $accent-color;
+    color: $accent;
     top: 35px;
     left: 140px;
     transform: translate(0);

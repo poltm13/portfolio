@@ -1,6 +1,6 @@
-$primary-color: "white";
-$accent-color: #7fffd4;
-$dark-primary-color: #272727;
+$primary: white;
+$accent: #7fffd4;
+$dark-primary: #272727;
 
 @import "./components/header";
 @import "./components/about";
@@ -26,7 +26,8 @@ html {
 
 body {
   font-family: "Raleway", sans-serif;
-  color: $dark-primary-color;
+  color: $dark-primary;
+  background-color: $primary;
 }
 
 h1 {

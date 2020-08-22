@@ -66,3 +66,10 @@ export const outerHeaderLogos = [
 ];
 
 export const faceImg = require("./face.png");
+
+export const education = {
+  santoangel: require("./santoangel.png"),
+  anglomex: require("./anglomex.png"),
+  utp: require("./utp.png"),
+  upc: require("./upc.png"),
+};

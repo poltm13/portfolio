@@ -8,13 +8,19 @@ import Skills from "./components/Skills";
 import Education from "./components/Education";
 
 function App() {
+  const hide = true;
+
   return (
     <>
-      <Header />
+      {!hide && (
+        <div>
+          <Header />
 
-      <About />
+          <About />
 
-      <Skills />
+          <Skills />
+        </div>
+      )}
 
       <Education />
 
