@@ -1,5 +1,4 @@
 .education {
-  height: 100vh;
   padding: 50px;
   padding-bottom: 0;
 
@@ -10,16 +9,15 @@
   .timeline {
     margin-top: 70px;
     @include flexCenter();
+    flex-direction: column;
 
     input {
       display: none;
     }
 
     ul {
-      width: 90%;
-      max-width: 1400px;
+      width: 100%;
       list-style: none;
-      position: absolute;
       margin: auto;
       display: flex;
       justify-content: center;
@@ -49,11 +47,10 @@
         }
       }
       .line {
-        width: 66.66%;
-        margin: auto;
+        width: calc((100% - 100px) * 0.6666);
         height: 7px;
         position: absolute;
-        bottom: 12px;
+        transform: translate(0, 30px);
         z-index: 1;
 
         span {
@@ -72,19 +69,18 @@
     }
 
     .content {
-      position: absolute;
-      margin-top: 150px;
-      @include flexCenter();
-      flex-direction: column;
+      margin-top: 50px;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
 
       .firstContent,
       .secondContent,
       .thirdContent {
         transform: scale(0);
-        transform-origin: center bottom;
+        transform-origin: center top;
         transition: all 0.5s ease-in-out;
         position: absolute;
-        top: 0;
         width: 80vw;
         max-width: 1200px;
         background: linear-gradient(180deg, $accent 0%, white 100%);
@@ -108,6 +104,8 @@
         }
       }
       .secondContent {
+        position: static; // for vertical spacing since this one has the biggest content
+
         h2 {
           margin: 20px;
           font-size: 2.2rem;
@@ -144,39 +142,62 @@
       }
     }
 
-    .first:checked ~ .content .firstContent,
-    .second:checked ~ .content .secondContent,
-    .third:checked ~ .content .thirdContent {
+    .educationFirst:checked ~ .content .firstContent,
+    .educationSecond:checked ~ .content .secondContent,
+    .educationThird:checked ~ .content .thirdContent {
       transform: scale(1);
       transition: all 0.5s ease-in-out 0.5s;
-      transform-origin: bottom;
+      transform-origin: top;
       z-index: 3;
     }
 
-    .first:checked ~ ul .line span {
+    .educationFirst:checked ~ ul .line span {
       width: 0%;
     }
-    .second:checked ~ ul .line span {
+    .educationSecond:checked ~ ul .line span {
       width: 50%;
     }
-    .third:checked ~ ul .line span {
+    .educationThird:checked ~ ul .line span {
       width: 100%;
     }
 
-    .first:checked ~ ul .l1::after,
-    .second:checked ~ ul .l2::after,
-    .third:checked ~ ul .l3::after,
+    .educationFirst:checked ~ ul .l1::after,
+    .educationSecond:checked ~ ul .l2::after,
+    .educationThird:checked ~ ul .l3::after,
     ul li:hover::after {
       border: 4px solid $accent;
       transform: scale(1.2);
     }
 
-    .first:checked ~ ul .l1,
-    .second:checked ~ ul .l2,
-    .third:checked ~ ul .l3,
+    .educationFirst:checked ~ ul .l1,
+    .educationSecond:checked ~ ul .l2,
+    .educationThird:checked ~ ul .l3,
     ul li:hover {
       font-weight: bolder;
       font-size: 1.2rem;
+      color: black;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .education .timeline {
+    ul {
+      li {
+        font-size: 0.9rem;
+      }
+
+      .line {
+        width: calc((100% - 100px) * 0.6666);
+        transform: translate(0, 25px);
+      }
+    }
+    .educationFirst:checked ~ ul .l1,
+    .educationSecond:checked ~ ul .l2,
+    .educationThird:checked ~ ul .l3,
+    ul li:hover {
+      color: black;
+      font-size: 0.9rem;
     }
   }
 }

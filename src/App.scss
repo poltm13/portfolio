@@ -1,12 +1,20 @@
 $primary: white;
 $accent: #7fffd4;
-//$accent: aqua;
+//$accent: #00ffff;
+//$accent: #05dfd7;
 $dark-primary: #272727;
+$text: #272727;
+
+/* @media (prefers-color-scheme: dark) {
+  $primary: #3b3b3b;
+  $text: white;
+} */
 
 @import "./components/header";
 @import "./components/about";
 @import "./components/skills";
 @import "./components/education";
+@import "./components/projects";
 
 @mixin flexCenter {
   display: flex;
@@ -27,7 +35,7 @@ html {
 
 body {
   font-family: "Raleway", sans-serif;
-  color: $dark-primary;
+  color: $text;
   background-color: $primary;
 }
 

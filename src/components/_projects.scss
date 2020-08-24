@@ -1,0 +1,197 @@
+.projects {
+  h1 {
+    margin: 50px;
+  }
+
+  input {
+    display: none;
+  }
+
+  .projectLogos {
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    transition: all 0.5s ease-in-out;
+
+    img {
+      width: 15vw;
+      max-width: 100px;
+      height: auto;
+      box-shadow: 3px 3px 0 0;
+      border-radius: 50%;
+      border: 1px solid white;
+      justify-self: center;
+      transition: all 0.5s ease-in-out;
+      transform-origin: center;
+    }
+  }
+
+  .projectContent {
+    margin-top: 50px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+    .semteContent,
+    .clauBdayContent,
+    .labelsContent,
+    .nativeContent,
+    .othersContent {
+      opacity: 0;
+      transition: all 0.25s ease-in-out;
+      position: absolute;
+      width: 80vw;
+      background: linear-gradient(180deg, $accent 0%, white 100%);
+      padding: 20px;
+      box-shadow: 0px 3px 1px 1px;
+      border-radius: 20px;
+      //transform: translate(-100px);
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-bottom-color: $accent;
+        border-top: 0;
+        margin-left: -20px;
+        margin-top: -20px;
+      }
+    }
+
+    .semteContent {
+      transform: translate(-100px);
+      &:after {
+        left: calc(2vw + 40px);
+      }
+    }
+    .clauBdayContent {
+      &:after {
+        left: 25%;
+      }
+    }
+    .labelsContent {
+      &:after {
+        left: 50%;
+      }
+    }
+    .nativeContent {
+      &:after {
+        left: 75%;
+      }
+    }
+    .othersContent {
+      transform: translate(100px);
+      &:after {
+        right: calc(2vw + 20px);
+      }
+    }
+  }
+
+  //content appearing transition
+  .projectsFirst:checked ~ .projectContent .semteContent,
+  .projectsSecond:checked ~ .projectContent .clauBdayContent,
+  .projectsThird:checked ~ .projectContent .labelsContent,
+  .projectsFourth:checked ~ .projectContent .nativeContent,
+  .projectsFifth:checked ~ .projectContent .othersContent {
+    opacity: 1;
+    transition: all 0.25s ease-in-out 0.25s;
+    transform: translate(0);
+  }
+  .projectsFirst:checked ~ .projectContent .clauBdayContent,
+  .projectsFirst:checked ~ .projectContent .labelsContent,
+  .projectsFirst:checked ~ .projectContent .nativeContent,
+  .projectsSecond:checked ~ .projectContent .labelsContent,
+  .projectsSecond:checked ~ .projectContent .nativeContent,
+  .projectsThird:checked ~ .projectContent .nativeContent {
+    transform: translate(100px);
+  }
+  .projectsThird:checked ~ .projectContent .clauBdayContent,
+  .projectsFourth:checked ~ .projectContent .labelsContent,
+  .projectsFourth:checked ~ .projectContent .clauBdayContent,
+  .projectsFifth:checked ~ .projectContent .clauBdayContent,
+  .projectsFifth:checked ~ .projectContent .labelsContent,
+  .projectsFifth:checked ~ .projectContent .nativeContent {
+    transform: translate(-100px);
+  }
+
+  //checked scale transitions
+  .projectsSecond:checked ~ .projectLogos .secondProj,
+  .projectsThird:checked ~ .projectLogos .thirdProj,
+  .projectsFourth:checked ~ .projectLogos .fourthProj {
+    transform: scale(1.5);
+  }
+  .projectsFirst:checked ~ .projectLogos .firstProj {
+    transform: scale(1.5) translateX(50%);
+  }
+  .projectsFifth:checked ~ .projectLogos .fifthProj {
+    transform: scale(1.5) translateX(-50%);
+  }
+
+  //right transitions
+  .projectsFirst:checked ~ .projectLogos .secondProj {
+    transform: scale(0.6) translateX(calc((20vw - 60%) / 2 + 30vw));
+  }
+  .projectsFirst:checked ~ .projectLogos .thirdProj,
+  .projectsSecond:checked ~ .projectLogos .thirdProj {
+    transform: scale(0.6) translateX(calc((20vw - 60%) / 2 + 20vw));
+  }
+  .projectsFirst:checked ~ .projectLogos .fourthProj,
+  .projectsSecond:checked ~ .projectLogos .fourthProj,
+  .projectsThird:checked ~ .projectLogos .fourthProj {
+    transform: scale(0.6) translateX(calc((20vw - 60%) / 2 + 10vw));
+  }
+  .projectsFirst:checked ~ .projectLogos .fifthProj,
+  .projectsSecond:checked ~ .projectLogos .fifthProj,
+  .projectsThird:checked ~ .projectLogos .fifthProj,
+  .projectsFourth:checked ~ .projectLogos .fifthProj {
+    transform: scale(0.6) translateX(calc((20vw - 60%) / 2));
+  }
+
+  //left transitions
+  .projectsSecond:checked ~ .projectLogos .firstProj,
+  .projectsThird:checked ~ .projectLogos .firstProj,
+  .projectsFourth:checked ~ .projectLogos .firstProj,
+  .projectsFifth:checked ~ .projectLogos .firstProj {
+    transform: scale(0.6) translateX(calc((-20vw + 60%) / 2));
+  }
+  .projectsThird:checked ~ .projectLogos .secondProj,
+  .projectsFourth:checked ~ .projectLogos .secondProj,
+  .projectsFifth:checked ~ .projectLogos .secondProj {
+    transform: scale(0.6) translateX(calc((-20vw + 60%) / 2 - 10vw));
+  }
+  .projectsFourth:checked ~ .projectLogos .thirdProj,
+  .projectsFifth:checked ~ .projectLogos .thirdProj {
+    transform: scale(0.6) translateX(calc((-20vw + 60%) / 2 - 20vw));
+  }
+  .projectsFifth:checked ~ .projectLogos .fourthProj {
+    transform: scale(0.6) translateX(calc((-20vw + 60%) / 2 - 30vw));
+  }
+}
+
+@keyframes left-to-right {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(-100);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes right-to-left {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(100);
+  }
+  100% {
+    transform: translate(0);
+  }
+}

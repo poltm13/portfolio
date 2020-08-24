@@ -13,7 +13,7 @@ export default function About() {
     <div className="about">
       <h1>About Me</h1>
       <h3>
-        I'm a Telecommunications Engineering student in UPC taking the
+        I'm a Telecommunications Engineering student at UPC taking the
         Audiovisual Systems specialization.
       </h3>
       <h3>

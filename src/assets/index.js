@@ -73,3 +73,9 @@ export const education = {
   utp: require("./utp.png"),
   upc: require("./upc.png"),
 };
+
+export const projects = {
+  clauBday: require("./clauBday.png"),
+  semte: require("./semte.jpg"),
+  labelsRoom: require("./labelsRoom.png"),
+};
