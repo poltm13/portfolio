@@ -78,4 +78,8 @@ export const projects = {
   clauBday: require("./clauBday.png"),
   semte: require("./semte.jpg"),
   labelsRoom: require("./labelsRoom.png"),
+  semtePreview: require("./semtePreview.png"),
+  clauPreview: require("./clauPreview.png"),
+  /*   labelsPreview: require("./labelsPreview.png"),
+  nativePreview: require("./nativePreview.png"), */
 };

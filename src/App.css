@@ -45,6 +45,44 @@
   }
 }
 
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #272727;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #272727;
+  }
+}
+
 header {
   height: 100vh;
   width: 100%;
@@ -70,7 +108,7 @@ header img {
           transition-delay: 0.3s;
 }
 
-header h1 {
+header .typewriter {
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
   -webkit-transition-delay: 0s;
@@ -80,6 +118,23 @@ header h1 {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+header .typewriter h1 {
+  overflow: hidden;
+  border-right: 0.1em solid #272727;
+  white-space: nowrap;
+  margin: 0 auto;
+  -webkit-animation: typing 2s steps(27, end), blink-caret 0.75s step-end infinite;
+          animation: typing 2s steps(27, end), blink-caret 0.75s step-end infinite;
+}
+
+header .typewriter h1 .tags {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3rem;
+  color: red;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .sticky {
@@ -99,7 +154,7 @@ header h1 {
           transition-delay: 0s;
 }
 
-.sticky h1 {
+.sticky .typewriter {
   color: #7fffd4;
   top: 35px;
   left: 140px;
@@ -107,6 +162,10 @@ header h1 {
           transform: translate(0);
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
+}
+
+.sticky .typewriter .tags {
+  opacity: 0;
 }
 
 .headerLogosInner {
@@ -681,6 +740,10 @@ header h1 {
   }
 }
 
+.projects {
+  height: 100vh;
+}
+
 .projects h1 {
   margin: 50px;
 }
@@ -690,6 +753,7 @@ header h1 {
 }
 
 .projects .projectLogos {
+  margin-top: 20px;
   width: 100%;
   display: -ms-inline-grid;
   display: inline-grid;
@@ -699,14 +763,13 @@ header h1 {
       grid-template-rows: auto;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  z-index: 2;
 }
 
 .projects .projectLogos img {
   width: 15vw;
   max-width: 100px;
   height: auto;
-  -webkit-box-shadow: 3px 3px 0 0;
-          box-shadow: 3px 3px 0 0;
   border-radius: 50%;
   border: 1px solid white;
   -ms-grid-column-align: center;
@@ -715,6 +778,23 @@ header h1 {
   transition: all 0.5s ease-in-out;
   -webkit-transform-origin: center;
           transform-origin: center;
+  -webkit-box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 2px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 2px 5px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+.projects .projectLogos img:hover {
+  -webkit-box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+          box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+  -webkit-transform: translateY(-10px) scale(1.1);
+          transform: translateY(-10px) scale(1.1);
+}
+
+.projects .notChecked:hover {
+  -webkit-box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+          box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+  -webkit-transform: translateY(-10px) scale(1.1);
+          transform: translateY(-10px) scale(1.1);
 }
 
 .projects .projectContent {
@@ -740,10 +820,11 @@ header h1 {
   width: 80vw;
   background: -webkit-gradient(linear, left top, left bottom, from(#7fffd4), to(white));
   background: linear-gradient(180deg, #7fffd4 0%, white 100%);
-  padding: 20px;
+  padding: 40px;
   -webkit-box-shadow: 0px 3px 1px 1px;
           box-shadow: 0px 3px 1px 1px;
   border-radius: 20px;
+  z-index: -10;
 }
 
 .projects .projectContent .semteContent:after,
@@ -763,6 +844,15 @@ header h1 {
   margin-top: -20px;
 }
 
+.projects .projectContent .semteContent h2,
+.projects .projectContent .clauBdayContent h2,
+.projects .projectContent .labelsContent h2,
+.projects .projectContent .nativeContent h2,
+.projects .projectContent .othersContent h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
 .projects .projectContent .semteContent {
   -webkit-transform: translate(-100px);
           transform: translate(-100px);
@@ -772,8 +862,72 @@ header h1 {
   left: calc(2vw + 40px);
 }
 
+.projects .projectContent .semteContent .preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50px;
+}
+
+.projects .projectContent .semteContent .preview a {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #272727;
+}
+
+.projects .projectContent .semteContent .preview a img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.projects .projectContent .semteContent .preview a img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .projects .projectContent .clauBdayContent:after {
   left: 25%;
+}
+
+.projects .projectContent .clauBdayContent .preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50px;
+}
+
+.projects .projectContent .clauBdayContent .preview a {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #272727;
+}
+
+.projects .projectContent .clauBdayContent .preview a img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.projects .projectContent .clauBdayContent .preview a img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .projects .projectContent .labelsContent:after {
@@ -799,6 +953,7 @@ header h1 {
 .projects .projectsFourth:checked ~ .projectContent .nativeContent,
 .projects .projectsFifth:checked ~ .projectContent .othersContent {
   opacity: 1;
+  z-index: 1;
   -webkit-transition: all 0.25s ease-in-out 0.25s;
   transition: all 0.25s ease-in-out 0.25s;
   -webkit-transform: translate(0);
@@ -832,9 +987,21 @@ header h1 {
           transform: scale(1.5);
 }
 
+.projects .projectsSecond:checked ~ .projectLogos .secondProj:hover,
+.projects .projectsThird:checked ~ .projectLogos .thirdProj:hover,
+.projects .projectsFourth:checked ~ .projectLogos .fourthProj:hover {
+  -webkit-box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 2px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
 .projects .projectsFirst:checked ~ .projectLogos .firstProj {
   -webkit-transform: scale(1.5) translateX(50%);
           transform: scale(1.5) translateX(50%);
+}
+
+.projects .projectsFirst:checked ~ .projectLogos .firstProj:hover {
+  -webkit-box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 2px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 .projects .projectsFifth:checked ~ .projectLogos .fifthProj {
@@ -842,9 +1009,21 @@ header h1 {
           transform: scale(1.5) translateX(-50%);
 }
 
+.projects .projectsFifth:checked ~ .projectLogos .fifthProj:hover {
+  -webkit-box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 2px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
 .projects .projectsFirst:checked ~ .projectLogos .secondProj {
   -webkit-transform: scale(0.6) translateX(calc((20vw - 60%) / 2 + 30vw));
           transform: scale(0.6) translateX(calc((20vw - 60%) / 2 + 30vw));
+}
+
+.projects .projectsFirst:checked ~ .projectLogos .secondProj:hover {
+  -webkit-box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+          box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+  -webkit-transform: translateY(-10px) scale(0.6) translateX(calc((20vw - 60%) / 2 + 30vw));
+          transform: translateY(-10px) scale(0.6) translateX(calc((20vw - 60%) / 2 + 30vw));
 }
 
 .projects .projectsFirst:checked ~ .projectLogos .thirdProj,
@@ -853,11 +1032,28 @@ header h1 {
           transform: scale(0.6) translateX(calc((20vw - 60%) / 2 + 20vw));
 }
 
+.projects .projectsFirst:checked ~ .projectLogos .thirdProj:hover,
+.projects .projectsSecond:checked ~ .projectLogos .thirdProj:hover {
+  -webkit-box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+          box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+  -webkit-transform: translateY(-10px) scale(0.6) translateX(calc((20vw - 60%) / 2 + 20vw));
+          transform: translateY(-10px) scale(0.6) translateX(calc((20vw - 60%) / 2 + 20vw));
+}
+
 .projects .projectsFirst:checked ~ .projectLogos .fourthProj,
 .projects .projectsSecond:checked ~ .projectLogos .fourthProj,
 .projects .projectsThird:checked ~ .projectLogos .fourthProj {
   -webkit-transform: scale(0.6) translateX(calc((20vw - 60%) / 2 + 10vw));
           transform: scale(0.6) translateX(calc((20vw - 60%) / 2 + 10vw));
+}
+
+.projects .projectsFirst:checked ~ .projectLogos .fourthProj:hover,
+.projects .projectsSecond:checked ~ .projectLogos .fourthProj:hover,
+.projects .projectsThird:checked ~ .projectLogos .fourthProj:hover {
+  -webkit-box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+          box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+  -webkit-transform: translateY(-10px) scale(0.6) translateX(calc((20vw - 60%) / 2 + 10vw));
+          transform: translateY(-10px) scale(0.6) translateX(calc((20vw - 60%) / 2 + 10vw));
 }
 
 .projects .projectsFirst:checked ~ .projectLogos .fifthProj,
@@ -868,12 +1064,32 @@ header h1 {
           transform: scale(0.6) translateX(calc((20vw - 60%) / 2));
 }
 
+.projects .projectsFirst:checked ~ .projectLogos .fifthProj:hover,
+.projects .projectsSecond:checked ~ .projectLogos .fifthProj:hover,
+.projects .projectsThird:checked ~ .projectLogos .fifthProj:hover,
+.projects .projectsFourth:checked ~ .projectLogos .fifthProj:hover {
+  -webkit-box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+          box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+  -webkit-transform: translateY(-10px) scale(0.6) translateX(calc((20vw - 60%) / 2));
+          transform: translateY(-10px) scale(0.6) translateX(calc((20vw - 60%) / 2));
+}
+
 .projects .projectsSecond:checked ~ .projectLogos .firstProj,
 .projects .projectsThird:checked ~ .projectLogos .firstProj,
 .projects .projectsFourth:checked ~ .projectLogos .firstProj,
 .projects .projectsFifth:checked ~ .projectLogos .firstProj {
   -webkit-transform: scale(0.6) translateX(calc((-20vw + 60%) / 2));
           transform: scale(0.6) translateX(calc((-20vw + 60%) / 2));
+}
+
+.projects .projectsSecond:checked ~ .projectLogos .firstProj:hover,
+.projects .projectsThird:checked ~ .projectLogos .firstProj:hover,
+.projects .projectsFourth:checked ~ .projectLogos .firstProj:hover,
+.projects .projectsFifth:checked ~ .projectLogos .firstProj:hover {
+  -webkit-box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+          box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+  -webkit-transform: translateY(-10px) scale(0.6) translateX(calc((-20vw + 60%) / 2));
+          transform: translateY(-10px) scale(0.6) translateX(calc((-20vw + 60%) / 2));
 }
 
 .projects .projectsThird:checked ~ .projectLogos .secondProj,
@@ -883,15 +1099,39 @@ header h1 {
           transform: scale(0.6) translateX(calc((-20vw + 60%) / 2 - 10vw));
 }
 
+.projects .projectsThird:checked ~ .projectLogos .secondProj:hover,
+.projects .projectsFourth:checked ~ .projectLogos .secondProj:hover,
+.projects .projectsFifth:checked ~ .projectLogos .secondProj:hover {
+  -webkit-box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+          box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+  -webkit-transform: translateY(-10px) scale(0.6) translateX(calc((-20vw + 60%) / 2 - 10vw));
+          transform: translateY(-10px) scale(0.6) translateX(calc((-20vw + 60%) / 2 - 10vw));
+}
+
 .projects .projectsFourth:checked ~ .projectLogos .thirdProj,
 .projects .projectsFifth:checked ~ .projectLogos .thirdProj {
   -webkit-transform: scale(0.6) translateX(calc((-20vw + 60%) / 2 - 20vw));
           transform: scale(0.6) translateX(calc((-20vw + 60%) / 2 - 20vw));
 }
 
+.projects .projectsFourth:checked ~ .projectLogos .thirdProj:hover,
+.projects .projectsFifth:checked ~ .projectLogos .thirdProj:hover {
+  -webkit-box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+          box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+  -webkit-transform: translateY(-10px) scale(0.6) translateX(calc((-20vw + 60%) / 2 - 20vw));
+          transform: translateY(-10px) scale(0.6) translateX(calc((-20vw + 60%) / 2 - 20vw));
+}
+
 .projects .projectsFifth:checked ~ .projectLogos .fourthProj {
   -webkit-transform: scale(0.6) translateX(calc((-20vw + 60%) / 2 - 30vw));
           transform: scale(0.6) translateX(calc((-20vw + 60%) / 2 - 30vw));
+}
+
+.projects .projectsFifth:checked ~ .projectLogos .fourthProj:hover {
+  -webkit-box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+          box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 12px 20px rgba(0, 0, 0, 0.4);
+  -webkit-transform: translateY(-10px) scale(0.6) translateX(calc((-20vw + 60%) / 2 - 30vw));
+          transform: translateY(-10px) scale(0.6) translateX(calc((-20vw + 60%) / 2 - 30vw));
 }
 
 @-webkit-keyframes left-to-right {

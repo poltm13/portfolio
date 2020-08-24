@@ -1,4 +1,6 @@
 .projects {
+  height: 100vh; //asdfasdf
+
   h1 {
     margin: 50px;
   }
@@ -8,22 +10,40 @@
   }
 
   .projectLogos {
+    margin-top: 20px;
     width: 100%;
     display: inline-grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto;
     transition: all 0.5s ease-in-out;
+    z-index: 2;
 
     img {
       width: 15vw;
       max-width: 100px;
       height: auto;
-      box-shadow: 3px 3px 0 0;
       border-radius: 50%;
       border: 1px solid white;
       justify-self: center;
       transition: all 0.5s ease-in-out;
       transform-origin: center;
+      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+        2px 2px 5px rgba(0, 0, 0, 0.8);
+      z-index: 2;
+
+      &:hover {
+        box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+          2px 12px 20px rgba(0, 0, 0, 0.4);
+        transform: translateY(-10px) scale(1.1);
+      }
+    }
+  }
+
+  .notChecked {
+    &:hover {
+      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+        2px 12px 20px rgba(0, 0, 0, 0.4);
+      transform: translateY(-10px) scale(1.1);
     }
   }
 
@@ -43,10 +63,10 @@
       position: absolute;
       width: 80vw;
       background: linear-gradient(180deg, $accent 0%, white 100%);
-      padding: 20px;
+      padding: 40px;
       box-shadow: 0px 3px 1px 1px;
       border-radius: 20px;
-      //transform: translate(-100px);
+      z-index: -10;
 
       &:after {
         content: "";
@@ -60,6 +80,11 @@
         margin-left: -20px;
         margin-top: -20px;
       }
+
+      h2 {
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
     }
 
     .semteContent {
@@ -67,10 +92,49 @@
       &:after {
         left: calc(2vw + 40px);
       }
+
+      .preview {
+        @include flexCenter();
+        padding: 50px;
+
+        a {
+          overflow: hidden;
+          border-radius: 10px;
+          border: 1px solid $dark-primary;
+          img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            transition: all 0.5s ease-in-out;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
     }
     .clauBdayContent {
       &:after {
         left: 25%;
+      }
+      .preview {
+        @include flexCenter();
+        padding: 50px;
+
+        a {
+          overflow: hidden;
+          border-radius: 10px;
+          border: 1px solid $dark-primary;
+          img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            transition: all 0.5s ease-in-out;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
       }
     }
     .labelsContent {
@@ -98,6 +162,7 @@
   .projectsFourth:checked ~ .projectContent .nativeContent,
   .projectsFifth:checked ~ .projectContent .othersContent {
     opacity: 1;
+    z-index: 1;
     transition: all 0.25s ease-in-out 0.25s;
     transform: translate(0);
   }
@@ -123,32 +188,67 @@
   .projectsThird:checked ~ .projectLogos .thirdProj,
   .projectsFourth:checked ~ .projectLogos .fourthProj {
     transform: scale(1.5);
+    &:hover {
+      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+        2px 2px 5px rgba(0, 0, 0, 0.8);
+    }
   }
   .projectsFirst:checked ~ .projectLogos .firstProj {
     transform: scale(1.5) translateX(50%);
+    &:hover {
+      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+        2px 2px 5px rgba(0, 0, 0, 0.8);
+    }
   }
   .projectsFifth:checked ~ .projectLogos .fifthProj {
     transform: scale(1.5) translateX(-50%);
+    &:hover {
+      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+        2px 2px 5px rgba(0, 0, 0, 0.8);
+    }
   }
 
   //right transitions
   .projectsFirst:checked ~ .projectLogos .secondProj {
     transform: scale(0.6) translateX(calc((20vw - 60%) / 2 + 30vw));
+    &:hover {
+      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+        2px 12px 20px rgba(0, 0, 0, 0.4);
+      transform: translateY(-10px) scale(0.6)
+        translateX(calc((20vw - 60%) / 2 + 30vw));
+    }
   }
   .projectsFirst:checked ~ .projectLogos .thirdProj,
   .projectsSecond:checked ~ .projectLogos .thirdProj {
     transform: scale(0.6) translateX(calc((20vw - 60%) / 2 + 20vw));
+    &:hover {
+      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+        2px 12px 20px rgba(0, 0, 0, 0.4);
+      transform: translateY(-10px) scale(0.6)
+        translateX(calc((20vw - 60%) / 2 + 20vw));
+    }
   }
   .projectsFirst:checked ~ .projectLogos .fourthProj,
   .projectsSecond:checked ~ .projectLogos .fourthProj,
   .projectsThird:checked ~ .projectLogos .fourthProj {
     transform: scale(0.6) translateX(calc((20vw - 60%) / 2 + 10vw));
+    &:hover {
+      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+        2px 12px 20px rgba(0, 0, 0, 0.4);
+      transform: translateY(-10px) scale(0.6)
+        translateX(calc((20vw - 60%) / 2 + 10vw));
+    }
   }
   .projectsFirst:checked ~ .projectLogos .fifthProj,
   .projectsSecond:checked ~ .projectLogos .fifthProj,
   .projectsThird:checked ~ .projectLogos .fifthProj,
   .projectsFourth:checked ~ .projectLogos .fifthProj {
     transform: scale(0.6) translateX(calc((20vw - 60%) / 2));
+    &:hover {
+      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+        2px 12px 20px rgba(0, 0, 0, 0.4);
+      transform: translateY(-10px) scale(0.6) translateX(calc((20vw - 60%) / 2));
+    }
   }
 
   //left transitions
@@ -157,18 +257,42 @@
   .projectsFourth:checked ~ .projectLogos .firstProj,
   .projectsFifth:checked ~ .projectLogos .firstProj {
     transform: scale(0.6) translateX(calc((-20vw + 60%) / 2));
+    &:hover {
+      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+        2px 12px 20px rgba(0, 0, 0, 0.4);
+      transform: translateY(-10px) scale(0.6)
+        translateX(calc((-20vw + 60%) / 2));
+    }
   }
   .projectsThird:checked ~ .projectLogos .secondProj,
   .projectsFourth:checked ~ .projectLogos .secondProj,
   .projectsFifth:checked ~ .projectLogos .secondProj {
     transform: scale(0.6) translateX(calc((-20vw + 60%) / 2 - 10vw));
+    &:hover {
+      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+        2px 12px 20px rgba(0, 0, 0, 0.4);
+      transform: translateY(-10px) scale(0.6)
+        translateX(calc((-20vw + 60%) / 2 - 10vw));
+    }
   }
   .projectsFourth:checked ~ .projectLogos .thirdProj,
   .projectsFifth:checked ~ .projectLogos .thirdProj {
     transform: scale(0.6) translateX(calc((-20vw + 60%) / 2 - 20vw));
+    &:hover {
+      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+        2px 12px 20px rgba(0, 0, 0, 0.4);
+      transform: translateY(-10px) scale(0.6)
+        translateX(calc((-20vw + 60%) / 2 - 20vw));
+    }
   }
   .projectsFifth:checked ~ .projectLogos .fourthProj {
     transform: scale(0.6) translateX(calc((-20vw + 60%) / 2 - 30vw));
+    &:hover {
+      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+        2px 12px 20px rgba(0, 0, 0, 0.4);
+      transform: translateY(-10px) scale(0.6)
+        translateX(calc((-20vw + 60%) / 2 - 30vw));
+    }
   }
 }
 

@@ -9,7 +9,7 @@ import Education from "./components/Education";
 import Projects from "./components/Projects";
 
 function App() {
-  const hide = true;
+  const hide = false;
 
   return (
     <>
@@ -22,12 +22,11 @@ function App() {
           <Skills />
 
           <Education />
-
-          <ArrowUp />
         </div>
       )}
 
       <Projects />
+      <ArrowUp />
     </>
   );
 }
