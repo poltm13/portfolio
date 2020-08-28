@@ -65,11 +65,11 @@ export const outerHeaderLogos = [
   require("./movie.png"),
 ];
 
-export const faceImg = require("./face.png");
+export const faceImg = require("./face.webp");
 
 export const education = {
   santoangel: require("./santoangel.png"),
-  anglomex: require("./anglomex.png"),
+  anglomex: require("./anglomex.webp"),
   utp: require("./utp.png"),
   upc: require("./upc.png"),
 };
@@ -78,7 +78,7 @@ export const projects = {
   clauBday: require("./clauBday.png"),
   semte: require("./semte.jpg"),
   labelsRoom: require("./labelsRoom.png"),
-  semtePreview: require("./semtePreview.png"),
+  semtePreview: require("./semtePreview.webp"),
   clauPreview: require("./clauPreview.png"),
   /*   labelsPreview: require("./labelsPreview.png"),
   nativePreview: require("./nativePreview.png"), */
