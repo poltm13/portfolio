@@ -14,10 +14,7 @@ export default function Skill(props) {
         <div className="bar">
           <div>
             <div style={{ width: props.skill }}>
-              <div
-                className="chart"
-                style={{ backgroundColor: props.color }}
-              ></div>
+              <div className="chart" style={{ background: props.color }}></div>
             </div>
           </div>
         </div>

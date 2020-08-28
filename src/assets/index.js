@@ -28,7 +28,13 @@ export const skillLogos = [
     color: "#1A989E",
     name: "Arduino",
   },
-  { src: require("./charts.png"), skill: "100%", color: "#7fffd4", name: " " },
+  {
+    src: require("./charts.png"),
+    skill: "100%",
+    color:
+      "linear-gradient(90deg, rgba(127, 255, 212, 1) 0%, rgba(122, 242, 255, 1) 50%, rgba(47, 156, 168, 1) 100%)",
+    name: " ",
+  },
 ];
 
 export const skillLogosObj = {

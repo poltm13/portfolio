@@ -2,6 +2,7 @@ import React from "react";
 import { faceImg, innerHeaderLogos, outerHeaderLogos } from "../assets";
 import scrollTop from "./scrollTop";
 import WebPicture from "./WebPicture";
+import arrowUp from "../assets/arrow-up.svg";
 
 export default function Header() {
   const arrowHandler = () => {
@@ -49,9 +50,7 @@ export default function Header() {
           </h1>
         </div>
       </header>
-      <div className="downArrow" onClick={arrowHandler}>
-        <div></div>
-      </div>
+      <img alt=" " className="downArrow" src={arrowUp} onClick={arrowHandler} />
     </div>
   );
 }

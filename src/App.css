@@ -85,63 +85,63 @@
 
 @-webkit-keyframes bounce {
   0% {
-    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
-            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(180deg);
+            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(180deg);
   }
   5% {
-    -webkit-transform: scale(1.1, 0.9) translateY(0) translate(-50%, -50%) rotate(45deg);
-            transform: scale(1.1, 0.9) translateY(0) translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: scale(1.1, 0.9) translateY(0) translate(-50%, -50%) rotate(180deg);
+            transform: scale(1.1, 0.9) translateY(0) translate(-50%, -50%) rotate(180deg);
   }
   15% {
-    -webkit-transform: scale(0.9, 1.1) translateY(-30px) translate(-50%, -50%) rotate(45deg);
-            transform: scale(0.9, 1.1) translateY(-30px) translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: scale(0.9, 1.1) translateY(-30px) translate(-50%, -50%) rotate(180deg);
+            transform: scale(0.9, 1.1) translateY(-30px) translate(-50%, -50%) rotate(180deg);
   }
   25% {
-    -webkit-transform: scale(1.05, 0.95) translateY(0) translate(-50%, -50%) rotate(45deg);
-            transform: scale(1.05, 0.95) translateY(0) translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: scale(1.05, 0.95) translateY(0) translate(-50%, -50%) rotate(180deg);
+            transform: scale(1.05, 0.95) translateY(0) translate(-50%, -50%) rotate(180deg);
   }
   28% {
-    -webkit-transform: scale(1, 1) translateY(-4px) translate(-50%, -50%) rotate(45deg);
-            transform: scale(1, 1) translateY(-4px) translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: scale(1, 1) translateY(-4px) translate(-50%, -50%) rotate(180deg);
+            transform: scale(1, 1) translateY(-4px) translate(-50%, -50%) rotate(180deg);
   }
   32% {
-    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
-            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(180deg);
+            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(180deg);
   }
   100% {
-    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
-            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(180deg);
+            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(180deg);
   }
 }
 
 @keyframes bounce {
   0% {
-    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
-            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(180deg);
+            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(180deg);
   }
   5% {
-    -webkit-transform: scale(1.1, 0.9) translateY(0) translate(-50%, -50%) rotate(45deg);
-            transform: scale(1.1, 0.9) translateY(0) translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: scale(1.1, 0.9) translateY(0) translate(-50%, -50%) rotate(180deg);
+            transform: scale(1.1, 0.9) translateY(0) translate(-50%, -50%) rotate(180deg);
   }
   15% {
-    -webkit-transform: scale(0.9, 1.1) translateY(-30px) translate(-50%, -50%) rotate(45deg);
-            transform: scale(0.9, 1.1) translateY(-30px) translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: scale(0.9, 1.1) translateY(-30px) translate(-50%, -50%) rotate(180deg);
+            transform: scale(0.9, 1.1) translateY(-30px) translate(-50%, -50%) rotate(180deg);
   }
   25% {
-    -webkit-transform: scale(1.05, 0.95) translateY(0) translate(-50%, -50%) rotate(45deg);
-            transform: scale(1.05, 0.95) translateY(0) translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: scale(1.05, 0.95) translateY(0) translate(-50%, -50%) rotate(180deg);
+            transform: scale(1.05, 0.95) translateY(0) translate(-50%, -50%) rotate(180deg);
   }
   28% {
-    -webkit-transform: scale(1, 1) translateY(-4px) translate(-50%, -50%) rotate(45deg);
-            transform: scale(1, 1) translateY(-4px) translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: scale(1, 1) translateY(-4px) translate(-50%, -50%) rotate(180deg);
+            transform: scale(1, 1) translateY(-4px) translate(-50%, -50%) rotate(180deg);
   }
   32% {
-    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
-            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(180deg);
+            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(180deg);
   }
   100% {
-    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
-            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(180deg);
+            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(180deg);
   }
 }
 
@@ -153,14 +153,29 @@
 header {
   height: 100%;
   width: 100%;
-  background-color: #7fffd4;
+  background: -webkit-gradient(linear, left top, right top, from(aquamarine), color-stop(50%, #7af2ff), to(#2f9ca8));
+  background: linear-gradient(90deg, aquamarine 0%, #7af2ff 50%, #2f9ca8 100%);
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
-  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
   overflow: hidden;
+  position: fixed;
+}
+
+header:before {
+  background: #272727;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 header img {
@@ -214,7 +229,10 @@ header .typewriter h1 .tags {
 
 .sticky header {
   height: 110px;
-  background-color: #272727;
+}
+
+.sticky header::before {
+  opacity: 1;
 }
 
 .sticky header ~ .downArrow {
@@ -232,7 +250,10 @@ header .typewriter h1 .tags {
 }
 
 .sticky header .typewriter {
-  color: #7fffd4;
+  background: -webkit-gradient(linear, left top, right top, from(aquamarine), color-stop(50%, #7af2ff), to(#2f9ca8));
+  background: linear-gradient(90deg, aquamarine 0%, #7af2ff 50%, #2f9ca8 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   top: 55px;
   left: 230px;
   -webkit-transition-delay: 0.25s;
@@ -422,14 +443,13 @@ header .typewriter h1 .tags {
 }
 
 .downArrow {
-  background: #272727;
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   z-index: 300;
   position: fixed;
   bottom: 10px;
-  -webkit-transform: translate(-50%, -50%) rotate(45deg);
-          transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(180deg);
+          transform: translate(-50%, -50%) rotate(180deg);
   left: 50%;
   -webkit-animation-name: bounce;
           animation-name: bounce;
@@ -443,14 +463,6 @@ header .typewriter h1 .tags {
           animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
   -webkit-transition: opacity 1s ease-in-out 1s;
   transition: opacity 1s ease-in-out 1s;
-}
-
-.downArrow div {
-  background-color: #7fffd4;
-  width: 40px;
-  height: 40px;
-  z-index: 300;
-  position: fixed;
 }
 
 @media (max-width: 500px) {
@@ -682,8 +694,8 @@ header .typewriter h1 .tags {
   content: " ";
   border-radius: 50px;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, color-stop(70%, #7fffd4), to(#272727));
-  background: linear-gradient(to right, #7fffd4 70%, #272727 100%);
+  background: -webkit-gradient(linear, left top, right top, from(aquamarine), color-stop(50%, #7af2ff), to(#2f9ca8));
+  background: linear-gradient(90deg, aquamarine 0%, #7af2ff 50%, #2f9ca8 100%);
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
   position: absolute;
