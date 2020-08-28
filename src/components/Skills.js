@@ -11,7 +11,7 @@ export default function Skills() {
         <h1>Skills</h1>
       </Fade>
       <Row>
-        <Col sm={12} md={6} xl={4}>
+        <Col sm={12} md={6}>
           <Fade
             bottom
             cascade
@@ -43,7 +43,7 @@ export default function Skills() {
             </div>
           </Fade>
         </Col>
-        <Col sm={12} md={6} xl={8}>
+        <Col sm={12} md={6}>
           <Fade bottom cascade big>
             <div className="skillText">
               <h3>Proactivity</h3>

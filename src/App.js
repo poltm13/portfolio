@@ -9,24 +9,21 @@ import Education from "./components/Education";
 import Projects from "./components/Projects";
 
 function App() {
-  const hide = false;
+  const hide = true;
 
   return (
     <>
+      <Header />
+      <About />
+      <Skills />
+      <Education />
+      <ArrowUp />
+
       {!hide && (
         <div>
-          <Header />
-
-          <About />
-
-          <Skills />
-
-          <Education />
+          <Projects />
         </div>
       )}
-
-      <Projects />
-      <ArrowUp />
     </>
   );
 }

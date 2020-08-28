@@ -1,5 +1,6 @@
 import React from "react";
 import arrowUp from "../assets/arrow-up.svg";
+import scrollTop from "./scrollTop";
 
 export default function ArrowUp() {
   return (
@@ -8,7 +9,7 @@ export default function ArrowUp() {
         alt="Arrow to scroll top"
         id="arrowNav"
         src={arrowUp}
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        onClick={scrollTop}
       />
     </div>
   );

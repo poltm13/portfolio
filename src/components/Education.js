@@ -2,6 +2,7 @@ import React from "react";
 import { education } from "../assets";
 import { Row, Col } from "react-bootstrap";
 import Fade from "react-reveal/Fade";
+import WebPicture from "./WebPicture";
 
 export default function Education() {
   const clickHandler = (inputItem) => {
@@ -65,8 +66,16 @@ export default function Education() {
                 <h2>Panama</h2>
               </Col>
               <Col md={4} sm={6} className="schoolLogo">
-                <img alt=" " id="angloLogo" src={education.anglomex} />
-                <img alt=" " id="utpLogo" src={education.utp} />
+                <WebPicture
+                  id="angloLogo"
+                  src={education.anglomex_original}
+                  srcWebp={education.anglomex}
+                />
+                <WebPicture
+                  id="utpLogo"
+                  src={education.utp_original}
+                  srcWebp={education.utp}
+                />
               </Col>
               <h3>
                 In 2014 I had to move to Panamá and there I finished my high

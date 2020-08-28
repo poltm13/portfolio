@@ -4,20 +4,39 @@
   align-items: center;
 }
 
+@mixin min-width($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+@mixin max-width($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
 .skills {
   padding: 50px;
 }
 
 .skillText {
   margin-left: 20px;
-  h3 {
-    margin: 2rem;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  height: 100%;
+  max-height: 400px;
+  display: flex;
+
+  @include max-width(767px) {
+    margin-top: 50px;
   }
 }
 
 .skill {
   transition: all 0.2s ease-in-out;
   display: flex;
+  max-width: 350px;
 
   &:hover {
     transform: scale(1.1);

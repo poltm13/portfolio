@@ -22,6 +22,17 @@ $text: #272727;
   align-items: center;
 }
 
+@mixin min-width($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+@mixin max-width($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -33,20 +44,25 @@ html {
   -webkit-user-drag: none;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   font-family: "Raleway", sans-serif;
   color: $text;
   background-color: $primary;
+  overflow: hidden;
 }
 
 h1 {
   font-family: "Bebas Neue", cursive;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .arrow {
@@ -56,5 +72,14 @@ h3 {
     z-index: 200;
     width: 100px;
     height: auto;
+  }
+}
+
+@include min-width(500px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
   }
 }

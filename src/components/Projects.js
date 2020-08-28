@@ -2,6 +2,7 @@ import React from "react";
 import Fade from "react-reveal/Fade";
 import { projects } from "../assets";
 import { Row, Col } from "react-bootstrap";
+import WebPicture from "./WebPicture";
 
 export default function Projects() {
   const clickHandler = (inputItem) => {
@@ -79,7 +80,10 @@ export default function Projects() {
           </Col>
           <Col lg={4} md={6} className="preview">
             <a href="http://semte.es" target="_blank" rel="noopener noreferrer">
-              <img src={projects.semtePreview} alt=" " />
+              <WebPicture
+                src={projects.semtePreview_original}
+                srcWebp={projects.semtePreview}
+              />
             </a>
           </Col>
         </Row>

@@ -68,14 +68,53 @@
   }
 }
 
-header {
+@mixin min-width($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+  }
+  5% {
+    transform: scale(1.1, 0.9) translateY(0) translate(-50%, -50%) rotate(45deg);
+  }
+  15% {
+    transform: scale(0.9, 1.1) translateY(-30px) translate(-50%, -50%)
+      rotate(45deg);
+  }
+  25% {
+    transform: scale(1.05, 0.95) translateY(0) translate(-50%, -50%)
+      rotate(45deg);
+  }
+  28% {
+    transform: scale(1, 1) translateY(-4px) translate(-50%, -50%) rotate(45deg);
+  }
+  32% {
+    transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+  }
+}
+
+.headerContainer {
+  width: 100vw;
   height: 100vh;
+}
+
+header {
+  height: 100%;
   width: 100%;
   background-color: $accent;
   transition: all 1s ease-in-out;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 100;
+  overflow: hidden;
 
   img {
     width: 200px;
@@ -92,7 +131,7 @@ header {
     transition: all 1s ease-in-out;
     transition-delay: 0s;
     position: absolute;
-    top: 65%;
+    top: calc(50% + 130px);
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -102,6 +141,8 @@ header {
       white-space: nowrap;
       margin: 0 auto;
       animation: typing 2s steps(27, end), blink-caret 0.75s step-end infinite;
+      transition: font-size 1s ease-in-out;
+
       .tags {
         font-family: "Raleway", sans-serif;
         font-size: 1.3rem;
@@ -114,37 +155,39 @@ header {
 
 .sticky {
   height: 110px;
-  flex-direction: row;
-  background-color: $dark-primary;
 
-  img {
-    width: 100px;
-    height: 100px;
-    left: 60px;
-    transition-delay: 0s;
-  }
+  header {
+    height: 110px;
+    background-color: $dark-primary;
 
-  .typewriter {
-    color: $accent;
-    top: 35px;
-    left: 140px;
-    transform: translate(0);
-    transition-delay: 0.3s;
-    .tags {
+    ~ .downArrow {
       opacity: 0;
+      transition: opacity 0.3s ease-in-out 0s;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+      left: 60px;
+      transition-delay: 0s;
+    }
+
+    .typewriter {
+      color: $accent;
+      top: 55px;
+      left: 230px;
+      transition-delay: 0.25s;
+
+      .tags {
+        opacity: 0;
+      }
     }
   }
 }
 
-$innerCircleSize: 40vmax;
-$outerCircleSize: 80vmax;
-$logo-size: 60px;
-
-@media (max-width: 500px) {
-  $innerCircleSize: 50vmax;
-  $outerCircleSize: 90vmax;
-  $logo-size: 40px;
-}
+$innerCircleSize: 50vmax;
+$outerCircleSize: 90vmax;
+$logo-size: 50px;
 
 .headerLogosInner {
   @include on-circle(
@@ -152,6 +195,7 @@ $logo-size: 60px;
     $circle-size: $innerCircleSize,
     $item-size: $logo-size
   );
+
   animation: spin 20s linear 0s infinite;
   margin: 0 auto 0;
   width: 100vw;
@@ -207,5 +251,40 @@ $logo-size: 60px;
 }
 
 .zIndex {
-  z-index: -1;
+  z-index: -1 !important;
+}
+
+.downArrow {
+  background: $dark-primary;
+  width: 50px;
+  height: 50px;
+  z-index: 300;
+  position: fixed;
+  bottom: 10px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: 50%;
+  animation-name: bounce;
+  animation-duration: 4s;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+  transition: opacity 1s ease-in-out 1s;
+
+  div {
+    background-color: $accent;
+    width: 40px;
+    height: 40px;
+    z-index: 300;
+    position: fixed;
+  }
+}
+
+@media (max-width: 500px) {
+  .sticky header .typewriter {
+    left: 200px;
+
+    h1 {
+      font-size: 20px;
+    }
+  }
 }

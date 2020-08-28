@@ -83,15 +83,84 @@
   }
 }
 
-header {
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+  }
+  5% {
+    -webkit-transform: scale(1.1, 0.9) translateY(0) translate(-50%, -50%) rotate(45deg);
+            transform: scale(1.1, 0.9) translateY(0) translate(-50%, -50%) rotate(45deg);
+  }
+  15% {
+    -webkit-transform: scale(0.9, 1.1) translateY(-30px) translate(-50%, -50%) rotate(45deg);
+            transform: scale(0.9, 1.1) translateY(-30px) translate(-50%, -50%) rotate(45deg);
+  }
+  25% {
+    -webkit-transform: scale(1.05, 0.95) translateY(0) translate(-50%, -50%) rotate(45deg);
+            transform: scale(1.05, 0.95) translateY(0) translate(-50%, -50%) rotate(45deg);
+  }
+  28% {
+    -webkit-transform: scale(1, 1) translateY(-4px) translate(-50%, -50%) rotate(45deg);
+            transform: scale(1, 1) translateY(-4px) translate(-50%, -50%) rotate(45deg);
+  }
+  32% {
+    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+  }
+  5% {
+    -webkit-transform: scale(1.1, 0.9) translateY(0) translate(-50%, -50%) rotate(45deg);
+            transform: scale(1.1, 0.9) translateY(0) translate(-50%, -50%) rotate(45deg);
+  }
+  15% {
+    -webkit-transform: scale(0.9, 1.1) translateY(-30px) translate(-50%, -50%) rotate(45deg);
+            transform: scale(0.9, 1.1) translateY(-30px) translate(-50%, -50%) rotate(45deg);
+  }
+  25% {
+    -webkit-transform: scale(1.05, 0.95) translateY(0) translate(-50%, -50%) rotate(45deg);
+            transform: scale(1.05, 0.95) translateY(0) translate(-50%, -50%) rotate(45deg);
+  }
+  28% {
+    -webkit-transform: scale(1, 1) translateY(-4px) translate(-50%, -50%) rotate(45deg);
+            transform: scale(1, 1) translateY(-4px) translate(-50%, -50%) rotate(45deg);
+  }
+  32% {
+    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+            transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(45deg);
+  }
+}
+
+.headerContainer {
+  width: 100vw;
   height: 100vh;
+}
+
+header {
+  height: 100%;
   width: 100%;
   background-color: #7fffd4;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 100;
+  overflow: hidden;
 }
 
 header img {
@@ -114,7 +183,7 @@ header .typewriter {
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
   position: absolute;
-  top: 65%;
+  top: calc(50% + 130px);
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -127,6 +196,8 @@ header .typewriter h1 {
   margin: 0 auto;
   -webkit-animation: typing 2s steps(27, end), blink-caret 0.75s step-end infinite;
           animation: typing 2s steps(27, end), blink-caret 0.75s step-end infinite;
+  -webkit-transition: font-size 1s ease-in-out;
+  transition: font-size 1s ease-in-out;
 }
 
 header .typewriter h1 .tags {
@@ -139,14 +210,20 @@ header .typewriter h1 .tags {
 
 .sticky {
   height: 110px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+}
+
+.sticky header {
+  height: 110px;
   background-color: #272727;
 }
 
-.sticky img {
+.sticky header ~ .downArrow {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out 0s;
+  transition: opacity 0.3s ease-in-out 0s;
+}
+
+.sticky header img {
   width: 100px;
   height: 100px;
   left: 60px;
@@ -154,24 +231,22 @@ header .typewriter h1 .tags {
           transition-delay: 0s;
 }
 
-.sticky .typewriter {
+.sticky header .typewriter {
   color: #7fffd4;
-  top: 35px;
-  left: 140px;
-  -webkit-transform: translate(0);
-          transform: translate(0);
-  -webkit-transition-delay: 0.3s;
-          transition-delay: 0.3s;
+  top: 55px;
+  left: 230px;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
 }
 
-.sticky .typewriter .tags {
+.sticky header .typewriter .tags {
   opacity: 0;
 }
 
 .headerLogosInner {
   position: relative;
-  width: 40vmax;
-  height: 40vmax;
+  width: 50vmax;
+  height: 50vmax;
   padding: 0;
   border-radius: 50%;
   list-style: none;
@@ -191,44 +266,44 @@ header .typewriter h1 .tags {
   position: absolute;
   top: 50%;
   left: 50%;
-  height: 60px;
+  height: 50px;
   width: auto;
-  margin: -30px;
+  margin: -25px;
 }
 
 .headerLogosInner > *:nth-of-type(1) {
-  -webkit-transform: rotate(0deg) translate(20vmax) rotate(0deg);
-          transform: rotate(0deg) translate(20vmax) rotate(0deg);
+  -webkit-transform: rotate(0deg) translate(25vmax) rotate(0deg);
+          transform: rotate(0deg) translate(25vmax) rotate(0deg);
 }
 
 .headerLogosInner > *:nth-of-type(2) {
-  -webkit-transform: rotate(51.42857deg) translate(20vmax) rotate(-51.42857deg);
-          transform: rotate(51.42857deg) translate(20vmax) rotate(-51.42857deg);
+  -webkit-transform: rotate(51.42857deg) translate(25vmax) rotate(-51.42857deg);
+          transform: rotate(51.42857deg) translate(25vmax) rotate(-51.42857deg);
 }
 
 .headerLogosInner > *:nth-of-type(3) {
-  -webkit-transform: rotate(102.85714deg) translate(20vmax) rotate(-102.85714deg);
-          transform: rotate(102.85714deg) translate(20vmax) rotate(-102.85714deg);
+  -webkit-transform: rotate(102.85714deg) translate(25vmax) rotate(-102.85714deg);
+          transform: rotate(102.85714deg) translate(25vmax) rotate(-102.85714deg);
 }
 
 .headerLogosInner > *:nth-of-type(4) {
-  -webkit-transform: rotate(154.28571deg) translate(20vmax) rotate(-154.28571deg);
-          transform: rotate(154.28571deg) translate(20vmax) rotate(-154.28571deg);
+  -webkit-transform: rotate(154.28571deg) translate(25vmax) rotate(-154.28571deg);
+          transform: rotate(154.28571deg) translate(25vmax) rotate(-154.28571deg);
 }
 
 .headerLogosInner > *:nth-of-type(5) {
-  -webkit-transform: rotate(205.71429deg) translate(20vmax) rotate(-205.71429deg);
-          transform: rotate(205.71429deg) translate(20vmax) rotate(-205.71429deg);
+  -webkit-transform: rotate(205.71429deg) translate(25vmax) rotate(-205.71429deg);
+          transform: rotate(205.71429deg) translate(25vmax) rotate(-205.71429deg);
 }
 
 .headerLogosInner > *:nth-of-type(6) {
-  -webkit-transform: rotate(257.14286deg) translate(20vmax) rotate(-257.14286deg);
-          transform: rotate(257.14286deg) translate(20vmax) rotate(-257.14286deg);
+  -webkit-transform: rotate(257.14286deg) translate(25vmax) rotate(-257.14286deg);
+          transform: rotate(257.14286deg) translate(25vmax) rotate(-257.14286deg);
 }
 
 .headerLogosInner > *:nth-of-type(7) {
-  -webkit-transform: rotate(308.57143deg) translate(20vmax) rotate(-308.57143deg);
-          transform: rotate(308.57143deg) translate(20vmax) rotate(-308.57143deg);
+  -webkit-transform: rotate(308.57143deg) translate(25vmax) rotate(-308.57143deg);
+          transform: rotate(308.57143deg) translate(25vmax) rotate(-308.57143deg);
 }
 
 .headerLogosInner img {
@@ -241,8 +316,8 @@ header .typewriter h1 .tags {
 
 .headerLogosOuter {
   position: relative;
-  width: 80vmax;
-  height: 80vmax;
+  width: 90vmax;
+  height: 90vmax;
   padding: 0;
   border-radius: 50%;
   list-style: none;
@@ -262,54 +337,54 @@ header .typewriter h1 .tags {
   position: absolute;
   top: 50%;
   left: 50%;
-  height: 60px;
+  height: 50px;
   width: auto;
-  margin: -30px;
+  margin: -25px;
 }
 
 .headerLogosOuter > *:nth-of-type(1) {
-  -webkit-transform: rotate(0deg) translate(40vmax) rotate(0deg);
-          transform: rotate(0deg) translate(40vmax) rotate(0deg);
+  -webkit-transform: rotate(0deg) translate(45vmax) rotate(0deg);
+          transform: rotate(0deg) translate(45vmax) rotate(0deg);
 }
 
 .headerLogosOuter > *:nth-of-type(2) {
-  -webkit-transform: rotate(40deg) translate(40vmax) rotate(-40deg);
-          transform: rotate(40deg) translate(40vmax) rotate(-40deg);
+  -webkit-transform: rotate(40deg) translate(45vmax) rotate(-40deg);
+          transform: rotate(40deg) translate(45vmax) rotate(-40deg);
 }
 
 .headerLogosOuter > *:nth-of-type(3) {
-  -webkit-transform: rotate(80deg) translate(40vmax) rotate(-80deg);
-          transform: rotate(80deg) translate(40vmax) rotate(-80deg);
+  -webkit-transform: rotate(80deg) translate(45vmax) rotate(-80deg);
+          transform: rotate(80deg) translate(45vmax) rotate(-80deg);
 }
 
 .headerLogosOuter > *:nth-of-type(4) {
-  -webkit-transform: rotate(120deg) translate(40vmax) rotate(-120deg);
-          transform: rotate(120deg) translate(40vmax) rotate(-120deg);
+  -webkit-transform: rotate(120deg) translate(45vmax) rotate(-120deg);
+          transform: rotate(120deg) translate(45vmax) rotate(-120deg);
 }
 
 .headerLogosOuter > *:nth-of-type(5) {
-  -webkit-transform: rotate(160deg) translate(40vmax) rotate(-160deg);
-          transform: rotate(160deg) translate(40vmax) rotate(-160deg);
+  -webkit-transform: rotate(160deg) translate(45vmax) rotate(-160deg);
+          transform: rotate(160deg) translate(45vmax) rotate(-160deg);
 }
 
 .headerLogosOuter > *:nth-of-type(6) {
-  -webkit-transform: rotate(200deg) translate(40vmax) rotate(-200deg);
-          transform: rotate(200deg) translate(40vmax) rotate(-200deg);
+  -webkit-transform: rotate(200deg) translate(45vmax) rotate(-200deg);
+          transform: rotate(200deg) translate(45vmax) rotate(-200deg);
 }
 
 .headerLogosOuter > *:nth-of-type(7) {
-  -webkit-transform: rotate(240deg) translate(40vmax) rotate(-240deg);
-          transform: rotate(240deg) translate(40vmax) rotate(-240deg);
+  -webkit-transform: rotate(240deg) translate(45vmax) rotate(-240deg);
+          transform: rotate(240deg) translate(45vmax) rotate(-240deg);
 }
 
 .headerLogosOuter > *:nth-of-type(8) {
-  -webkit-transform: rotate(280deg) translate(40vmax) rotate(-280deg);
-          transform: rotate(280deg) translate(40vmax) rotate(-280deg);
+  -webkit-transform: rotate(280deg) translate(45vmax) rotate(-280deg);
+          transform: rotate(280deg) translate(45vmax) rotate(-280deg);
 }
 
 .headerLogosOuter > *:nth-of-type(9) {
-  -webkit-transform: rotate(320deg) translate(40vmax) rotate(-320deg);
-          transform: rotate(320deg) translate(40vmax) rotate(-320deg);
+  -webkit-transform: rotate(320deg) translate(45vmax) rotate(-320deg);
+          transform: rotate(320deg) translate(45vmax) rotate(-320deg);
 }
 
 .headerLogosOuter img {
@@ -343,27 +418,57 @@ header .typewriter h1 .tags {
 }
 
 .zIndex {
-  z-index: -1;
+  z-index: -1 !important;
+}
+
+.downArrow {
+  background: #272727;
+  width: 50px;
+  height: 50px;
+  z-index: 300;
+  position: fixed;
+  bottom: 10px;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  left: 50%;
+  -webkit-animation-name: bounce;
+          animation-name: bounce;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+          animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+  -webkit-transition: opacity 1s ease-in-out 1s;
+  transition: opacity 1s ease-in-out 1s;
+}
+
+.downArrow div {
+  background-color: #7fffd4;
+  width: 40px;
+  height: 40px;
+  z-index: 300;
+  position: fixed;
+}
+
+@media (max-width: 500px) {
+  .sticky header .typewriter {
+    left: 200px;
+  }
+  .sticky header .typewriter h1 {
+    font-size: 20px;
+  }
 }
 
 .about {
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
   padding: 50px;
   padding-bottom: 0;
-  margin-top: 200vh;
 }
 
 .about h1 {
   margin-bottom: 20px;
-}
-
-.sticky-margin {
-  margin-top: 200px;
-  -webkit-transition-delay: 0.3s;
-          transition-delay: 0.3s;
 }
 
 .skills {
@@ -372,10 +477,27 @@ header .typewriter h1 .tags {
 
 .skillText {
   margin-left: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 100%;
+  max-height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.skillText h3 {
-  margin: 2rem;
+@media screen and (max-width: 767px) {
+  .skillText {
+    margin-top: 50px;
+  }
 }
 
 .skill {
@@ -384,6 +506,7 @@ header .typewriter h1 .tags {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 350px;
 }
 
 .skill:hover {
@@ -641,10 +764,14 @@ header .typewriter h1 .tags {
           align-items: center;
 }
 
-.education .timeline .content .secondContent .schoolLogo img {
+.education .timeline .content .secondContent .schoolLogo picture {
   width: 50%;
   max-width: 120px;
   margin-bottom: 20px;
+}
+
+.education .timeline .content .secondContent .schoolLogo picture img {
+  width: 100%;
 }
 
 .education .timeline .content .secondContent .schoolLogo #angloLogo {
@@ -1208,20 +1335,25 @@ html {
   -webkit-user-drag: none;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   font-family: "Raleway", sans-serif;
   color: #272727;
   background-color: white;
+  overflow: hidden;
 }
 
 h1 {
   font-family: "Bebas Neue", cursive;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .arrow {
@@ -1240,5 +1372,14 @@ h3 {
   z-index: 200;
   width: 100px;
   height: auto;
+}
+
+@media screen and (min-width: 500px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
 }
 /*# sourceMappingURL=App.css.map */

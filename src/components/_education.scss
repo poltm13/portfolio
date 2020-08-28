@@ -112,10 +112,14 @@
         }
         .schoolLogo {
           @include flexCenter();
-          img {
+          picture {
             width: 50%;
             max-width: 120px;
             margin-bottom: 20px;
+
+            img {
+              width: 100%;
+            }
           }
 
           #angloLogo {
