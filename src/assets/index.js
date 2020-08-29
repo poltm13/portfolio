@@ -86,12 +86,21 @@ export const education = {
 };
 
 export const projects = {
-  clauBday: require("./clauBday.png"),
   semte: require("./semte.jpg"),
-  labelsRoom: require("./labelsRoom.png"),
   semtePreview: require("./semtePreview.webp"),
   semtePreview_original: require("./semtePreview.png"),
-  clauPreview: require("./clauPreview.png"),
-  /*   labelsPreview: require("./labelsPreview.png"),
-  nativePreview: require("./nativePreview.png"), */
+
+  clauBday: require("./clauBday.png"),
+  clauPreview: require("./clauPreview.webp"),
+  clauPreview_original: require("./clauPreview.png"),
+
+  labelsRoom: require("./labelsRoom.png"),
+  labelsPreview: require("./labelsPreview.webp"),
+  labelsPreview_original: require("./labelsPreview.jpg"),
+
+  native: require("./native.jpg"),
+  nativePreview: require("./nativePreview.webp"),
+  nativePreview_original: require("./nativePreview.gif"),
+
+  others: require("./codigo.png"),
 };

@@ -1,9 +1,13 @@
 .projects {
   height: 100vh; //asdfasdf
   @include content();
+  padding-left: 0;
+  padding-right: 0;
 
   h1 {
+    @include underline();
     margin: 50px;
+    margin-bottom: 20px;
   }
 
   input {
@@ -14,13 +18,29 @@
     margin-top: 20px;
     width: 100%;
     display: inline-grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     grid-template-rows: auto;
     transition: all 0.5s ease-in-out;
     z-index: 2;
 
+    .semte {
+      grid-column: 2;
+    }
+    .clauBday {
+      grid-column: 3;
+    }
+    .labelsRoom {
+      grid-column: 4;
+    }
+    .nativeApp {
+      grid-column: 5;
+    }
+    .others {
+      grid-column: 6;
+    }
+
     img {
-      width: 15vw;
+      width: 14vw;
       max-width: 100px;
       height: auto;
       border-radius: 50%;
@@ -50,9 +70,10 @@
 
   .projectContent {
     margin-top: 50px;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 
     .semteContent,
     .clauBdayContent,
@@ -62,11 +83,10 @@
       opacity: 0;
       transition: all 0.25s ease-in-out;
       position: absolute;
-      width: 80vw;
+      width: 100%;
       background: linear-gradient(180deg, $accent 0%, white 100%);
       padding: 40px;
       box-shadow: 0px 3px 1px 1px;
-      border-radius: 20px;
       z-index: -10;
 
       &:after {
@@ -89,9 +109,8 @@
     }
 
     .semteContent {
-      transform: translate(-100px);
       &:after {
-        left: calc(2vw + 40px);
+        left: 21.42vw;
       }
 
       .preview {
@@ -116,7 +135,7 @@
     }
     .clauBdayContent {
       &:after {
-        left: 25%;
+        left: 35.71vw;
       }
       .preview {
         @include flexCenter();
@@ -142,16 +161,49 @@
       &:after {
         left: 50%;
       }
+
+      .preview {
+        @include flexCenter();
+        padding: 50px;
+
+        a {
+          overflow: hidden;
+          border-radius: 10px;
+          border: 1px solid $dark-primary;
+          img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            transition: all 0.5s ease-in-out;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
     }
     .nativeContent {
       &:after {
-        left: 75%;
+        left: 64.28vw;
+      }
+
+      .preview {
+        @include flexCenter();
+        padding: 50px;
+
+        img {
+          border-radius: 10px;
+          border: 1px solid $dark-primary;
+          width: 100%;
+          max-width: 300px;
+          height: auto;
+          transition: all 0.5s ease-in-out;
+        }
       }
     }
     .othersContent {
-      transform: translate(100px);
       &:after {
-        right: calc(2vw + 20px);
+        left: 78.57vw;
       }
     }
   }
@@ -165,44 +217,15 @@
     opacity: 1;
     z-index: 1;
     transition: all 0.25s ease-in-out 0.25s;
-    transform: translate(0);
-  }
-  .projectsFirst:checked ~ .projectContent .clauBdayContent,
-  .projectsFirst:checked ~ .projectContent .labelsContent,
-  .projectsFirst:checked ~ .projectContent .nativeContent,
-  .projectsSecond:checked ~ .projectContent .labelsContent,
-  .projectsSecond:checked ~ .projectContent .nativeContent,
-  .projectsThird:checked ~ .projectContent .nativeContent {
-    transform: translate(100px);
-  }
-  .projectsThird:checked ~ .projectContent .clauBdayContent,
-  .projectsFourth:checked ~ .projectContent .labelsContent,
-  .projectsFourth:checked ~ .projectContent .clauBdayContent,
-  .projectsFifth:checked ~ .projectContent .clauBdayContent,
-  .projectsFifth:checked ~ .projectContent .labelsContent,
-  .projectsFifth:checked ~ .projectContent .nativeContent {
-    transform: translate(-100px);
   }
 
   //checked scale transitions
+  .projectsFirst:checked ~ .projectLogos .firstProj,
   .projectsSecond:checked ~ .projectLogos .secondProj,
   .projectsThird:checked ~ .projectLogos .thirdProj,
-  .projectsFourth:checked ~ .projectLogos .fourthProj {
-    transform: scale(1.5);
-    &:hover {
-      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
-        2px 2px 5px rgba(0, 0, 0, 0.8);
-    }
-  }
-  .projectsFirst:checked ~ .projectLogos .firstProj {
-    transform: scale(1.5) translateX(50%);
-    &:hover {
-      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
-        2px 2px 5px rgba(0, 0, 0, 0.8);
-    }
-  }
+  .projectsFourth:checked ~ .projectLogos .fourthProj,
   .projectsFifth:checked ~ .projectLogos .fifthProj {
-    transform: scale(1.5) translateX(-50%);
+    transform: scale(1.5);
     &:hover {
       box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
         2px 2px 5px rgba(0, 0, 0, 0.8);

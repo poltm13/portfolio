@@ -13,7 +13,7 @@ export default function About() {
           Audiovisual Systems specialization.
         </h3>
         <h3>
-          I consider myself a passionate person about new technology and i'm
+          I consider myself a passionate person about new technology and I'm
           seeking to expand my training and knowledge in the workplace.
         </h3>
         <h3>

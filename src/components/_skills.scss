@@ -2,6 +2,7 @@
   @include content();
 
   h1 {
+    @include underline();
     margin-bottom: 20px;
   }
 

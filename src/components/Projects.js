@@ -46,13 +46,13 @@ export default function Projects() {
         <img
           alt=" "
           onClick={() => clickHandler(".projectsFourth")}
-          src={projects.clauBday}
+          src={projects.native}
           className="nativeApp fourthProj"
         />
         <img
           alt=" "
           onClick={() => clickHandler(".projectsFifth")}
-          src={projects.clauBday}
+          src={projects.others}
           className="others fifthProj"
         />
       </div>
@@ -110,21 +110,63 @@ export default function Projects() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={projects.clauPreview} alt=" " />
+              <WebPicture
+                src={projects.clauPreview_original}
+                srcWebp={projects.clauPreview}
+              />
             </a>
           </Col>
         </Row>
         <Row className="labelsContent">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis
-          dolorem est, ullam nulla ab quaerat corporis temporibus consectetur
-          minima beatae perspiciatis possimus. Ab incidunt cumque assumenda
-          magnam tempora optio eveniet!
+          <Col lg={8} md={6}>
+            <h2>Labels Room</h2>
+            <h3>
+              For this project I collaborated in the creation of the b2b
+              (buisness to buisness) eCommerce part of the website and the
+              styiling of it.
+              <br />
+              <br />
+              <br />
+              Date: 2020
+              <br />
+              Technologies: WordPress, CSS
+            </h3>
+          </Col>
+          <Col lg={4} md={6} className="preview">
+            <a
+              href="https://labelsroom.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <WebPicture
+                src={projects.labelsPreview_original}
+                srcWebp={projects.labelsPreview}
+              />
+            </a>
+          </Col>
         </Row>
         <Row className="nativeContent">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis
-          dolorem est, ullam nulla ab quaerat corporis temporibus consectetur
-          minima beatae perspiciatis possimus. Ab incidunt cumque assumenda
-          magnam tempora optio eveniet!
+          <Col lg={8} md={6}>
+            <h2>React Native App</h2>
+            <h3>
+              This geeky project is a present to my girlfriend for her 24th
+              birthday.
+              <br />
+              It is basically a bunch of images that are either from some trip
+              we made or that we just find funny. <br />
+              <br />
+              <br />
+              Date: 2020
+              <br />
+              Technologies: React JS, SASS/CSS
+            </h3>
+          </Col>
+          <Col lg={4} md={6} className="preview">
+            <WebPicture
+              src={projects.nativePreview_original}
+              srcWebp={projects.nativePreview}
+            />
+          </Col>
         </Row>
         <Row className="othersContent">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis

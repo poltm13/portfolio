@@ -18,12 +18,9 @@ function App() {
       <Skills />
       <Education />
 
+      <Projects />
       <ArrowUp />
-      {!hide && (
-        <div>
-          <Projects />
-        </div>
-      )}
+      {!hide && <div></div>}
     </>
   );
 }
