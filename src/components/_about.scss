@@ -1,6 +1,5 @@
 .about {
-  padding: 50px;
-  padding-bottom: 0;
+  @include content();
 
   h1 {
     margin-bottom: 20px;

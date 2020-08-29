@@ -1,7 +1,5 @@
 $primary: white;
-$accent: #7fffd4;
-//$accent: #00ffff;
-//$accent: #05dfd7;
+$accent: rgba(122, 242, 255, 1);
 $dark-primary: #272727;
 $text: #272727;
 $gradient: linear-gradient(
@@ -16,28 +14,12 @@ $gradient: linear-gradient(
   $text: white;
 } */
 
+@import "./components/common";
 @import "./components/header";
 @import "./components/about";
 @import "./components/skills";
 @import "./components/education";
 @import "./components/projects";
-
-@mixin flexCenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin min-width($width) {
-  @media screen and (min-width: $width) {
-    @content;
-  }
-}
-@mixin max-width($width) {
-  @media screen and (max-width: $width) {
-    @content;
-  }
-}
 
 html {
   scroll-behavior: smooth;

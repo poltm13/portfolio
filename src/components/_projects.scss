@@ -1,5 +1,6 @@
 .projects {
   height: 100vh; //asdfasdf
+  @include content();
 
   h1 {
     margin: 50px;

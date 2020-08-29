@@ -475,8 +475,11 @@ header .typewriter h1 .tags {
 }
 
 .about {
-  padding: 50px;
-  padding-bottom: 0;
+  -webkit-box-shadow: 0px 0px 40px -25px;
+          box-shadow: 0px 0px 40px -25px;
+  border-radius: 10px;
+  padding: 50px 50px 30px;
+  margin-bottom: 15px;
 }
 
 .about h1 {
@@ -484,11 +487,23 @@ header .typewriter h1 .tags {
 }
 
 .skills {
-  padding: 50px;
+  -webkit-box-shadow: 0px 0px 40px -25px;
+          box-shadow: 0px 0px 40px -25px;
+  border-radius: 10px;
+  padding: 50px 50px 30px;
+  margin-bottom: 15px;
 }
 
-.skillText {
-  margin-left: 20px;
+.skills h1 {
+  margin-bottom: 20px;
+}
+
+.skills .skillText {
+  padding-left: 20px;
+  max-height: 400px;
+}
+
+.skills .skillText div {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -500,19 +515,43 @@ header .typewriter h1 .tags {
       -ms-flex-align: start;
           align-items: flex-start;
   height: 100%;
-  max-height: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
+.skills .skillText div h3 {
+  font-weight: bold;
+}
+
+.skills .skillText div h3::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, right top, from(aquamarine), color-stop(50%, #7af2ff), to(#2f9ca8));
+  background: linear-gradient(90deg, aquamarine 0%, #7af2ff 50%, #2f9ca8 100%);
+  float: left;
+  margin-right: 15px;
+  -webkit-box-shadow: 0px 1px 2px 1px;
+          box-shadow: 0px 1px 2px 1px;
+}
+
 @media screen and (max-width: 767px) {
-  .skillText {
-    margin-top: 50px;
+  .skills .skillText {
+    margin-top: 40px;
+    margin-bottom: 10px;
   }
 }
 
-.skill {
+.skills .chartContainer div .row {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.skills .chartContainer .skill {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: -webkit-box;
@@ -521,12 +560,12 @@ header .typewriter h1 .tags {
   max-width: 350px;
 }
 
-.skill:hover {
+.skills .chartContainer .skill:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.skill .languangeImg {
+.skills .chartContainer .skill .languangeImg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -539,17 +578,17 @@ header .typewriter h1 .tags {
   padding: 5%;
 }
 
-.skill .languangeImg img {
+.skills .chartContainer .skill .languangeImg img {
   width: 100%;
   height: auto;
 }
 
-.skill .languangeChart {
+.skills .chartContainer .skill .languangeChart {
   padding: 5px;
   height: 100%;
 }
 
-.skill .languangeChart .tooltiptext {
+.skills .chartContainer .skill .languangeChart .tooltiptext {
   height: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -562,18 +601,18 @@ header .typewriter h1 .tags {
           align-items: flex-end;
 }
 
-.skill .languangeChart .tooltiptext span {
+.skills .chartContainer .skill .languangeChart .tooltiptext span {
   opacity: 0;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   font-size: 100%;
 }
 
-.skill .languangeChart .bar {
+.skills .chartContainer .skill .languangeChart .bar {
   height: 60%;
 }
 
-.skill .languangeChart .bar div {
+.skills .chartContainer .skill .languangeChart .bar div {
   width: 100%;
   height: 33%;
   border-radius: 20px;
@@ -587,14 +626,14 @@ header .typewriter h1 .tags {
           box-shadow: 1px 1px 1px 1px;
 }
 
-.skill .languangeChart .bar div div {
+.skills .chartContainer .skill .languangeChart .bar div div {
   height: 100%;
   border-radius: 20px;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.skill .languangeChart .bar div div .chart {
+.skills .chartContainer .skill .languangeChart .bar div div .chart {
   width: 0%;
   height: 100%;
   border-radius: 20px;
@@ -604,17 +643,20 @@ header .typewriter h1 .tags {
   transition: all 1s ease-in-out;
 }
 
-.skill:hover .languangeChart .tooltiptext span {
+.skills .chartContainer .skill:hover .languangeChart .tooltiptext span {
   opacity: 1 !important;
 }
 
-.revealed {
+.skills .chartContainer .revealed {
   width: 100% !important;
 }
 
 .education {
-  padding: 50px;
-  padding-bottom: 0;
+  -webkit-box-shadow: 0px 0px 40px -25px;
+          box-shadow: 0px 0px 40px -25px;
+  border-radius: 10px;
+  padding: 50px 50px 30px;
+  margin-bottom: 15px;
 }
 
 .education h1 {
@@ -724,11 +766,11 @@ header .typewriter h1 .tags {
   position: absolute;
   width: 80vw;
   max-width: 1200px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#7fffd4), to(white));
-  background: linear-gradient(180deg, #7fffd4 0%, white 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#7af2ff), to(white));
+  background: linear-gradient(180deg, #7af2ff 0%, white 100%);
   padding: 20px;
-  -webkit-box-shadow: 0px 3px 1px 1px;
-          box-shadow: 0px 3px 1px 1px;
+  -webkit-box-shadow: 0px 10px 30px -10px;
+          box-shadow: 0px 10px 30px -10px;
   border-radius: 20px;
 }
 
@@ -847,7 +889,7 @@ header .typewriter h1 .tags {
 .education .timeline .educationSecond:checked ~ ul .l2::after,
 .education .timeline .educationThird:checked ~ ul .l3::after,
 .education .timeline ul li:hover::after {
-  border: 4px solid #7fffd4;
+  border: 4px solid #7af2ff;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
@@ -881,6 +923,11 @@ header .typewriter h1 .tags {
 
 .projects {
   height: 100vh;
+  -webkit-box-shadow: 0px 0px 40px -25px;
+          box-shadow: 0px 0px 40px -25px;
+  border-radius: 10px;
+  padding: 50px 50px 30px;
+  margin-bottom: 15px;
 }
 
 .projects h1 {
@@ -957,8 +1004,8 @@ header .typewriter h1 .tags {
   transition: all 0.25s ease-in-out;
   position: absolute;
   width: 80vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#7fffd4), to(white));
-  background: linear-gradient(180deg, #7fffd4 0%, white 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#7af2ff), to(white));
+  background: linear-gradient(180deg, #7af2ff 0%, white 100%);
   padding: 40px;
   -webkit-box-shadow: 0px 3px 1px 1px;
           box-shadow: 0px 3px 1px 1px;
@@ -977,7 +1024,7 @@ header .typewriter h1 .tags {
   width: 0;
   height: 0;
   border: 20px solid transparent;
-  border-bottom-color: #7fffd4;
+  border-bottom-color: #7af2ff;
   border-top: 0;
   margin-left: -20px;
   margin-top: -20px;
