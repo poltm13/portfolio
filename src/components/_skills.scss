@@ -35,11 +35,11 @@
     }
 
     @include max-width(767px) {
-      margin-top: 40px;
+      margin-top: 15px;
       margin-bottom: 10px;
 
-      div {
-        //align-items: center;
+      h3 {
+        margin-top: 15px;
       }
     }
   }

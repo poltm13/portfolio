@@ -11,13 +11,16 @@ import Projects from "./components/Projects";
 function App() {
   const hide = true;
 
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <>
       <Header />
       <About />
       <Skills />
       <Education />
-
       <Projects />
       <ArrowUp />
       {!hide && <div></div>}

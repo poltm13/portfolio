@@ -7,10 +7,7 @@ import WebPicture from "./WebPicture";
 export default function Projects() {
   const clickHandler = (inputItem) => {
     let item = document.querySelector(inputItem);
-    item.checked = true;
-
-    //buscar si hay algun checked y si no poner una
-    //clase con position: absolute al mas largo
+    item.checked = !item.checked;
   };
 
   return (
@@ -121,7 +118,7 @@ export default function Projects() {
           <Col lg={8} md={6}>
             <h2>Labels Room</h2>
             <h3>
-              For this project I collaborated in the creation of the b2b
+              For this project I collaborated in the creation of the B2B
               (buisness to buisness) eCommerce part of the website and the
               styiling of it.
               <br />
@@ -147,18 +144,24 @@ export default function Projects() {
         </Row>
         <Row className="nativeContent">
           <Col lg={8} md={6}>
-            <h2>React Native App</h2>
+            <h2>To Do list app</h2>
             <h3>
-              This geeky project is a present to my girlfriend for her 24th
-              birthday.
+              At the beginning of 2020 I decided to learn mobile app development
+              and I opted to learn React Native as I was familiar with
+              Javascript.
               <br />
-              It is basically a bunch of images that are either from some trip
-              we made or that we just find funny. <br />
+              The goal was no other than to learn the framework by creating an
+              app that required a general knowledge.
+              <br />
+              <br />
+              Thanks to this project I discovered the usefulness of frameworks
+              like React JS and I started using it on the web.
+              <br />
               <br />
               <br />
               Date: 2020
               <br />
-              Technologies: React JS, SASS/CSS
+              Technologies: React Native, CSS
             </h3>
           </Col>
           <Col lg={4} md={6} className="preview">
@@ -169,10 +172,11 @@ export default function Projects() {
           </Col>
         </Row>
         <Row className="othersContent">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis
-          dolorem est, ullam nulla ab quaerat corporis temporibus consectetur
-          minima beatae perspiciatis possimus. Ab incidunt cumque assumenda
-          magnam tempora optio eveniet!
+          <h2>Other Projects</h2>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
+          inventore dolorem mollitia rem at saepe quia voluptas ea explicabo
+          officiis, assumenda, dicta ipsam soluta dignissimos a repellendus
+          eaque vitae cupiditate.
         </Row>
       </div>
     </div>

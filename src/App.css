@@ -572,8 +572,11 @@ header .typewriter h1 .tags {
 
 @media screen and (max-width: 767px) {
   .skills .skillText {
-    margin-top: 40px;
+    margin-top: 15px;
     margin-bottom: 10px;
+  }
+  .skills .skillText h3 {
+    margin-top: 15px;
   }
 }
 
@@ -970,7 +973,6 @@ header .typewriter h1 .tags {
 }
 
 .projects {
-  height: 100vh;
   -webkit-box-shadow: 0px 0px 40px -25px;
           box-shadow: 0px 0px 40px -25px;
   border-radius: 10px;
@@ -1084,7 +1086,7 @@ header .typewriter h1 .tags {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  overflow: hidden;
+  position: relative;
 }
 
 .projects .projectContent .semteContent,
@@ -1100,9 +1102,19 @@ header .typewriter h1 .tags {
   background: -webkit-gradient(linear, left top, left bottom, from(#7af2ff), to(white));
   background: linear-gradient(180deg, #7af2ff 0%, white 100%);
   padding: 40px;
-  -webkit-box-shadow: 0px 3px 1px 1px;
-          box-shadow: 0px 3px 1px 1px;
   z-index: -10;
+  height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .projects .projectContent .semteContent,
+  .projects .projectContent .clauBdayContent,
+  .projects .projectContent .labelsContent,
+  .projects .projectContent .nativeContent,
+  .projects .projectContent .othersContent {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .projects .projectContent .semteContent:after,
@@ -1253,7 +1265,15 @@ header .typewriter h1 .tags {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 50px;
+  padding: 70px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .projects .projectContent .nativeContent .preview {
+    padding-top: 20px;
+  }
 }
 
 .projects .projectContent .nativeContent .preview img {
@@ -1279,6 +1299,7 @@ header .typewriter h1 .tags {
   z-index: 1;
   -webkit-transition: all 0.25s ease-in-out 0.25s;
   transition: all 0.25s ease-in-out 0.25s;
+  position: static;
 }
 
 .projects .projectsFirst:checked ~ .projectLogos .firstProj,

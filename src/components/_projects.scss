@@ -1,5 +1,5 @@
 .projects {
-  height: 100vh; //asdfasdf
+  //height: 100vh; //asdfasdf
   @include content();
   padding-left: 0;
   padding-right: 0;
@@ -73,7 +73,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    overflow: hidden;
+    position: relative;
 
     .semteContent,
     .clauBdayContent,
@@ -86,8 +86,13 @@
       width: 100%;
       background: linear-gradient(180deg, $accent 0%, white 100%);
       padding: 40px;
-      box-shadow: 0px 3px 1px 1px;
       z-index: -10;
+      height: 100%;
+
+      @include max-width(767px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
 
       &:after {
         content: "";
@@ -189,7 +194,13 @@
 
       .preview {
         @include flexCenter();
-        padding: 50px;
+        padding: 70px;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        @include max-width(767px) {
+          padding-top: 20px;
+        }
 
         img {
           border-radius: 10px;
@@ -217,6 +228,7 @@
     opacity: 1;
     z-index: 1;
     transition: all 0.25s ease-in-out 0.25s;
+    position: static;
   }
 
   //checked scale transitions
