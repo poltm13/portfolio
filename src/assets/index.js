@@ -103,4 +103,23 @@ export const projects = {
   nativePreview_original: require("./nativePreview.gif"),
 
   others: require("./codigo.png"),
+  agario: require("./agario.webp"),
+  agario_original: require("./agario.gif"),
+  asteroids: require("./asteroids.webp"),
+  asteroids_original: require("./asteroids.gif"),
+  invaders: require("./invaders.webp"),
+  invaders_original: require("./invaders.gif"),
+  pong: require("./pong.webp"),
+  pong_original: require("./pong.gif"),
+};
+
+export const contact = {
+  mailIcon: require("./email-icon.svg"),
+  mapIcon: require("./map-marker.png"),
+  earphoneIcon: require("./earphone.png"),
+  envelopeIcon: require("./envelope.png"),
+  linkedIcon: require("./linked-in.png"),
+  curriculum: require("./curriculum.webp"),
+  curriculum_original: require("./curriculum.jpg"),
+  cv: require("./CVPolTedesko.pdf"),
 };

@@ -121,4 +121,18 @@
       width: 100% !important;
     }
   }
+
+  @include max-width(575px) {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    h1,
+    .skillText {
+      margin-left: 30px;
+    }
+
+    .chartContainer .skill {
+      max-width: 90vw;
+    }
+  }
 }

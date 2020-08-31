@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 
 import ArrowUp from "./components/ArrowUp";
@@ -7,11 +7,10 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 function App() {
-  const hide = true;
-
-  React.useEffect(() => {
+  useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
@@ -22,8 +21,8 @@ function App() {
       <Skills />
       <Education />
       <Projects />
+      <Contact />
       <ArrowUp />
-      {!hide && <div></div>}
     </>
   );
 }

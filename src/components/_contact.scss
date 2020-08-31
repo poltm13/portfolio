@@ -1,0 +1,81 @@
+.contact {
+  @include content();
+
+  .title {
+    display: flex;
+
+    h1 {
+      @include underline();
+      margin-bottom: 50px;
+    }
+
+    .mailIcon {
+      width: 50px;
+      height: auto;
+      margin-left: 15px;
+      position: relative;
+      top: -30px;
+    }
+  }
+
+  .cv {
+    width: 100%;
+    min-height: 333px;
+    @include flexCenter();
+    margin-bottom: 20px;
+
+    img {
+      width: 200px;
+      height: auto;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  ul .contactItem {
+    margin: 4vh;
+    margin-left: 0;
+    margin-right: 0;
+
+    p {
+      font-size: 1.3rem;
+    }
+
+    a {
+      font-size: 1.3rem;
+      color: black;
+
+      &:hover {
+        color: $accent;
+        text-decoration: none;
+      }
+    }
+
+    .contactIcon {
+      margin-right: 20px;
+    }
+  }
+
+  .map {
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+
+    div {
+      border-radius: 20px;
+    }
+    @include flexCenter();
+  }
+
+  @include min-width(1200px) {
+    .cv {
+      margin-bottom: 0;
+    }
+    .map {
+      max-width: 400px;
+    }
+  }
+}
