@@ -1,5 +1,4 @@
 .projects {
-  //height: 100vh; //asdfasdf
   @include content();
   padding-left: 0;
   padding-right: 0;
@@ -21,7 +20,7 @@
     display: inline-grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: auto;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.45s ease-in-out;
     z-index: 2;
 
     .semte {
@@ -40,23 +39,28 @@
       grid-column: 6;
     }
 
-    img {
-      width: 14vw;
-      max-width: 100px;
-      height: auto;
-      border-radius: 50%;
-      border: 1px solid white;
+    picture {
       justify-self: center;
-      transition: all 0.5s ease-in-out;
+      transition: all 0.45s ease-in-out;
       transform-origin: center;
-      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
-        2px 2px 5px rgba(0, 0, 0, 0.8);
       z-index: 2;
 
-      &:hover {
+      img {
+        width: 14vw;
+        max-width: 100px;
+        height: auto;
+        border-radius: 50%;
+        border: 1px solid white;
+        transition: all 0.45s ease-in-out;
+        transform-origin: center;
         box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
-          2px 12px 20px rgba(0, 0, 0, 0.4);
-        transform: translateY(-10px) scale(1.1);
+          2px 2px 5px rgba(0, 0, 0, 0.8);
+
+        &:hover {
+          box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+            2px 12px 20px rgba(0, 0, 0, 0.4);
+          transform: translateY(-10px) scale(1.1);
+        }
       }
     }
   }
@@ -131,7 +135,7 @@
             width: 100%;
             max-width: 300px;
             height: auto;
-            transition: all 0.5s ease-in-out;
+            transition: all 0.45s ease-in-out;
             &:hover {
               transform: scale(1.1);
             }
@@ -155,7 +159,7 @@
             width: 100%;
             max-width: 300px;
             height: auto;
-            transition: all 0.5s ease-in-out;
+            transition: all 0.45s ease-in-out;
             &:hover {
               transform: scale(1.1);
             }
@@ -180,7 +184,7 @@
             width: 100%;
             max-width: 300px;
             height: auto;
-            transition: all 0.5s ease-in-out;
+            transition: all 0.45s ease-in-out;
             &:hover {
               transform: scale(1.1);
             }
@@ -209,7 +213,7 @@
           width: 100%;
           max-width: 300px;
           height: auto;
-          transition: all 0.5s ease-in-out;
+          transition: all 0.45s ease-in-out;
         }
       }
     }
@@ -256,7 +260,7 @@
             border-radius: 10px;
             width: 300px;
             height: auto;
-            transition: all 0.5s ease-in-out;
+            transition: all 0.45s ease-in-out;
           }
         }
 
@@ -344,7 +348,7 @@
   .projectsFourth:checked ~ .projectLogos .fourthProj,
   .projectsFifth:checked ~ .projectLogos .fifthProj {
     transform: scale(1.5);
-    &:hover {
+    &:hover img {
       box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
         2px 2px 5px rgba(0, 0, 0, 0.8);
     }
@@ -354,20 +358,24 @@
   .projectsFirst:checked ~ .projectLogos .secondProj {
     transform: scale(0.6) translateX(calc((20vw - 60%) / 2 + 30vw));
     &:hover {
-      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
-        2px 12px 20px rgba(0, 0, 0, 0.4);
       transform: translateY(-10px) scale(0.6)
         translateX(calc((20vw - 60%) / 2 + 30vw));
+      img {
+        box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+          2px 12px 20px rgba(0, 0, 0, 0.4);
+      }
     }
   }
   .projectsFirst:checked ~ .projectLogos .thirdProj,
   .projectsSecond:checked ~ .projectLogos .thirdProj {
     transform: scale(0.6) translateX(calc((20vw - 60%) / 2 + 20vw));
     &:hover {
-      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
-        2px 12px 20px rgba(0, 0, 0, 0.4);
       transform: translateY(-10px) scale(0.6)
         translateX(calc((20vw - 60%) / 2 + 20vw));
+      img {
+        box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+          2px 12px 20px rgba(0, 0, 0, 0.4);
+      }
     }
   }
   .projectsFirst:checked ~ .projectLogos .fourthProj,
@@ -375,10 +383,12 @@
   .projectsThird:checked ~ .projectLogos .fourthProj {
     transform: scale(0.6) translateX(calc((20vw - 60%) / 2 + 10vw));
     &:hover {
-      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
-        2px 12px 20px rgba(0, 0, 0, 0.4);
       transform: translateY(-10px) scale(0.6)
         translateX(calc((20vw - 60%) / 2 + 10vw));
+      img {
+        box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+          2px 12px 20px rgba(0, 0, 0, 0.4);
+      }
     }
   }
   .projectsFirst:checked ~ .projectLogos .fifthProj,
@@ -387,9 +397,11 @@
   .projectsFourth:checked ~ .projectLogos .fifthProj {
     transform: scale(0.6) translateX(calc((20vw - 60%) / 2));
     &:hover {
-      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
-        2px 12px 20px rgba(0, 0, 0, 0.4);
       transform: translateY(-10px) scale(0.6) translateX(calc((20vw - 60%) / 2));
+      ç img {
+        box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+          2px 12px 20px rgba(0, 0, 0, 0.4);
+      }
     }
   }
 
@@ -400,10 +412,12 @@
   .projectsFifth:checked ~ .projectLogos .firstProj {
     transform: scale(0.6) translateX(calc((-20vw + 60%) / 2));
     &:hover {
-      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
-        2px 12px 20px rgba(0, 0, 0, 0.4);
       transform: translateY(-10px) scale(0.6)
         translateX(calc((-20vw + 60%) / 2));
+      img {
+        box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+          2px 12px 20px rgba(0, 0, 0, 0.4);
+      }
     }
   }
   .projectsThird:checked ~ .projectLogos .secondProj,
@@ -411,29 +425,35 @@
   .projectsFifth:checked ~ .projectLogos .secondProj {
     transform: scale(0.6) translateX(calc((-20vw + 60%) / 2 - 10vw));
     &:hover {
-      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
-        2px 12px 20px rgba(0, 0, 0, 0.4);
       transform: translateY(-10px) scale(0.6)
         translateX(calc((-20vw + 60%) / 2 - 10vw));
+      img {
+        box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+          2px 12px 20px rgba(0, 0, 0, 0.4);
+      }
     }
   }
   .projectsFourth:checked ~ .projectLogos .thirdProj,
   .projectsFifth:checked ~ .projectLogos .thirdProj {
     transform: scale(0.6) translateX(calc((-20vw + 60%) / 2 - 20vw));
     &:hover {
-      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
-        2px 12px 20px rgba(0, 0, 0, 0.4);
       transform: translateY(-10px) scale(0.6)
         translateX(calc((-20vw + 60%) / 2 - 20vw));
+      img {
+        box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+          2px 12px 20px rgba(0, 0, 0, 0.4);
+      }
     }
   }
   .projectsFifth:checked ~ .projectLogos .fourthProj {
     transform: scale(0.6) translateX(calc((-20vw + 60%) / 2 - 30vw));
     &:hover {
-      box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
-        2px 12px 20px rgba(0, 0, 0, 0.4);
       transform: translateY(-10px) scale(0.6)
         translateX(calc((-20vw + 60%) / 2 - 30vw));
+      img {
+        box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+          2px 12px 20px rgba(0, 0, 0, 0.4);
+      }
     }
   }
 }

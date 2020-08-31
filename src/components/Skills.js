@@ -32,6 +32,7 @@ export default function Skills() {
                   return (
                     <Skill
                       src={data.src}
+                      srcWebp={data.srcWebp}
                       key={index}
                       skill={data.skill}
                       color={data.color}

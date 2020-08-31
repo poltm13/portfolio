@@ -23,34 +23,39 @@ export default function Projects() {
       <input type="radio" className="projectsFifth" name="ProjInput" />
       <input type="radio" className="noneChecked" name="ProjInput" />
       <div className="projectLogos">
-        <img
-          alt=" "
+        <WebPicture
+          srcWebp={projects.semte}
+          src={projects.semte_original}
+          srcType={projects.semteType}
           onClick={() => clickHandler(".projectsFirst")}
-          src={projects.semte}
           className="semte firstProj"
         />
-        <img
-          alt=" "
+        <WebPicture
+          srcWebp={projects.clauBday}
+          src={projects.clauBday_original}
+          srcType={projects.clauBdayType}
           onClick={() => clickHandler(".projectsSecond")}
-          src={projects.clauBday}
           className="clauBday secondProj"
         />
-        <img
-          alt=" "
+        <WebPicture
+          srcWebp={projects.labelsRoom}
+          src={projects.labelsRoom_original}
+          srcType={projects.labelsRoomType}
           onClick={() => clickHandler(".projectsThird")}
-          src={projects.labelsRoom}
           className="labelsRoom thirdProj"
         />
-        <img
-          alt=" "
+        <WebPicture
+          srcWebp={projects.native}
+          src={projects.native_original}
+          srcType={projects.nativeType}
           onClick={() => clickHandler(".projectsFourth")}
-          src={projects.native}
           className="nativeApp fourthProj"
         />
-        <img
-          alt=" "
-          onClick={() => clickHandler(".projectsFifth")}
+        <WebPicture
+          srcWebp={projects.others}
           src={projects.others}
+          srcType={"png"}
+          onClick={() => clickHandler(".projectsFifth")}
           className="others fifthProj"
         />
       </div>
@@ -86,6 +91,7 @@ export default function Projects() {
                 <WebPicture
                   src={projects.semtePreview_original}
                   srcWebp={projects.semtePreview}
+                  srcType={projects.semtePreviewType}
                 />
               </a>
             </Col>
@@ -116,6 +122,7 @@ export default function Projects() {
                 <WebPicture
                   src={projects.clauPreview_original}
                   srcWebp={projects.clauPreview}
+                  srcType={projects.clauPreviewType}
                 />
               </a>
             </Col>
@@ -145,6 +152,7 @@ export default function Projects() {
                 <WebPicture
                   src={projects.labelsPreview_original}
                   srcWebp={projects.labelsPreview}
+                  srcType={projects.labelsPreviewType}
                 />
               </a>
             </Col>
@@ -176,6 +184,7 @@ export default function Projects() {
               <WebPicture
                 src={projects.nativePreview_original}
                 srcWebp={projects.nativePreview}
+                srcType={projects.nativePreviewType}
               />
             </Col>
           </Row>
@@ -195,6 +204,7 @@ export default function Projects() {
                   <WebPicture
                     src={projects.invaders_original}
                     srcWebp={projects.invaders}
+                    srcType={projects.invadersType}
                   />
                 </LazyLoad>
               </div>
@@ -204,6 +214,7 @@ export default function Projects() {
                   <WebPicture
                     src={projects.asteroids_original}
                     srcWebp={projects.asteroids}
+                    srcType={projects.asteroidsType}
                   />
                 </LazyLoad>
               </div>
@@ -213,6 +224,7 @@ export default function Projects() {
                   <WebPicture
                     src={projects.pong_original}
                     srcWebp={projects.pong}
+                    srcType={projects.pongType}
                   />
                 </LazyLoad>
               </div>
@@ -222,6 +234,7 @@ export default function Projects() {
                   <WebPicture
                     src={projects.agario_original}
                     srcWebp={projects.agario}
+                    srcType={projects.agarioType}
                   />
                 </LazyLoad>
               </div>

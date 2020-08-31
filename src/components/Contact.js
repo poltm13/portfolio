@@ -4,6 +4,7 @@ import Fade from "react-reveal/Fade";
 import WebPicture from "./WebPicture";
 import { contact } from "../assets";
 import Map from "./Map";
+import LazyLoad from "react-lazy-load";
 
 export default function Contact() {
   return (
@@ -21,6 +22,7 @@ export default function Contact() {
               <WebPicture
                 src={contact.curriculum_original}
                 srcWebp={contact.curriculum}
+                srcType={contact.curriculumType}
               />
             </a>
           </Col>
@@ -70,7 +72,9 @@ export default function Contact() {
             </ul>
           </Col>
           <Col md={12} xl={4} className="map">
-            <Map />
+            <LazyLoad height={300} width="100%" offsetVertical={300}>
+              <Map />
+            </LazyLoad>
           </Col>
         </Row>
       </Fade>

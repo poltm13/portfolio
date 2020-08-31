@@ -42,6 +42,7 @@ export default function Header() {
           onClick={scrollTop}
           src={faceImg.face_original}
           srcWebp={faceImg.face}
+          srcType={faceImg.faceType}
         />
         <div className="typewriter" onClick={scrollTop}>
           <h1>

@@ -70,11 +70,13 @@ export default function Education() {
                   id="angloLogo"
                   src={education.anglomex_original}
                   srcWebp={education.anglomex}
+                  srcType={education.anglomexType}
                 />
                 <WebPicture
                   id="utpLogo"
                   src={education.utp_original}
                   srcWebp={education.utp}
+                  srcType={education.utpType}
                 />
               </Col>
               <h3>

@@ -1,6 +1,6 @@
 export default function scrollTop() {
   let delay =
-    (window.pageYOffset || document.documentElement.scrollTop) > 0 ? 500 : 0;
+    (window.pageYOffset || document.documentElement.scrollTop) > 0 ? 700 : 0;
 
   window.scrollTo({ top: 0, behavior: "smooth" });
   setTimeout(() => {
