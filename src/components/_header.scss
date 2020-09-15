@@ -170,6 +170,15 @@ $innerCircleSize: 50vmax;
 $outerCircleSize: 90vmax;
 $logo-size: 50px;
 
+.card1,
+.card2 {
+  width: 100vw;
+  height: 100vh;
+  z-index: 101;
+  position: fixed;
+  top: 0;
+}
+
 .headerLogosInner {
   @include on-circle(
     $item-count: 7,

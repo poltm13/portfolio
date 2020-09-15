@@ -265,6 +265,15 @@ header .typewriter h1 .tags {
   opacity: 0;
 }
 
+.card1,
+.card2 {
+  width: 100vw;
+  height: 100vh;
+  z-index: 101;
+  position: fixed;
+  top: 0;
+}
+
 .headerLogosInner {
   position: relative;
   width: 50vmax;
@@ -825,8 +834,6 @@ header .typewriter h1 .tags {
 .education .timeline .content .thirdContent {
   -webkit-transform: scale(0);
           transform: scale(0);
-  -webkit-transform-origin: center top;
-          transform-origin: center top;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   position: absolute;
@@ -838,6 +845,11 @@ header .typewriter h1 .tags {
   -webkit-box-shadow: 0px 10px 30px -10px;
           box-shadow: 0px 10px 30px -10px;
   border-radius: 20px;
+}
+
+.education .timeline .content .firstContent {
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
 }
 
 .education .timeline .content .firstContent h2 {
@@ -864,6 +876,8 @@ header .typewriter h1 .tags {
 }
 
 .education .timeline .content .secondContent {
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
   position: static;
 }
 
@@ -904,6 +918,11 @@ header .typewriter h1 .tags {
           transform: rotate(10deg);
 }
 
+.education .timeline .content .thirdContent {
+  -webkit-transform-origin: right top;
+          transform-origin: right top;
+}
+
 .education .timeline .content .thirdContent h2 {
   margin: 20px;
   font-size: 2.2rem;
@@ -927,15 +946,33 @@ header .typewriter h1 .tags {
   margin-bottom: 20px;
 }
 
-.education .timeline .educationFirst:checked ~ .content .firstContent,
-.education .timeline .educationSecond:checked ~ .content .secondContent,
+.education .timeline .educationFirst:checked ~ .content .firstContent {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.5s ease-in-out 0.5s;
+  transition: all 0.5s ease-in-out 0.5s;
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  z-index: 3;
+}
+
+.education .timeline .educationSecond:checked ~ .content .secondContent {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.5s ease-in-out 0.5s;
+  transition: all 0.5s ease-in-out 0.5s;
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  z-index: 3;
+}
+
 .education .timeline .educationThird:checked ~ .content .thirdContent {
   -webkit-transform: scale(1);
           transform: scale(1);
   -webkit-transition: all 0.5s ease-in-out 0.5s;
   transition: all 0.5s ease-in-out 0.5s;
-  -webkit-transform-origin: top;
-          transform-origin: top;
+  -webkit-transform-origin: right top;
+          transform-origin: right top;
   z-index: 3;
 }
 

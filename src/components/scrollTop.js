@@ -16,11 +16,7 @@ export default function scrollTop() {
       .classList.toggle("stickyInner", false);
 
     document.querySelector(".downArrow").classList.toggle("zIndex", false);
-    document
-      .querySelector(".headerLogosOuter")
-      .classList.toggle("zIndex", false);
-    document
-      .querySelector(".headerLogosInner")
-      .classList.toggle("zIndex", false);
+    document.querySelector(".card1").classList.toggle("zIndex", false);
+    document.querySelector(".card2").classList.toggle("zIndex", false);
   }, delay);
 }

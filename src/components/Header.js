@@ -3,6 +3,11 @@ import { faceImg, innerHeaderLogos, outerHeaderLogos } from "../assets";
 import scrollTop from "./scrollTop";
 import WebPicture from "./WebPicture";
 import arrowUp from "../assets/arrow-up.svg";
+import { useSpring, animated } from "react-spring";
+
+const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
+const trans1 = (x, y) => `translate3d(${x / 14}px,${y / 12}px,0)`;
+const trans2 = (x, y) => `translate3d(${x / 5}px,${y / 5}px,0)`;
 
 export default function Header() {
   const arrowHandler = () => {
@@ -15,28 +20,49 @@ export default function Header() {
       .querySelector(".headerLogosInner")
       .classList.toggle("stickyInner", true);
     setTimeout(() => {
-      document
-        .querySelector(".headerLogosOuter")
-        .classList.toggle("zIndex", true);
-      document
-        .querySelector(".headerLogosInner")
-        .classList.toggle("zIndex", true);
+      document.querySelector(".card1").classList.toggle("zIndex", true);
+      document.querySelector(".card2").classList.toggle("zIndex", true);
     }, 500);
     document.querySelector(".downArrow").classList.toggle("zIndex", true);
   };
 
+  const [props, set] = useSpring(() => ({
+    xy: [0, 0],
+    config: { mass: 10, tension: 550, friction: 140 },
+  }));
+
   return (
-    <div className="headerContainer">
-      <div className="headerLogosInner">
-        {innerHeaderLogos.map((data, index) => {
-          return <img alt=" " src={data} key={index} />;
-        })}
-      </div>
-      <div className="headerLogosOuter">
-        {outerHeaderLogos.map((data, index) => {
-          return <img alt=" " src={data} key={index} />;
-        })}
-      </div>
+    <div
+      className="headerContainer"
+      onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
+    >
+      <animated.div
+        class="card1"
+        style={{
+          transform: props.xy.interpolate(trans1),
+          willChange: "transform",
+        }}
+      >
+        <div className="headerLogosInner">
+          {innerHeaderLogos.map((data, index) => {
+            return <img alt=" " src={data} key={index} />;
+          })}
+        </div>
+      </animated.div>
+
+      <animated.div
+        class="card2"
+        style={{
+          transform: props.xy.interpolate(trans2),
+          willChange: "transform",
+        }}
+      >
+        <div className="headerLogosOuter">
+          {outerHeaderLogos.map((data, index) => {
+            return <img alt=" " src={data} key={index} />;
+          })}
+        </div>
+      </animated.div>
       <header>
         <WebPicture
           onClick={scrollTop}
@@ -51,6 +77,7 @@ export default function Header() {
           </h1>
         </div>
       </header>
+
       <img alt=" " className="downArrow" src={arrowUp} onClick={arrowHandler} />
     </div>
   );
