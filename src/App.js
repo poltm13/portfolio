@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
+
 import ArrowUp from "./components/ArrowUp";
 import Header from "./components/Header";
 import About from "./components/About";
