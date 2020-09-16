@@ -1,6 +1,5 @@
 import React from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import { MapsAPI } from "./Credentials";
 
 const containerStyle = {
   width: "100%",
@@ -270,7 +269,7 @@ const mapStyle = [
 
 function Map() {
   return (
-    <LoadScript googleMapsApiKey={MapsAPI}>
+    <LoadScript googleMapsApiKey={process.env.REACT_APP_API_KEY}>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
