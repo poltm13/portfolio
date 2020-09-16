@@ -37,7 +37,7 @@ export default function Header() {
       onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
     >
       <animated.div
-        class="card1"
+        className="card1"
         style={{
           transform: props.xy.interpolate(trans1),
           willChange: "transform",
@@ -51,7 +51,7 @@ export default function Header() {
       </animated.div>
 
       <animated.div
-        class="card2"
+        className="card2"
         style={{
           transform: props.xy.interpolate(trans2),
           willChange: "transform",

@@ -51,6 +51,7 @@ h3 {
 
 .arrow {
   @include flexCenter();
+  cursor: pointer;
 
   img {
     z-index: 200;

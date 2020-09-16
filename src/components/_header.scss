@@ -149,6 +149,7 @@ header {
       height: 100px;
       left: 60px;
       transition-delay: 0s;
+      cursor: pointer;
     }
 
     .typewriter {
@@ -158,6 +159,7 @@ header {
       top: 55px;
       left: 230px;
       transition-delay: 0.25s;
+      cursor: pointer;
 
       .tags {
         opacity: 0;
@@ -258,6 +260,7 @@ $logo-size: 50px;
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
   transition: opacity 1s ease-in-out 1s;
+  cursor: pointer;
 }
 
 @media (max-width: 500px) {

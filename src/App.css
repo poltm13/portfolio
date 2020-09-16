@@ -248,6 +248,7 @@ header .typewriter h1 .tags {
   left: 60px;
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
+  cursor: pointer;
 }
 
 .sticky header .typewriter {
@@ -259,6 +260,7 @@ header .typewriter h1 .tags {
   left: 230px;
   -webkit-transition-delay: 0.25s;
           transition-delay: 0.25s;
+  cursor: pointer;
 }
 
 .sticky header .typewriter .tags {
@@ -473,6 +475,7 @@ header .typewriter h1 .tags {
           animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
   -webkit-transition: opacity 1s ease-in-out 1s;
   transition: opacity 1s ease-in-out 1s;
+  cursor: pointer;
 }
 
 @media (max-width: 500px) {
@@ -834,8 +837,8 @@ header .typewriter h1 .tags {
 .education .timeline .content .thirdContent {
   -webkit-transform: scale(0);
           transform: scale(0);
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s cubic-bezier(0.57, -0.34, 0.58, 1);
+  transition: all 0.5s cubic-bezier(0.57, -0.34, 0.58, 1);
   position: absolute;
   width: 80vw;
   max-width: 1200px;
@@ -949,8 +952,8 @@ header .typewriter h1 .tags {
 .education .timeline .educationFirst:checked ~ .content .firstContent {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: all 0.5s ease-in-out 0.5s;
-  transition: all 0.5s ease-in-out 0.5s;
+  -webkit-transition: all 0.5s cubic-bezier(0.8, 0.13, 0.51, 1.35) 0.5s;
+  transition: all 0.5s cubic-bezier(0.8, 0.13, 0.51, 1.35) 0.5s;
   -webkit-transform-origin: left top;
           transform-origin: left top;
   z-index: 3;
@@ -959,8 +962,8 @@ header .typewriter h1 .tags {
 .education .timeline .educationSecond:checked ~ .content .secondContent {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: all 0.5s ease-in-out 0.5s;
-  transition: all 0.5s ease-in-out 0.5s;
+  -webkit-transition: all 0.5s cubic-bezier(0.8, 0.13, 0.51, 1.35) 0.5s;
+  transition: all 0.5s cubic-bezier(0.8, 0.13, 0.51, 1.35) 0.5s;
   -webkit-transform-origin: center top;
           transform-origin: center top;
   z-index: 3;
@@ -969,8 +972,8 @@ header .typewriter h1 .tags {
 .education .timeline .educationThird:checked ~ .content .thirdContent {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: all 0.5s ease-in-out 0.5s;
-  transition: all 0.5s ease-in-out 0.5s;
+  -webkit-transition: all 0.5s cubic-bezier(0.8, 0.13, 0.51, 1.35) 0.5s;
+  transition: all 0.5s cubic-bezier(0.8, 0.13, 0.51, 1.35) 0.5s;
   -webkit-transform-origin: right top;
           transform-origin: right top;
   z-index: 3;
@@ -1107,6 +1110,7 @@ header .typewriter h1 .tags {
   -webkit-transform-origin: center;
           transform-origin: center;
   z-index: 2;
+  cursor: pointer;
 }
 
 .projects .projectLogos picture img {
@@ -1912,6 +1916,7 @@ h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 
 .arrow img {

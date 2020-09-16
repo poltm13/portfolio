@@ -74,7 +74,7 @@
       .secondContent,
       .thirdContent {
         transform: scale(0);
-        transition: all 0.5s ease-in-out;
+        transition: all 0.5s cubic-bezier(0.57, -0.34, 0.58, 1);
         position: absolute;
         width: 80vw;
         max-width: 1200px;
@@ -146,19 +146,19 @@
 
     .educationFirst:checked ~ .content .firstContent {
       transform: scale(1);
-      transition: all 0.5s ease-in-out 0.5s;
+      transition: all 0.5s cubic-bezier(0.8, 0.13, 0.51, 1.35) 0.5s;
       transform-origin: left top;
       z-index: 3;
     }
     .educationSecond:checked ~ .content .secondContent {
       transform: scale(1);
-      transition: all 0.5s ease-in-out 0.5s;
+      transition: all 0.5s cubic-bezier(0.8, 0.13, 0.51, 1.35) 0.5s;
       transform-origin: center top;
       z-index: 3;
     }
     .educationThird:checked ~ .content .thirdContent {
       transform: scale(1);
-      transition: all 0.5s ease-in-out 0.5s;
+      transition: all 0.5s cubic-bezier(0.8, 0.13, 0.51, 1.35) 0.5s;
       transform-origin: right top;
       z-index: 3;
     }

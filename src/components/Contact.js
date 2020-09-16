@@ -17,7 +17,7 @@ export default function Contact() {
       </Fade>
       <Fade bottom big>
         <Row>
-          <Col md={6} xl={4} className="cv">
+          <Col lg={6} xl={4} className="cv">
             <a href={contact.cv} target="_blank" rel="noopener noreferrer">
               <WebPicture
                 src={contact.curriculum_original}
@@ -26,7 +26,7 @@ export default function Contact() {
               />
             </a>
           </Col>
-          <Col md={6} xl={4}>
+          <Col lg={6} xl={4}>
             <ul style={{ listStyleType: "none" }}>
               <li className="contactItem">
                 <p>
@@ -71,7 +71,7 @@ export default function Contact() {
               </li>
             </ul>
           </Col>
-          <Col md={12} xl={4} className="map">
+          <Col lg={12} xl={4} className="map">
             <LazyLoad height={300} width="100%" offsetVertical={300}>
               <Map />
             </LazyLoad>
