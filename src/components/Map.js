@@ -267,9 +267,11 @@ const mapStyle = [
   },
 ];
 
+const API_KEY = `${process.env.REACT_APP_API_KEY}`;
+
 function Map() {
   return (
-    <LoadScript googleMapsApiKey={process.env.REACT_APP_API_KEY}>
+    <LoadScript googleMapsApiKey={API_KEY}>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
