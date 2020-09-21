@@ -4,18 +4,7 @@ $dark-primary: #272727;
 $text: #272727;
 $gradient: linear-gradient(90deg, #7fffd4 0%, #7af2ff 50%, #2f9ca8 100%);
 
-/* @media (prefers-color-scheme: dark) {
-  $primary: #3b3b3b;
-  $text: white;
-} */
-
 @import "./components/common";
-@import "./components/header";
-@import "./components/about";
-@import "./components/skills";
-@import "./components/education";
-@import "./components/projects";
-@import "./components/contact";
 
 html {
   scroll-behavior: smooth;
@@ -72,3 +61,11 @@ h3 {
 .row {
   margin: 0 !important;
 }
+
+@import "./components/header";
+@import "./components/about";
+@import "./components/skills";
+@import "./components/education";
+@import "./components/projects";
+@import "./components/contact";
+@import "./components/theme";
