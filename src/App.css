@@ -289,6 +289,9 @@ header .typewriter h1 .tags {
 }
 
 header .toggler {
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-in-out, background 0.3s;
+  transition: opacity 0.4s ease-in-out, background 0.3s;
   position: absolute;
 }
 
@@ -333,6 +336,12 @@ header .toggler {
 
 .sticky header .typewriter .tags {
   opacity: 0;
+}
+
+.sticky header .toggler {
+  opacity: 1;
+  -webkit-transition: opacity 0.4s ease-in-out 0.6s, background 0.3s;
+  transition: opacity 0.4s ease-in-out 0.6s, background 0.3s;
 }
 
 .card1,
@@ -1939,13 +1948,20 @@ header .toggler {
   }
 }
 
-.dark-mode #root .headerContainer header .toggler {
-  background: -webkit-gradient(linear, left top, right top, from(#7fffd4), color-stop(50%, #7af2ff), to(#2f9ca8)) !important;
-  background: linear-gradient(90deg, #7fffd4 0%, #7af2ff 50%, #2f9ca8 100%) !important;
+.dark-mode {
+  background-color: #1f1f1f;
+  color: #272727;
 }
 
-.dark-mode #root .headerContainer header .toggler div {
-  -webkit-transform: translate(25.5px, 2.5px) !important;
-          transform: translate(25.5px, 2.5px) !important;
+.dark-mode h1,
+.dark-mode span,
+.dark-mode li {
+  color: darkgrey;
+}
+
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p {
+  color: #4e4e4e;
 }
 /*# sourceMappingURL=App.css.map */

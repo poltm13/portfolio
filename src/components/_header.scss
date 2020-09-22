@@ -129,6 +129,8 @@ header {
   }
 
   .toggler {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out, background 0.3s;
     position: absolute;
   }
 }
@@ -168,6 +170,10 @@ header {
       .tags {
         opacity: 0;
       }
+    }
+    .toggler {
+      opacity: 1;
+      transition: opacity 0.4s ease-in-out 0.6s, background 0.3s;
     }
   }
 }
