@@ -1,5 +1,5 @@
 .dark-mode {
-  background-color: rgb(31, 31, 31);
+  background-color: $dark-background;
   color: $dark-primary;
 
   h1,
@@ -12,5 +12,31 @@
   h3,
   p {
     color: #4e4e4e;
+  }
+
+  .headerContainer header .typewriter h1 {
+    color: $dark-primary;
+  }
+
+  .education .timeline .educationFirst:checked ~ ul .l1,
+  .education .timeline .educationSecond:checked ~ ul .l2,
+  .education .timeline .educationThird:checked ~ ul .l3,
+  .education .timeline ul li:hover {
+    color: white;
+  }
+
+  .education .timeline ul li::after {
+    border-color: white;
+    background-color: $dark-background;
+  }
+
+  .education .timeline .content .firstContent,
+  .education .timeline .content .secondContent,
+  .education .timeline .content .thirdContent {
+    background: linear-gradient(180deg, #7af2ff 0%, $dark-background 100%);
+    h3,
+    h2 {
+      color: black;
+    }
   }
 }

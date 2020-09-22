@@ -8,7 +8,7 @@ export default function ThemeToggler(props) {
   const toggler = {
     width: "45px",
     height: "22px",
-    background: "#7af2ff",
+    background: "#4e4e4e",
     right: "0",
     top: "50%",
     borderRadius: "20px",
@@ -16,11 +16,10 @@ export default function ThemeToggler(props) {
   };
 
   const togglerDark = {
-    background: "#4e4e4e",
+    background: "#7af2ff",
   };
 
   const toggle = {
-    content: "''",
     background: "url(" + sun + ") 0% 0% / 17px",
     width: "17px",
     height: "17px",

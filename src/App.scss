@@ -1,6 +1,7 @@
 $primary: white;
 $accent: #7af2ff;
 $dark-primary: #272727;
+$dark-background: rgb(31, 31, 31);
 $text: #272727;
 $gradient: linear-gradient(90deg, #7fffd4 0%, #7af2ff 50%, #2f9ca8 100%);
 
@@ -26,6 +27,7 @@ body {
   color: $text;
   background-color: $primary;
   overflow: hidden;
+  transition: background-color 0.3s;
 }
 
 h1 {
