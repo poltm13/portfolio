@@ -28,29 +28,25 @@ export default function Contact() {
           </Col>
           <Col lg={6} xl={4}>
             <ul style={{ listStyleType: "none" }}>
-              <li className="contactItem">
-                <p>
-                  <img alt="" src={contact.mapIcon} className="contactIcon" />
-                  C/Brucs nº19, 08850 Gavà, Barcelona, Spain
-                </p>
+              <li className="contactItem" style={{ display: "flex" }}>
+                <div className="contactIcon">
+                  <img alt="" src={contact.mapIcon} />
+                </div>
+                <p>C/Brucs nº19, 08850 Gavà, Barcelona, Spain</p>
               </li>
               <li className="contactItem">
                 <a href="tel:+34674173927">
-                  <img
-                    alt=""
-                    src={contact.earphoneIcon}
-                    className="contactIcon"
-                  />
+                  <div className="contactIcon">
+                    <img alt="" src={contact.earphoneIcon} />
+                  </div>
                   674 173 927
                 </a>
               </li>
               <li className="contactItem">
                 <a href="mailto:poltm13@gmail.com">
-                  <img
-                    alt=""
-                    src={contact.envelopeIcon}
-                    className="contactIcon"
-                  />
+                  <div className="contactIcon">
+                    <img alt="" src={contact.envelopeIcon} />
+                  </div>
                   poltm13@gmail.com
                 </a>
               </li>
@@ -61,11 +57,9 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
-                    alt=""
-                    src={contact.linkedIcon}
-                    className="contactIcon"
-                  />
+                  <div className="contactIcon">
+                    <img alt="" src={contact.linkedIcon} />
+                  </div>
                   Pol Tedesko Millán
                 </a>
               </li>

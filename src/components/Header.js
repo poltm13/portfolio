@@ -2,7 +2,7 @@ import React from "react";
 import { faceImg, innerHeaderLogos, outerHeaderLogos } from "../assets";
 import scrollTop from "./scrollTop";
 import WebPicture from "./WebPicture";
-//import ThemeToggler from "./ThemeToggler";
+import ThemeToggler from "./ThemeToggler";
 import arrowUp from "../assets/arrow-up.svg";
 import { useSpring, animated } from "react-spring";
 
@@ -77,7 +77,7 @@ export default function Header() {
             <span className="tags">{"</h1>"}</span>
           </h1>
         </div>
-        {/*<ThemeToggler className="toggler" />*/}
+        <ThemeToggler className="toggler" />
       </header>
 
       <img alt=" " className="downArrow" src={arrowUp} onClick={arrowHandler} />

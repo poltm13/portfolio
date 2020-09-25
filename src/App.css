@@ -22,8 +22,6 @@ body {
   color: #272727;
   background-color: white;
   overflow: hidden;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
 }
 
 h1 {
@@ -1118,6 +1116,7 @@ header .toggler {
   margin-bottom: 15px;
   padding-left: 0;
   padding-right: 0;
+  padding-bottom: 50px;
 }
 
 .projects h1 {
@@ -1839,6 +1838,7 @@ header .toggler {
   border-radius: 10px;
   padding: 50px 50px 30px;
   margin-bottom: 15px;
+  padding-bottom: 50px;
 }
 
 .contact .title {
@@ -1913,6 +1913,9 @@ header .toggler {
 }
 
 .contact ul .contactItem a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 1.3rem;
   color: black;
 }
@@ -1923,7 +1926,21 @@ header .toggler {
 }
 
 .contact ul .contactItem .contactIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: 20px;
+  width: 35px;
+  height: 35px;
+  min-width: 35px;
+  border-radius: 50%;
+  background-color: white;
 }
 
 .contact .map {
@@ -2016,7 +2033,7 @@ header .toggler {
 .dark-mode .contact {
   -webkit-box-shadow: none;
           box-shadow: none;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: #191919;
 }
 
 .dark-mode .skills .skillText div h3::before {
@@ -2030,12 +2047,19 @@ header .toggler {
   background: rgba(255, 255, 255, 0.05);
 }
 
+.dark-mode .skills .chartContainer .skill .languangeChart .bar div div {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: transparent;
+}
+
 .dark-mode .projects .projectContent .semteContent,
 .dark-mode .projects .projectContent .clauBdayContent,
 .dark-mode .projects .projectContent .labelsContent,
 .dark-mode .projects .projectContent .nativeContent,
 .dark-mode .projects .projectContent .othersContent {
-  background: #272727;
+  background: -webkit-gradient(linear, left top, left bottom, from(#272727), to(#191919));
+  background: linear-gradient(180deg, #272727 0%, #191919 100%);
 }
 
 .dark-mode .projects .projectContent .semteContent::after,
@@ -2046,7 +2070,7 @@ header .toggler {
   border-bottom-color: #272727;
 }
 
-.dark-mode .contact ul .contactItem .contactIcon path {
-  fill: royalblue;
+.dark-mode .contact ul .contactItem .contactIcon {
+  background-color: #7af2ff;
 }
 /*# sourceMappingURL=App.css.map */

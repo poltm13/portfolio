@@ -1,5 +1,6 @@
 .contact {
   @include content();
+  padding-bottom: 50px;
 
   .title {
     display: flex;
@@ -45,6 +46,7 @@
     }
 
     a {
+      display: flex;
       font-size: 1.3rem;
       color: black;
 
@@ -55,7 +57,13 @@
     }
 
     .contactIcon {
+      @include flexCenter();
       margin-right: 20px;
+      width: 35px;
+      height: 35px;
+      min-width: 35px;
+      border-radius: 50%;
+      background-color: white;
     }
   }
 

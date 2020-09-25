@@ -52,7 +52,7 @@
   .projects,
   .contact {
     box-shadow: none;
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: #191919;
   }
 
   .skills .skillText div h3::before {
@@ -62,6 +62,11 @@
   .skills .chartContainer .skill .languangeChart .bar div {
     box-shadow: 1px 1px 1px 1px black;
     background: rgba(255, 255, 255, 0.05);
+
+    div {
+      box-shadow: none;
+      background: transparent;
+    }
   }
 
   .projects .projectContent .semteContent,
@@ -69,14 +74,14 @@
   .projects .projectContent .labelsContent,
   .projects .projectContent .nativeContent,
   .projects .projectContent .othersContent {
-    background: $dark-primary;
+    background: linear-gradient(180deg, $dark-primary 0%, #191919 100%);
 
     &::after {
       border-bottom-color: $dark-primary;
     }
   }
 
-  .contact ul .contactItem .contactIcon path {
-    fill: royalblue;
+  .contact ul .contactItem .contactIcon {
+    background-color: $accent;
   }
 }

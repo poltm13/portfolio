@@ -3,7 +3,13 @@ import sun from "../assets/sun.png";
 import moon from "../assets/moon.png";
 
 export default function ThemeToggler(props) {
-  const [darkTheme, setTheme] = useState(false);
+  const [darkTheme, setTheme] = useState(
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
+
+  React.useEffect(() => {
+    document.querySelector("body").classList.toggle("dark-mode", darkTheme);
+  }, [darkTheme]);
 
   const toggler = {
     width: "45px",
@@ -38,7 +44,6 @@ export default function ThemeToggler(props) {
   };
 
   const toggleHandler = () => {
-    document.querySelector("body").classList.toggle("dark-mode");
     setTheme(!darkTheme);
   };
 
