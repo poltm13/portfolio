@@ -13,6 +13,7 @@ export default function ThemeToggler(props) {
     top: "50%",
     borderRadius: "20px",
     transform: "translate(-100%, -50%)",
+    cursor: "pointer",
   };
 
   const togglerDark = {

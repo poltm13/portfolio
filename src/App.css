@@ -572,6 +572,8 @@ header .toggler {
   border-radius: 10px;
   padding: 50px 50px 30px;
   margin-bottom: 15px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .about h1 {
@@ -708,6 +710,7 @@ header .toggler {
 .skills .chartContainer .skill .languangeImg img {
   width: 100%;
   height: auto;
+  border-radius: 5px;
 }
 
 .skills .chartContainer .skill .languangeChart {
@@ -1952,20 +1955,26 @@ header .toggler {
 }
 
 .dark-mode {
-  background-color: #1f1f1f;
+  background-color: #121212;
   color: #272727;
 }
 
 .dark-mode h1,
 .dark-mode span,
 .dark-mode li {
-  color: darkgrey;
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .dark-mode h2,
 .dark-mode h3,
-.dark-mode p {
-  color: #4e4e4e;
+.dark-mode p,
+.dark-mode .contact ul .contactItem a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-mode .contact ul .contactItem a:hover {
+  color: #7af2ff;
+  text-decoration: none;
 }
 
 .dark-mode .headerContainer header .typewriter h1 {
@@ -1981,14 +1990,14 @@ header .toggler {
 
 .dark-mode .education .timeline ul li::after {
   border-color: white;
-  background-color: #1f1f1f;
+  background-color: #121212;
 }
 
 .dark-mode .education .timeline .content .firstContent,
 .dark-mode .education .timeline .content .secondContent,
 .dark-mode .education .timeline .content .thirdContent {
-  background: -webkit-gradient(linear, left top, left bottom, from(#7af2ff), to(#1f1f1f));
-  background: linear-gradient(180deg, #7af2ff 0%, #1f1f1f 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#7af2ff), to(#2f9ca8));
+  background: linear-gradient(180deg, #7af2ff 0%, #2f9ca8 100%);
 }
 
 .dark-mode .education .timeline .content .firstContent h3,
@@ -1998,5 +2007,46 @@ header .toggler {
 .dark-mode .education .timeline .content .thirdContent h3,
 .dark-mode .education .timeline .content .thirdContent h2 {
   color: black;
+}
+
+.dark-mode .about,
+.dark-mode .skills,
+.dark-mode .education,
+.dark-mode .projects,
+.dark-mode .contact {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.dark-mode .skills .skillText div h3::before {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.dark-mode .skills .chartContainer .skill .languangeChart .bar div {
+  -webkit-box-shadow: 1px 1px 1px 1px black;
+          box-shadow: 1px 1px 1px 1px black;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .projects .projectContent .semteContent,
+.dark-mode .projects .projectContent .clauBdayContent,
+.dark-mode .projects .projectContent .labelsContent,
+.dark-mode .projects .projectContent .nativeContent,
+.dark-mode .projects .projectContent .othersContent {
+  background: #272727;
+}
+
+.dark-mode .projects .projectContent .semteContent::after,
+.dark-mode .projects .projectContent .clauBdayContent::after,
+.dark-mode .projects .projectContent .labelsContent::after,
+.dark-mode .projects .projectContent .nativeContent::after,
+.dark-mode .projects .projectContent .othersContent::after {
+  border-bottom-color: #272727;
+}
+
+.dark-mode .contact ul .contactItem .contactIcon path {
+  fill: royalblue;
 }
 /*# sourceMappingURL=App.css.map */

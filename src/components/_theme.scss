@@ -5,13 +5,19 @@
   h1,
   span,
   li {
-    color: darkgrey;
+    color: rgba(255, 255, 255, 0.87);
   }
 
   h2,
   h3,
-  p {
-    color: #4e4e4e;
+  p,
+  .contact ul .contactItem a {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .contact ul .contactItem a:hover {
+    color: #7af2ff;
+    text-decoration: none;
   }
 
   .headerContainer header .typewriter h1 {
@@ -33,10 +39,44 @@
   .education .timeline .content .firstContent,
   .education .timeline .content .secondContent,
   .education .timeline .content .thirdContent {
-    background: linear-gradient(180deg, #7af2ff 0%, $dark-background 100%);
+    background: linear-gradient(180deg, $accent 0%, $accent-darker 100%);
     h3,
     h2 {
       color: black;
     }
+  }
+
+  .about,
+  .skills,
+  .education,
+  .projects,
+  .contact {
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+
+  .skills .skillText div h3::before {
+    box-shadow: none;
+  }
+
+  .skills .chartContainer .skill .languangeChart .bar div {
+    box-shadow: 1px 1px 1px 1px black;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .projects .projectContent .semteContent,
+  .projects .projectContent .clauBdayContent,
+  .projects .projectContent .labelsContent,
+  .projects .projectContent .nativeContent,
+  .projects .projectContent .othersContent {
+    background: $dark-primary;
+
+    &::after {
+      border-bottom-color: $dark-primary;
+    }
+  }
+
+  .contact ul .contactItem .contactIcon path {
+    fill: royalblue;
   }
 }

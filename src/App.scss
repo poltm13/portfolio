@@ -1,9 +1,16 @@
 $primary: white;
 $accent: #7af2ff;
+$accent-lighter: #7fffd4;
+$accent-darker: #2f9ca8;
 $dark-primary: #272727;
-$dark-background: rgb(31, 31, 31);
+$dark-background: #121212;
 $text: #272727;
-$gradient: linear-gradient(90deg, #7fffd4 0%, #7af2ff 50%, #2f9ca8 100%);
+$gradient: linear-gradient(
+  90deg,
+  $accent-lighter 0%,
+  $accent 50%,
+  $accent-darker 100%
+);
 
 @import "./components/common";
 
