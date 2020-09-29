@@ -274,11 +274,22 @@ $logo-size: 50px;
 }
 
 @media (max-width: 500px) {
-  .sticky header .typewriter {
-    left: 200px;
+  .sticky header {
+    .typewriter {
+      left: 180px;
 
-    h1 {
-      font-size: 20px;
+      h1 {
+        font-size: 20px;
+      }
     }
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .toggler {
+    transform: scale(0.8) translate(-50%, -50%) !important;
   }
 }
