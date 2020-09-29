@@ -622,7 +622,7 @@ header .toggler {
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .skills h1::after {
@@ -799,12 +799,18 @@ header .toggler {
     padding-left: 20px;
     padding-right: 20px;
   }
-  .skills h1,
-  .skills .skillText {
+  .skills h1 {
     margin-left: 30px;
   }
+  .skills .chartContainer {
+    padding: 0;
+  }
   .skills .chartContainer .skill {
-    max-width: 90vw;
+    padding: 0;
+    max-width: calc(50vw - 20px);
+  }
+  .skills .chartContainer .tooltiptext {
+    font-size: small;
   }
 }
 
@@ -814,6 +820,8 @@ header .toggler {
   border-radius: 10px;
   padding: 50px 50px 30px;
   margin-bottom: 15px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .education h1 {
@@ -822,6 +830,7 @@ header .toggler {
   width: fit-content;
   position: relative;
   margin-bottom: 20px;
+  margin-left: 50px;
 }
 
 .education h1::after {
@@ -858,7 +867,7 @@ header .toggler {
 }
 
 .education .timeline ul {
-  width: 100%;
+  width: 80vw;
   list-style: none;
   margin: auto;
   display: -webkit-box;
@@ -883,7 +892,7 @@ header .toggler {
 
 .education .timeline ul li::after {
   content: "";
-  border: 2px solid #272727;
+  border: 3px solid #272727;
   position: relative;
   width: 15px;
   height: 15px;
@@ -897,7 +906,7 @@ header .toggler {
 }
 
 .education .timeline ul .line {
-  width: calc((100% - 100px) * 0.6666);
+  width: calc(80vw * 0.666);
   height: 7px;
   position: absolute;
   -webkit-transform: translate(0, 30px);
@@ -1092,8 +1101,8 @@ header .toggler {
 .education .timeline .educationThird:checked ~ ul .l3::after,
 .education .timeline ul li:hover::after {
   border: 4px solid #7af2ff;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.2) translateY(-1px);
+          transform: scale(1.2) translateY(-1px);
 }
 
 .education .timeline .educationFirst:checked ~ ul .l1,
@@ -1105,12 +1114,15 @@ header .toggler {
   color: black;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 500px) {
+  .education .timeline ul {
+    width: 100vw;
+  }
   .education .timeline ul li {
     font-size: 0.9rem;
   }
   .education .timeline ul .line {
-    width: calc((100% - 100px) * 0.6666);
+    width: 66.66vw;
     -webkit-transform: translate(0, 25px);
             transform: translate(0, 25px);
   }
@@ -1884,7 +1896,9 @@ header .toggler {
 
 .contact .title .mailIcon {
   width: 50px;
-  height: auto;
+  height: 50px;
+  -webkit-transform: translateY(30%);
+          transform: translateY(30%);
   margin-left: 15px;
   position: relative;
   top: -30px;
