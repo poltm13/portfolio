@@ -555,8 +555,15 @@ header .toggler {
   cursor: pointer;
 }
 
-@media (max-width: 500px) {
+@media screen and (max-width: 500px), (max-height: 500px) {
+  .sticky {
+    height: 90px;
+  }
+  .sticky header {
+    height: 90px;
+  }
   .sticky header .typewriter {
+    top: 45px;
     left: 180px;
   }
   .sticky header .typewriter h1 {

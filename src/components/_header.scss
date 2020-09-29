@@ -273,19 +273,26 @@ $logo-size: 50px;
   cursor: pointer;
 }
 
-@media (max-width: 500px) {
-  .sticky header {
-    .typewriter {
-      left: 180px;
+@media screen and (max-width: 500px), (max-height: 500px) {
+  .sticky {
+    height: 90px;
 
-      h1 {
-        font-size: 20px;
+    header {
+      height: 90px;
+
+      .typewriter {
+        top: 45px;
+        left: 180px;
+
+        h1 {
+          font-size: 20px;
+        }
       }
-    }
 
-    img {
-      width: 80px;
-      height: 80px;
+      img {
+        width: 80px;
+        height: 80px;
+      }
     }
   }
 
