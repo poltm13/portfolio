@@ -65,12 +65,14 @@ export default function Header() {
         </div>
       </animated.div>
       <header>
-        <WebPicture
-          onClick={scrollTop}
-          src={faceImg.face_original}
-          srcWebp={faceImg.face}
-          srcType={faceImg.faceType}
-        />
+        <div className="faceContainer">
+          <WebPicture
+            onClick={scrollTop}
+            src={faceImg.face_original}
+            srcWebp={faceImg.face}
+            srcType={faceImg.faceType}
+          />
+        </div>
         <div className="typewriter" onClick={scrollTop}>
           <h1>
             <span className="tags">{"<h1>"}</span> POL TEDESKO MILLÁN

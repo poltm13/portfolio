@@ -243,7 +243,7 @@ header:before {
   transition: all 1s ease-in-out;
 }
 
-header img {
+header .faceContainer {
   width: 200px;
   height: 200px;
   -webkit-transition: all 1s ease-in-out;
@@ -255,6 +255,15 @@ header img {
           transform: translate(-50%, -50%);
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
+  overflow: hidden;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#7af2ff), color-stop(50%, #7af2ff), to(#2f9ca8));
+  background: linear-gradient(180deg, #7af2ff 0%, #7af2ff 50%, #2f9ca8 100%);
+}
+
+header img {
+  width: 100%;
+  height: 100%;
 }
 
 header .typewriter {
@@ -296,11 +305,11 @@ header .toggler {
 }
 
 .sticky {
-  height: 110px;
+  height: 100px;
 }
 
 .sticky header {
-  height: 110px;
+  height: 100px;
 }
 
 .sticky header::before {
@@ -313,13 +322,14 @@ header .toggler {
   transition: opacity 0.3s ease-in-out 0s;
 }
 
-.sticky header img {
-  width: 100px;
-  height: 100px;
+.sticky header .faceContainer {
+  width: 90px;
+  height: 90px;
   left: 60px;
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
   cursor: pointer;
+  border-radius: 50%;
 }
 
 .sticky header .typewriter {
@@ -327,7 +337,7 @@ header .toggler {
   background: linear-gradient(90deg, #7fffd4 0%, #7af2ff 50%, #2f9ca8 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  top: 55px;
+  top: 50px;
   left: 230px;
   -webkit-transition-delay: 0.25s;
           transition-delay: 0.25s;
@@ -569,7 +579,7 @@ header .toggler {
   .sticky header .typewriter h1 {
     font-size: 20px;
   }
-  .sticky header img {
+  .sticky header .faceContainer {
     width: 80px;
     height: 80px;
   }
@@ -2025,6 +2035,10 @@ header .toggler {
 
 .dark-mode .headerContainer header .typewriter h1 {
   color: #272727;
+}
+
+.dark-mode .sticky .faceContainer {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .dark-mode .education .timeline .educationFirst:checked ~ ul .l1,

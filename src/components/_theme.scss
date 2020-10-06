@@ -24,6 +24,10 @@
     color: $dark-primary;
   }
 
+  .sticky .faceContainer {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
   .education .timeline .educationFirst:checked ~ ul .l1,
   .education .timeline .educationSecond:checked ~ ul .l2,
   .education .timeline .educationThird:checked ~ ul .l3,
