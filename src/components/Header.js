@@ -1,9 +1,9 @@
 import React from "react";
-import { faceImg, innerHeaderLogos, outerHeaderLogos } from "../assets";
+import { innerHeaderLogos, outerHeaderLogos } from "../assets";
 import scrollTop from "./scrollTop";
-import WebPicture from "./WebPicture";
 import ThemeToggler from "./ThemeToggler";
 import arrowUp from "../assets/arrow-up.svg";
+import Avatar from "./Avatar";
 import { useSpring, animated } from "react-spring";
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
@@ -66,12 +66,7 @@ export default function Header() {
       </animated.div>
       <header>
         <div className="faceContainer">
-          <WebPicture
-            onClick={scrollTop}
-            src={faceImg.face_original}
-            srcWebp={faceImg.face}
-            srcType={faceImg.faceType}
-          />
+          <Avatar />
         </div>
         <div className="typewriter" onClick={scrollTop}>
           <h1>
