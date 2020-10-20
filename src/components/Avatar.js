@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-export default function Avatar(props) {
+export default function Avatar() {
   const Eyes = useRef(document.querySelectorAll("#Eyes"));
 
   const blink = (delay) => {
@@ -39,7 +39,7 @@ export default function Avatar(props) {
         .querySelector("body")
         .removeEventListener("mousemove", eyesEffect, { passive: true });
     };
-  }, []);
+  });
 
   return (
     <svg
