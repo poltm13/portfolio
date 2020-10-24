@@ -62,9 +62,25 @@
   }
 }
 
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  3.99% {
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .headerContainer {
   width: 100vw;
   height: 100vh;
+  position: absolute;
 }
 
 header {
@@ -74,7 +90,7 @@ header {
   transition: all 1s ease-in-out;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 5;
   overflow: hidden;
   position: fixed;
 
@@ -82,13 +98,13 @@ header {
   &:before {
     background: $dark-primary;
     content: "";
+    position: absolute;
     display: block;
     height: 100%;
-    position: absolute;
+    width: 100%;
     top: 0;
     left: 0;
     opacity: 0;
-    width: 100%;
     transition: all 1s ease-in-out;
   }
 
@@ -97,10 +113,8 @@ header {
     height: 200px;
     transition: all 1s ease-in-out;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition-delay: 0.3s;
+    transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+    transition-delay: 0.1s;
     overflow: hidden;
     border-radius: 50%;
     background: linear-gradient(
@@ -120,9 +134,7 @@ header {
     transition: all 1s ease-in-out;
     transition-delay: 0s;
     position: absolute;
-    top: calc(50% + 130px);
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(calc(50vw - 50%), calc(50vh + 110px));
 
     h1 {
       overflow: hidden;
@@ -158,28 +170,35 @@ header {
       opacity: 1;
     }
 
-    ~ .downArrow {
+    .downArrow {
       opacity: 0;
       transition: opacity 0.3s ease-in-out 0s;
+      animation: none;
     }
 
     .faceContainer {
       width: 90px;
       height: 90px;
-      left: 60px;
+      transform: translate(20px, 5px);
       transition-delay: 0s;
       cursor: pointer;
       border-radius: 50%;
     }
 
     .typewriter {
-      background: $gradient;
+      /*       background: $gradient;   //Not Working on firefox!!!!!!
       background-clip: text;
-      -webkit-text-fill-color: transparent;
-      top: 50px;
-      left: 230px;
-      transition-delay: 0.25s;
+      -webkit-text-fill-color: transparent; */
+
+      transform: translate(80px, calc(50px - 50%));
+      transition-delay: 0.05s;
       cursor: pointer;
+
+      h1 {
+        color: $accent; //Temp
+        border: none;
+        animation: none;
+      }
 
       .tags {
         opacity: 0;
@@ -200,7 +219,6 @@ $logo-size: 50px;
 .card2 {
   width: 100vw;
   height: 100vh;
-  z-index: 101;
   position: fixed;
   top: 0;
 }
@@ -216,7 +234,6 @@ $logo-size: 50px;
   margin: 0 auto 0;
   width: 100vw;
   height: 100vh;
-  z-index: 101;
   position: fixed;
   top: 0;
   background-color: transparent;
@@ -238,7 +255,6 @@ $logo-size: 50px;
   margin: 0 auto 0;
   width: 100vw;
   height: 100vh;
-  z-index: 101;
   position: fixed;
   top: 0;
   background-color: transparent;
@@ -273,7 +289,7 @@ $logo-size: 50px;
 .downArrow {
   width: 80px;
   height: 80px;
-  z-index: 300;
+  z-index: 10;
   position: fixed;
   bottom: 10px;
   transform: translate(-50%, -50%) rotate(180deg);
@@ -295,8 +311,7 @@ $logo-size: 50px;
       height: 90px;
 
       .typewriter {
-        top: 45px;
-        left: 180px;
+        transform: translate(70px, calc(45px - 50%));
 
         h1 {
           font-size: 20px;
@@ -313,4 +328,8 @@ $logo-size: 50px;
   .toggler {
     transform: scale(0.8) translate(-50%, -50%) !important;
   }
+}
+
+#Eyes {
+  animation: blink 5s linear infinite 2s;
 }

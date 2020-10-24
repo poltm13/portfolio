@@ -24,6 +24,10 @@
     color: $dark-primary;
   }
 
+  .headerContainer.sticky header .typewriter h1 {
+    color: $accent;
+  }
+
   .sticky .faceContainer {
     background: rgba(255, 255, 255, 0.1);
   }
