@@ -24,9 +24,11 @@ export default function Header() {
     document
       .querySelector(".headerLogosInner")
       .classList.toggle("stickyInner", true);
-    document.querySelector(".card1").classList.toggle("zIndex", true);
-    document.querySelector(".card2").classList.toggle("zIndex", true);
-    document.querySelector(".downArrow").classList.toggle("zIndex", true);
+    setTimeout(() => {
+      document.querySelector(".card1").classList.toggle("zIndex", true);
+      document.querySelector(".card2").classList.toggle("zIndex", true);
+      document.querySelector(".downArrow").classList.toggle("zIndex", true);
+    }, 500)
   };
 
   const [{ xy }, setEyes] = useSpring(() => ({
@@ -47,7 +49,6 @@ export default function Header() {
         setEyes({ xy: foo });
       }}
     >
-      <header>
         <animated.div
           className="card1"
           style={{
@@ -75,6 +76,7 @@ export default function Header() {
             })}
           </div>
         </animated.div>
+      <header>
 
         <div className="faceContainer">
           <svg
@@ -351,13 +353,13 @@ export default function Header() {
 
         <ThemeToggler className="toggler" />
 
+      </header>
         <img
           alt=" "
           className="downArrow"
           src={arrowUp}
           onClick={arrowHandler}
         />
-      </header>
     </div>
   );
 }

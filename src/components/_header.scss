@@ -221,6 +221,7 @@ $logo-size: 50px;
   height: 100vh;
   position: fixed;
   top: 0;
+  z-index: 6;
 }
 
 .headerLogosInner {
