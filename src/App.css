@@ -335,20 +335,20 @@ header .toggler {
   height: 100px;
 }
 
+.sticky .downArrow {
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in-out 0s;
+  transition: opacity 0.2s ease-in-out 0s;
+  -webkit-animation: none;
+          animation: none;
+}
+
 .sticky header {
   height: 100px;
 }
 
 .sticky header::before {
   opacity: 1;
-}
-
-.sticky header .downArrow {
-  opacity: 0;
-  -webkit-transition: opacity 0.3s ease-in-out 0s;
-  transition: opacity 0.3s ease-in-out 0s;
-  -webkit-animation: none;
-          animation: none;
 }
 
 .sticky header .faceContainer {

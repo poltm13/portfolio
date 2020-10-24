@@ -163,17 +163,17 @@ header {
 .sticky {
   height: 100px;
 
+  .downArrow {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out 0s;
+    animation: none;
+  }
+
   header {
     height: 100px;
 
     &::before {
       opacity: 1;
-    }
-
-    .downArrow {
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out 0s;
-      animation: none;
     }
 
     .faceContainer {
