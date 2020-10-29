@@ -186,16 +186,12 @@ header {
     }
 
     .typewriter {
-      /*       background: $gradient;   //Not Working on firefox!!!!!!
-      background-clip: text;
-      -webkit-text-fill-color: transparent; */
-
       transform: translate(80px, calc(50px - 50%));
       transition-delay: 0.05s;
       cursor: pointer;
 
       h1 {
-        color: $accent; //Temp
+        color: $accent;
         border: none;
         animation: none;
       }

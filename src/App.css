@@ -363,9 +363,6 @@ header .toggler {
 }
 
 .sticky header .typewriter {
-  /*       background: $gradient;   //Not Working on firefox!!!!!!
-      background-clip: text;
-      -webkit-text-fill-color: transparent; */
   -webkit-transform: translate(80px, calc(50px - 50%));
           transform: translate(80px, calc(50px - 50%));
   -webkit-transition-delay: 0.05s;

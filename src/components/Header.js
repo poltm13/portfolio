@@ -13,6 +13,10 @@ const eyeMovement = (x, y) =>
   `translate(${(x / window.innerWidth) * 12}px,${
     (y / window.innerHeight) * 8
   }px)`;
+const eyebrowMovement = (x, y) => {
+  let foo = y / window.innerHeight;
+  return foo < 0 ? `translateY(${foo * 10}px)` : "";
+};
 
 export default function Header() {
   const arrowHandler = () => {
@@ -28,10 +32,14 @@ export default function Header() {
       document.querySelector(".card1").classList.toggle("zIndex", true);
       document.querySelector(".card2").classList.toggle("zIndex", true);
       document.querySelector(".downArrow").classList.toggle("zIndex", true);
-    }, 500)
+    }, 500);
   };
 
-  const [{ xy }, setEyes] = useSpring(() => ({
+  const [eyeSpring, setEyes] = useSpring(() => ({
+    xy: [0, 0],
+    config: { mass: 0, tension: 0, friction: 0 },
+  }));
+  const [eyebrowSpring, setEyebrows] = useSpring(() => ({
     xy: [0, 0],
     config: { mass: 0, tension: 0, friction: 0 },
   }));
@@ -47,37 +55,37 @@ export default function Header() {
         let foo = calc(x, y);
         set({ xy: foo });
         setEyes({ xy: foo });
+        setEyebrows({ xy: foo });
       }}
     >
-        <animated.div
-          className="card1"
-          style={{
-            transform: spring.xy.interpolate(innerLogos),
-            willChange: "transform",
-          }}
-        >
-          <div className="headerLogosInner">
-            {innerHeaderLogos.map((data, index) => {
-              return <img alt=" " src={data} key={index} />;
-            })}
-          </div>
-        </animated.div>
+      <animated.div
+        className="card1"
+        style={{
+          transform: spring.xy.interpolate(innerLogos),
+          willChange: "transform",
+        }}
+      >
+        <div className="headerLogosInner">
+          {innerHeaderLogos.map((data, index) => {
+            return <img alt=" " src={data} key={index} />;
+          })}
+        </div>
+      </animated.div>
 
-        <animated.div
-          className="card2"
-          style={{
-            transform: spring.xy.interpolate(outerLogos),
-            willChange: "transform",
-          }}
-        >
-          <div className="headerLogosOuter">
-            {outerHeaderLogos.map((data, index) => {
-              return <img alt=" " src={data} key={index} />;
-            })}
-          </div>
-        </animated.div>
+      <animated.div
+        className="card2"
+        style={{
+          transform: spring.xy.interpolate(outerLogos),
+          willChange: "transform",
+        }}
+      >
+        <div className="headerLogosOuter">
+          {outerHeaderLogos.map((data, index) => {
+            return <img alt=" " src={data} key={index} />;
+          })}
+        </div>
+      </animated.div>
       <header>
-
         <div className="faceContainer">
           <svg
             style={{ width: "100%", height: "100%" }}
@@ -204,7 +212,7 @@ export default function Header() {
               />
               <animated.path
                 id="Eye"
-                style={{ transform: xy.interpolate(eyeMovement) }}
+                style={{ transform: eyeSpring.xy.interpolate(eyeMovement) }}
                 d="M106 118C109.314 118 112 115.314 112 112C112 108.686 109.314 106 106 106C102.686 106 100 108.686 100 112C100 115.314 102.686 118 106 118Z"
                 fill="#0D4404"
                 fill-opacity="0.7"
@@ -235,20 +243,28 @@ export default function Header() {
               />
               <animated.path
                 id="Eye"
-                style={{ transform: xy.interpolate(eyeMovement) }}
+                style={{ transform: eyeSpring.xy.interpolate(eyeMovement) }}
                 d="M158 118C161.314 118 164 115.314 164 112C164 108.686 161.314 106 158 106C154.686 106 152 108.686 152 112C152 115.314 154.686 118 158 118Z"
                 fill="#0D4404"
                 fill-opacity="0.7"
               />
             </g>
-            <path
+            <animated.path
+              id="Eyebrow"
+              style={{
+                transform: eyebrowSpring.xy.interpolate(eyebrowMovement),
+              }}
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M102.547 86.4329C96.7404 86.7012 87.3522 90.9208 87.5941 96.7767C87.6021 96.9684 87.8837 97.0525 88.0212 96.9051C90.7761 93.9458 110.337 90.9554 117.226 92.5401C117.857 92.6853 118.336 92.0633 117.936 91.6139C114.514 87.7657 107.75 86.1875 102.547 86.4329Z"
               fill="black"
               fill-opacity="0.6"
             />
-            <path
+            <animated.path
+              id="Eyebrow"
+              style={{
+                transform: eyebrowSpring.xy.interpolate(eyebrowMovement),
+              }}
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M162.453 86.4329C168.26 86.7012 177.648 90.9208 177.406 96.7767C177.398 96.9684 177.116 97.0525 176.979 96.9051C174.224 93.9458 154.663 90.9554 147.774 92.5401C147.143 92.6853 146.664 92.0633 147.064 91.6139C150.486 87.7657 157.25 86.1875 162.453 86.4329Z"
@@ -352,14 +368,8 @@ export default function Header() {
         </div>
 
         <ThemeToggler className="toggler" />
-
       </header>
-        <img
-          alt=" "
-          className="downArrow"
-          src={arrowUp}
-          onClick={arrowHandler}
-        />
+      <img alt=" " className="downArrow" src={arrowUp} onClick={arrowHandler} />
     </div>
   );
 }
