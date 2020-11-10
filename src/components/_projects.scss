@@ -125,6 +125,27 @@
         left: 21.42vw;
       }
 
+      .oldPage {
+        h3 {
+          margin-top: 10px;
+          display: inline-block;
+          transform: scale(0.8);
+          text-decoration: none;
+        }
+
+        span {
+          display: inline-block;
+          transform: translateX(3px);
+          transition: all 0.3s;
+        }
+
+        &:hover {
+          span {
+            transform: translateX(20px);
+          }
+        }
+      }
+
       .preview {
         @include flexCenter();
         padding: 50px;

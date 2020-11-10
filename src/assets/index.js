@@ -138,8 +138,8 @@ export const projects = {
   semte_original: require("./semte.jpg"),
   semteType: "jpeg",
   semtePreview: require("./semtePreview.webp"),
-  semtePreview_original: require("./semtePreview.png"),
-  semtePreviewType: "png",
+  semtePreview_original: require("./semtePreview.jpg"),
+  semtePreviewType: "jpg",
 
   clauBday: require("./clauBday.webp"),
   clauBday_original: require("./clauBday.png"),

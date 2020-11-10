@@ -15,7 +15,7 @@ const eyeMovement = (x, y) =>
   }px)`;
 const eyebrowMovement = (x, y) => {
   let foo = y / window.innerHeight;
-  return foo < 0 ? `translateY(${foo * 10}px)` : "";
+  return foo < 0 ? `translateY(${foo * 12 - 2}px)` : `translateY(${-2}px)`;
 };
 
 export default function Header() {

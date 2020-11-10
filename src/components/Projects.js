@@ -68,23 +68,45 @@ export default function Projects() {
                 This is the first Front-end project I ever made.
                 <br />
                 It is an air conditioning company website that I made from
-                scratch only using HTML, CSS and eventually Javascript as I was
+                scratch using only HTML, CSS and eventually Javascript as I was
                 learning on the run.
               </h3>
+              <br />
               <h3>
-                I am currently rewriting the entire app to migrate it to React
-                JS now that I'm far more experienced than I was.
+                In 2020 I migrated the entire application to ReactJS and rewrote
+                all the codebase applying the knowledge acquired during all
+                these years
                 <br />
                 <br />
                 <br />
-                Date: 2017
+                Date: 2017 / 2020
                 <br />
-                Technologies: HTML, CSS, Javascript
+                Technologies: HTML, CSS, Javascript , ReactJS, GatsbyJS, SASS
               </h3>
+              <a
+                href="https://semte.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="oldPage"
+              >
+                <h3>Old page</h3>
+                <span>
+                  <svg
+                    width="40"
+                    height="12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z"
+                      fill-rule="nonzero"
+                    />
+                  </svg>
+                </span>
+              </a>
             </Col>
             <Col lg={4} md={6} className="preview">
               <a
-                href="http://semte.es"
+                href="https://semte.es"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -110,7 +132,7 @@ export default function Projects() {
                 <br />
                 Date: 2020
                 <br />
-                Technologies: React JS, SASS/CSS
+                Technologies: ReactJS, SASS/CSS
               </h3>
             </Col>
             <Col lg={4} md={6} className="preview">
@@ -171,7 +193,7 @@ export default function Projects() {
                 <br />
                 <br />
                 Thanks to this project I discovered the usefulness of frameworks
-                like React JS and I started using it on the web.
+                like ReactJS and I started using it on the web.
                 <br />
                 <br />
                 <br />
