@@ -1,9 +1,10 @@
-import React from "react";
+import { Col, Row } from "react-bootstrap";
+
 import Fade from "react-reveal/Fade";
-import { projects } from "../assets";
-import { Row, Col } from "react-bootstrap";
-import WebPicture from "./WebPicture";
 import LazyLoad from "react-lazy-load";
+import React from "react";
+import WebPicture from "./WebPicture";
+import { projects } from "../assets";
 
 export default function Projects() {
   const clickHandler = (inputItem) => {
@@ -155,7 +156,7 @@ export default function Projects() {
               <h2>Labels Room</h2>
               <h3>
                 For this project I collaborated in the creation of the B2B
-                (buisness to buisness) eCommerce part of the website and the
+                (business to business) eCommerce part of the website and the
                 styiling of it.
                 <br />
                 <br />
