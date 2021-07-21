@@ -1,0 +1,206 @@
+.skills {
+  @include content();
+  overflow: hidden;
+
+  h1 {
+    @include underline();
+    margin-bottom: 70px;
+  }
+
+  .skillText {
+    max-height: 400px;
+    padding-left: 0px;
+    margin-top: 20px;
+
+    
+    @include min-width($xs) {
+      padding-left: 10px;
+    }
+    
+    @include min-width($s) {
+      padding-left: 40px;
+    }
+    
+    @include min-width($m) {
+      padding-left: 10px;
+      margin-top: 0px;
+    }
+    
+    @include min-width($l) {
+      padding-left: 80px;
+    }
+
+    div {
+      h3 {
+        font-weight: bold;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+
+        @include min-width($xs) {
+          font-size: 1rem;
+          margin-bottom: 15px
+        }
+    
+        @include min-width($s) {
+          font-size: 1.2rem;
+          margin-bottom: 20px
+        }
+    
+        @include min-width($l) {
+          font-size: 1.3rem;
+          margin-bottom: 25px
+        }
+
+        &::before {
+          content: "";
+          display: block;
+          border-radius: 50%;
+          background: $down-gradient;
+          float: left;
+          box-shadow: 0px 1px 2px 1px;
+          margin-right: 5px;
+          width: 10px;
+          height: 10px;
+
+          @include min-width($xs) {
+            width: 13px;
+            height: 13px;
+            margin-right: 9px;
+          }
+      
+          @include min-width($m) {
+            width: 17px;
+            height: 17px;
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .chartContainer {
+    padding: 0;
+
+    .skill {
+      @include flexCenter();
+      position: absolute;
+      
+      &__img img {
+        border-radius: 5px;
+        width: 30px;
+        
+        @include min-width($s) {
+          width: 40px;
+        }
+
+        transition: transform 0.25s cubic-bezier(.27,1.73,.63,1.73);
+        &:hover {
+          transform: scale(1.4);
+        }
+      }
+      &__chart {
+        max-width: 250px;
+        position: absolute;
+        height: 40px;
+        transform: translateX(70%);
+        width: 200%;
+
+        @include min-width($xs) {
+          transform: translateX(60%);
+          width: 250%;
+        }
+        
+        @include min-width($m) {
+          transform: translateX(50%);
+          width: 300%;
+        }
+
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        pointer-events: none;
+    
+        &--tooltiptext {
+          height: 40%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+
+          span {
+            font-size: 7px;
+            font-family: $native-font;
+
+            @include min-width($xs) {
+              font-size: 9px;
+            }
+            
+            @include min-width($m) {
+              font-size: 11px;
+            }
+          }
+        }
+
+        &--bar {
+          height: 60%;
+
+          div {
+            width: 100%;
+            height: 33%;
+            border-radius: 20px;
+            display: flex;
+            justify-content: flex-start;
+            box-shadow: 1px 1px 1px 1px;
+
+            div {
+              height: 100%;
+              border-radius: 20px;
+              box-shadow: none;
+
+              .chart {
+                width: 0%;
+                height: 100%;
+                border-radius: 20px;
+                box-shadow: none;
+                transition: all 1s ease-in-out 1s;
+              }
+            }
+          }
+        }
+      }
+
+      .focused {
+        .skill__chart {
+          transition: opacity 0.3s ease-in-out 0.8s; 
+          opacity: 1;
+          .chart {
+            width: 100% !important;
+          }
+        }
+        .skill__img img:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+/*   @include max-width(575px) {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    h1 {
+      margin-left: 30px;
+    }
+
+    .chartContainer {
+      padding: 0;
+
+      .skill {
+        padding: 0;
+        max-width: calc(50vw - 20px);
+      }
+
+      .tooltiptext {
+        font-size: small;
+      }
+    }
+  } */
+}

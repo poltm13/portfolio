@@ -1,0 +1,132 @@
+.contact-container {
+  margin-top: 200px;
+  z-index: 3;
+  position: relative;
+
+  background: linear-gradient(
+    90deg,
+    $accent 0%,
+    #48b8c5  100%
+  );
+  
+  @include min-width($s) {
+    background: linear-gradient(
+      90deg,
+      $accent-lighter 0%,
+      $accent 100%,
+    );
+  }
+  
+  @include min-width($m) {
+    background: $gradient;
+  }
+
+  .contact {
+    max-width: 1500px;
+    margin: auto;
+    padding: 30px;
+
+    @include min-width($xs) {
+      padding: 40px;
+    }
+    
+    @include min-width($s) {
+      padding: 50px;
+    }
+
+    .contact--resume {
+      inset: 0;
+      margin: auto;
+      display: block;
+      border-radius: 50px;
+      padding: 5px 20px;
+      border: none;
+      background: transparent;
+      cursor: none;
+      text-align: center;
+      color: black !important;
+
+      &:after {    
+        background: none repeat scroll 0 0 transparent;
+        bottom: 5px;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: relative;
+        background: rgb(0, 0, 0);
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      
+      &:hover:after { 
+        width: 100%; 
+        left: 0; 
+      }
+  
+      span svg{
+        position: relative;
+        margin: 10px 10px 10px 0;
+        transform: translateY(-20%);
+      }
+    }
+
+    .contact--media {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      max-width: 400px;
+      margin: 30px auto 30px auto;
+
+      span {
+        @include flexCenter();
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: transparent;
+        transition: all 0.3s ease-in-out;
+        
+        &:hover {
+          box-shadow: 
+            inset 4px 4px 7px rgba(0, 0, 0, 0.25),
+            inset -4px -4px 7px rgba(255, 255, 255, 0.20);
+        }
+      }
+
+    }
+
+    .contact--map {
+      padding: 0;
+      width: 100%;
+      @include flexCenter();
+
+      & > div {
+        margin-top: 30px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px 0px #3b939c8c;
+      }
+    }
+  }
+
+}
+
+.arrow {
+  @include flexCenter();
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

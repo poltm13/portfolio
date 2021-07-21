@@ -1,0 +1,67 @@
+.cursorMain {
+  transform: scale(0.5);
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  filter: url('#goo');
+  overflow: hidden;
+  background: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  
+  & > div {
+    position: absolute;
+    will-change: transform;
+    border-radius: 50%;
+    transition: background 1s, box-shadow 0.4s, opacity 1s;
+    background: #7af2ff;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    opacity: 0.6;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    &:nth-child(1) {
+      width: 30px;
+      height: 30px;
+      
+    }
+    
+    &:nth-child(2) {
+      width: 40px;
+      height: 40px;
+      
+      &::after {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &.hover-small > div:nth-child(2) {
+    opacity: 0.05;
+    transition: opacity 1s;
+  }
+
+  &.hover-invisible > div {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+}

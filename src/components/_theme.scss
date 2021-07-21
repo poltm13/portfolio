@@ -1,23 +1,65 @@
 .dark-mode {
-  background-color: $dark-background;
   color: $dark-primary;
 
+  .sticky-nav--toggler:hover {
+    filter: none;
+  }
+
+  .content-background {
+    background-color: $dark-section-background;
+  }
+
+  .cursorMain > div {
+    background: #2f9ca8;
+  }
+
+  .upper-curve {
+    path {
+      fill: $dark-section-background;
+    }
+  }
+
+  .bottom-curve {
+    path {
+      fill: url(#dark-gradient);
+    }
+  }
+
   h1,
-  span,
+  .skill__chart--tooltiptext span,
   li {
     color: rgba(255, 255, 255, 0.87);
   }
 
   h2,
   h3,
-  p,
-  .contact ul .contactItem a {
+  p {
     color: rgba(255, 255, 255, 0.6);
   }
 
-  .contact ul .contactItem a:hover {
-    color: #7af2ff;
-    text-decoration: none;
+  .contact-container {
+    background: linear-gradient(
+      90deg,
+      #54c7d3 0%,
+      #3baab6 100%
+    );
+  
+    @include min-width($s) {
+      background: linear-gradient(
+        90deg,
+        $accent 0%,
+        #54c7d3 100%
+      );
+    }
+    
+    @include min-width($m) {
+      background: $dark-gradient;
+    }
+
+    & ul .contactItem a:hover {
+      color: #7af2ff;
+      text-decoration: none;
+    }
   }
 
   .headerContainer header .typewriter h1 {
@@ -41,7 +83,7 @@
 
   .education .timeline ul li::after {
     border-color: white;
-    background-color: $dark-background;
+    background-color: $dark-section-background;
   }
 
   .education .timeline .content .firstContent,
@@ -54,22 +96,18 @@
     }
   }
 
-  .about,
-  .skills,
-  .education,
-  .projects,
-  .contact {
-    box-shadow: none;
-    background-color: #191919;
+  .about svg path {
+      fill: white;
   }
+
 
   .skills .skillText div h3::before {
     box-shadow: none;
   }
 
-  .skills .chartContainer .skill .languangeChart .bar div {
-    box-shadow: 1px 1px 1px 1px black;
-    background: rgba(255, 255, 255, 0.05);
+  .skill__chart--bar > div {
+    box-shadow: 1px 1px 1px 1px black !important;
+    background: rgba(255, 255, 255, 0.15);
 
     div {
       box-shadow: none;
@@ -87,10 +125,6 @@
     &::after {
       border-bottom-color: $dark-primary;
     }
-  }
-
-  .contact ul .contactItem .contactIcon {
-    background-color: $accent;
   }
 
   .projects .projectContent .semteContent .oldPage span {

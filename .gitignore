@@ -1,4 +1,4 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+old
 
 # dependencies
 /node_modules
@@ -9,17 +9,24 @@
 /coverage
 
 # production
+public
 /build
-.env
 
 # misc
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*
 
+.cache/
 debug.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
+.vscode/*

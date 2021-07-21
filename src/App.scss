@@ -1,73 +1,154 @@
 $primary: white;
 $accent: #7af2ff;
-$accent-lighter: #7fffd4;
+$accent-lighter: #6FDCE8;
 $accent-darker: #2f9ca8;
+/* $accent: #B407DB;
+$accent-lighter: #DF00FF;
+$accent-darker: #890DB7; */
 $dark-primary: #272727;
 $dark-background: #121212;
+$dark-section-background: #191919;
 $text: #272727;
+$native-font: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
 $gradient: linear-gradient(
   90deg,
   $accent-lighter 0%,
   $accent 50%,
   $accent-darker 100%
 );
+$dark-gradient: linear-gradient(
+  90deg,
+  $accent 0%,
+  $accent-darker 100%
+);
+$down-gradient: linear-gradient(
+  180deg,
+  $accent-lighter 0%,
+  $accent 40%,
+  $accent-darker 100%
+);
+
+// Viewport breakpoints
+$xs: 320px;
+$s: 480px;
+$m: 768px;
+$l: 992px;
+$xl: 1200px;
 
 @import "./components/common";
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
 
 html {
   scroll-behavior: smooth;
 }
 
-* {
+*, *::before, *::after {
   padding: 0;
   margin: 0;
   user-select: none;
   -webkit-user-drag: none;
+  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
 
-body {
+body, .content-background {
   font-family: "Raleway", sans-serif;
   color: $text;
   background-color: $primary;
-  overflow: hidden;
+  transition: background 0.2s ease-out;
 }
 
 h1 {
   font-family: "Bebas Neue", cursive;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
+
+  @include min-width($xs) {
+    font-size: 1.7rem;
+  }
+  
+  @include min-width($s) {
+    font-size: 1.9rem;
+  }
+  
+  @include min-width($m) {
+    font-size: 2.1rem;
+  }
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+
+  @include min-width($xs) {
+    font-size: 1.2rem;
+  }
+  
+  @include min-width($s) {
+    font-size: 1.3rem;
+  }
+  
+  @include min-width($m) {
+    font-size: 1.5rem;
+  }
 }
 
 a,
 a:hover {
   color: $text;
+  cursor: none;
+  text-decoration: none;
 }
 
-.arrow {
-  @include flexCenter();
-  cursor: pointer;
+.upper-curve {
+  position: absolute;
+  transform: translateY(-90%);
+  width: 150%;
+  
+  @include min-width($s) {
+    transform: translateY(-98%);
+    width: 100%;
+  }
 
-  img {
-    //z-index: 200;
-    width: 100px;
-    height: auto;
+  path {
+    fill: $primary;
   }
 }
 
-@include min-width(500px) {
-  h1 {
-    font-size: 2rem;
+#content {
+  overflow: auto;
+  height: 100%;
+}
+
+.bottom-curve {
+  position: absolute;
+  bottom: 0;
+  width: 300%;
+  z-index: 2;
+  svg {
+    transform: translateX(-50%);
   }
-  h3 {
-    font-size: 1.5rem;
+  @include min-width($s) {
+    width: 200%;
+    svg {
+      transform: translateX(0)
+    }
+  }
+  
+  @include min-width($m) {
+    width: 100%;
+  }
+
+  path {
+    fill: url(#light-gradient);
   }
 }
 
@@ -75,10 +156,13 @@ a:hover {
   margin: 0 !important;
 }
 
-@import "./components/header";
-@import "./components/about";
-@import "./components/skills";
-@import "./components/education";
-@import "./components/projects";
-@import "./components/contact";
+@import "./components/Background/background";
+@import "./components/Navbar/navbar";
+@import "./components/Header/header";
+@import "./components/About/about";
+@import "./components/Skills/skills";
+@import "./components/Education/education";
+@import "./components/Projects/projects";
+@import "./components/Contact/contact";
 @import "./components/theme";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";

@@ -1,0 +1,268 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinBack {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: $dark-primary;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(180deg);
+  }
+  5% {
+    transform: scale(1.1, 0.9) translateY(0) translate(-50%, -50%)
+      rotate(180deg);
+  }
+  15% {
+    transform: scale(0.9, 1.1) translateY(-30px) translate(-50%, -50%)
+      rotate(180deg);
+  }
+  25% {
+    transform: scale(1.05, 0.95) translateY(0) translate(-50%, -50%)
+      rotate(180deg);
+  }
+  28% {
+    transform: scale(1, 1) translateY(-4px) translate(-50%, -50%) rotate(180deg);
+  }
+  32% {
+    transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(180deg);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0) translate(-50%, -50%) rotate(180deg);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  3.99% {
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.headerContainer {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  height: 100%;
+  width: 100%;
+  background: $gradient;
+  transition: all 1s ease-in-out;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden;
+  position: fixed;
+
+  .faceContainer {
+    width: 200px;
+    height: 200px;
+    transition: all 1s ease-in-out;
+    position: absolute;
+    transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+    transition-delay: 0.1s;
+    overflow: hidden;
+    border-radius: 50%;
+    background: linear-gradient(
+      180deg,
+      $accent 0%,
+      $accent 50%,
+      $accent-darker 100%
+    );
+    
+    @include max-width(767px) {
+      width: 150px;
+      height: 150px;
+      transform: translate(calc(50vw - 50%), calc(50vh - 70%))
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .typewriter {
+    transition: all 1s ease-in-out;
+    transition-delay: 0s;
+    position: absolute;
+    transform: translate(calc(50vw - 50%), calc(50vh + 110px));
+
+    h1 {
+      overflow: hidden;
+      border-right: 0.1em solid $dark-primary;
+      white-space: nowrap;
+      margin: 0 auto;
+      animation: typing 2s steps(27, end), blink-caret 0.75s step-end infinite;
+      transition: font-size 1s ease-in-out;
+
+      .tags {
+        font-family: "Raleway", sans-serif;
+        font-size: 1.3rem;
+        color: red;
+        transition: all 1s ease-in-out;
+      }
+    }
+
+    @include max-width(767px) {
+      transform: translate(calc(50vw - 50%), calc(50vh + 50px));
+      h1 {
+        font-size: 1.6rem;
+        .tags {    
+          font-size: 1.2rem;
+        }
+      } 
+    }
+  }
+}
+
+$innerCircleSize: 50vmax;
+$outerCircleSize: 90vmax;
+$logo-size: 50px;
+$logo-small-size: 30px;
+
+
+.card1,
+.card2 {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+@include min-width(768px) {
+  .headerLogosInner {
+    @include on-circle(
+      $item-count: 7,
+      $circle-size: $innerCircleSize,
+      $item-size: $logo-size
+    );
+    
+    animation: spin 20s linear 0s infinite;
+    margin: 0 auto 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: transparent;
+    
+    img {
+      display: block;
+      transition: all 0.3s ease-in-out;
+      transition-delay: 0.7s;
+    }
+  }
+}
+@include max-width(767px) {
+  .headerLogosInner {
+    @include on-circle(
+      $item-count: 7,
+      $circle-size: $innerCircleSize,
+      $item-size: $logo-small-size
+    );
+  
+    animation: spin 20s linear 0s infinite;
+    margin: 0 auto 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: transparent;
+  
+    img {
+      display: block;
+      transition: all 0.3s ease-in-out;
+      transition-delay: 0.7s;
+    }
+  }
+}
+
+.headerLogosOuter {
+  @include on-circle(
+    $item-count: 9,
+    $circle-size: $outerCircleSize,
+    $item-size: $logo-size
+  );
+  animation: spinBack 20s linear 0s infinite;
+  margin: 0 auto 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: transparent;
+
+  img {
+    display: block;
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.7s;
+  }
+}
+
+.zIndex {
+  z-index: -1 !important;
+}
+
+.downArrowContainer {
+  z-index: 10;
+  position: fixed;
+  bottom: 5vh;
+  transform: translate(-50%, -50%) rotate(180deg);
+  left: 50%;
+  animation-name: bounce;
+  animation-duration: 3s;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+  transition: opacity 1s ease-in-out 1s;
+  cursor: pointer;
+  padding: 20px;
+
+  .downArrow {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+#Eyes {
+  animation: blink 5s linear infinite 2s;
+}
