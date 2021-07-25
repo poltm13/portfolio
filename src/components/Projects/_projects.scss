@@ -1,9 +1,29 @@
 .projects {
-  @include content();
+  max-width: 1500px;
+  margin: auto;
+  min-height: 80vh;
+  padding: 100px 10px 10px;
+
+  @include min-width($xs) {
+    padding: 120px 10px 10px;
+  }
+  
+  @include min-width($s) {
+    padding: 140px 10px 10px;
+  }
 
   h1 {
     @include underline();
     margin-bottom: 70px;
+    margin: 0px 20px 20px;
+
+    @include min-width($xs) {
+      margin: 0px 30px 30px;
+    }
+    
+    @include min-width($s) {
+      margin: 0px 40px 40px;
+    }
   }
 
   & > div {
@@ -14,13 +34,37 @@
 
   .project-card {
     font-family: $native-font;
-    width: 200px;
-    height: 300px;
-    margin: 20px;
-    border-radius: 20px;
     position: relative;
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
+    box-shadow: 0 4px 10px 1px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    width: 100px;
+    height: 150px;
+    margin: 5px;
+
+    @include min-width($xs) {
+      width: 120px;
+      height: 180px;
+      margin: 10px;
+    }
+    
+    @include min-width($s) {
+      width: 160px;
+      height: 240px;
+      margin: 15px;
+    }
+    
+    @include min-width($m) {
+      width: 200px;
+      height: 250px;
+      margin: 20px;
+    }
+
+    &--container {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
 
     &--image {
       width: 100%;
@@ -29,54 +73,141 @@
       border-radius: 20px;
       img {
         width: 100%;
-        transition: all 0.3s ease-in-out;
       }
     }
     
     &--content {
-      background-color: white;
+      background-color: rgba(255, 255, 255, 1);
       position: absolute;
       bottom: 0;
-      border-radius: 18px;
+      border-radius: 20px;
       padding: 10px;
-      min-height: 70%;
-      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+      height: 100%;
+      width: 100%;
       transition: all 0.3s ease-in-out;
       transform: translateY(100%);
       
       &--title {
-        font-size: 1.2rem;
+        font-size: 0.8rem;
+
+        @include min-width($xs) {
+          font-size: 0.9rem;
+        }
+        
+        @include min-width($s) {
+          font-size: 1.2rem;
+        }
+        
+        @include min-width($m) {
+          font-size: 1.2rem;
+        }
       }
       
       &--description {
-        font-size: 1.0rem;
+        font-size: 0.7rem;
+        max-height: 70%;
+        overflow: auto;
+
+        @include min-width($xs) {
+          font-size: 0.8rem;
+        }
+        
+        @include min-width($s) {
+          font-size: 1rem;
+          overflow: hidden;
+        }
+        
+        @include min-width($m) {
+          font-size: 1rem;
+        }
       }
       
       &--tags {
-        font-size: 13px;
         position: absolute;
         bottom: 0;
         padding: 0 10px 10px 0;
         display: flex;
         flex-wrap: wrap;
+        font-size: 0.5rem;
 
         span {
-          margin: 5px;
-          padding: 5px;
+          margin: 2px;
+          padding: 3px;
           display: inline-block;
           background: rgba(85, 206, 214, 0.5);
           border-radius: 4px;
           font-weight: 500;
+        }
+
+        @include min-width($xs) {
+          font-size: 0.6rem;
+        }
+        
+        @include min-width($s) {
+          font-size: 0.7rem;
+        }
+        
+        @include min-width($m) {
+          font-size: 0.8rem;
+          span {
+            margin: 5px;
+            padding: 5px;
+          }
+        }
+      }
+    }
+
+    &--logo {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      @include flexCenter();
+
+      img {
+        border-radius: 100%;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        width: 25px;
+        height: 25px;
+        
+        @include min-width($xs) {
+          width: 30px;
+          height: 30px;
+        }
+        
+        @include min-width($s) {
+          width: 40px;
+          height: 40px;
+        }
+        
+        @include min-width($m) {
+          width: 50px;
+          height: 50px;
         }
       }
     }
 
     &:hover {
       .project-card--image img { 
-        transform: scale(3.5) translateY(74px);
+        transition-delay: 0.3s;
+        opacity: 0;
       }
       .project-card--content {        
         transform: translateY(0%)
+      }
+      .project-card--logo img {        
+        transform: translateY(-30px);
+        
+        @include min-width($xs) {
+          transform: translateY(-35px);
+        }
+        
+        @include min-width($s) {
+          transform: translateY(-47px);
+        }
+        
+        @include min-width($m) {
+          transform: translateY(-60px);
+        }
       }
     }
   }

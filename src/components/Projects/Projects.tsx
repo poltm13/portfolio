@@ -13,25 +13,43 @@ const projects: CardProps[] = [
     title: 'SEMTE',
     description: 'A website for a local air conditioning company',
     tags: ['React/Gatsby', 'SASS'],
-    imageSrc: _Projects.semte 
+    imageSrc: _Projects.semte, 
+    logoSrc: _Projects.semteLogo 
   },
   {
     title: 'HappyBday',
     description: 'A geeky website for my girlfriend’s 24th birthday with a bunch of images of us',
     tags: ['React', 'p5.js', 'SASS'],
-    imageSrc: _Projects.clauBday 
+    imageSrc: _Projects.clauBday, 
+    logoSrc: _Projects.semteLogo 
   },
   {
     title: 'LabelsRoom',
     description: 'I collaborated in the creation of the B2B (business to business) eCommerce part of the website and the styiling of it.',
     tags: ['WordPress', 'CSS'],
-    imageSrc: _Projects.labelsRoom 
+    imageSrc: _Projects.labelsRoom, 
+    logoSrc: _Projects.semteLogo 
+  },
+  {
+    title: 'LabelsRoom',
+    description: 'I collaborated in the creation of the B2B (business to business) eCommerce part of the website and the styiling of it.',
+    tags: ['WordPress', 'CSS'],
+    imageSrc: _Projects.labelsRoom, 
+    logoSrc: _Projects.semteLogo 
+  },
+  {
+    title: 'LabelsRoom',
+    description: 'I collaborated in the creation of the B2B (business to business) eCommerce part of the website and the styiling of it.',
+    tags: ['WordPress', 'CSS'],
+    imageSrc: _Projects.labelsRoom, 
+    logoSrc: _Projects.semteLogo 
   },
   {
     title: 'HappyBday',
     description: 'A geeky website for my girlfriend’s 24th birthday with a bunch of images of us',
     tags: ['React', 'p5.js', 'SASS'],
-    imageSrc: _Projects.clauBday 
+    imageSrc: _Projects.clauBday, 
+    logoSrc: _Projects.semteLogo 
   }
 ];
 

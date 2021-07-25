@@ -59,10 +59,8 @@ import python from './python.png';
 import react from './react.png';
 import santoangel from './santoangel.png';
 import sass from './sass.png';
-import semte from './semte.jpg';
-import semtePreview from './semtePreview.jpg';
-import semtePreviewWebp from './semtePreview.webp';
-import semteWebp from './semte.webp';
+import semte from './semte.webp';
+import semteLogo from './semteLogo.jpg';
 import seo from './seo.png';
 import snow from './snow.png';
 import sun from './sun.png';
@@ -233,11 +231,8 @@ export const education = {
 };
 
 export const _Projects = {
-  semte: semteWebp,
-  semte_original: semte,
-  semteType: 'jpeg',
-  semtePreview: semtePreviewWebp,
-  semtePreview_original: semtePreview,
+  semteLogo: semteLogo,
+  semte: semte,
   semtePreviewType: 'jpg',
 
   clauBday: clauBdayWebp,

@@ -3,4 +3,5 @@ export interface CardProps {
   description: string;
   tags: string[];
   imageSrc: string;
+  logoSrc?: string;
 }
