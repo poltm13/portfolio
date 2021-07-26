@@ -30,16 +30,16 @@ const Contact = ({handleArrowUp}) => {
         <a href={contact.cv} target="_blank" rel="noopener noreferrer" > 
           <button
             className="contact--resume"
-            {...Utils.hoverEffect()}
+            {...Utils.cursorHoverEffect()}
           >
             <span><DownloadIcon /></span>Download my resume
           </button>
         </a>
         <div className="contact--media">
-          <span {...Utils.hoverEffect('#F1C71D')}><MailIcon /></span>
-          <span {...Utils.hoverEffect('#211F1F')}><GithubIcon /></span>
-          <span {...Utils.hoverEffect('#2867B2')}><LinkedInIcon /></span>
-          <span {...Utils.hoverEffect('#C13584')}><InstagramIcon /></span>
+          <span {...Utils.cursorHoverEffect('#F1C71D')}><MailIcon /></span>
+          <span {...Utils.cursorHoverEffect('#211F1F')}><GithubIcon /></span>
+          <span {...Utils.cursorHoverEffect('#2867B2')}><LinkedInIcon /></span>
+          <span {...Utils.cursorHoverEffect('#C13584')}><InstagramIcon /></span>
         </div>
         <div className="contact--map">
           <Map />

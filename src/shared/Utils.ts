@@ -1,6 +1,11 @@
 export default class Utils {
 
-  static hoverEffect = (color?: string): React.DOMAttributes<HTMLElement> => ({
+  static hoverEffect = (selector: string, className: string): React.DOMAttributes<HTMLElement> => ({
+    onMouseOver: () => document.querySelectorAll(selector).forEach((item) => item.classList.toggle(className, true)),
+    onMouseOut: () => document.querySelectorAll(selector).forEach((item) => item.classList.toggle(className, false))
+  })
+
+  static cursorHoverEffect = (color?: string): React.DOMAttributes<HTMLElement> => ({
     onMouseOver: () => this.handleHoverSmall(true, color),
     onMouseOut: () => this.handleHoverSmall(false, color)
   })

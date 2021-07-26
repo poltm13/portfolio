@@ -5,7 +5,7 @@ import WebPicture from 'shared/WebPicture';
 export default function Skill(props) {
   return (
     <div style={{display: 'flex'}} className={props.focused ? 'focused' : ''}>
-      <div className="skill__img" {...Utils.hoverEffect(props.color)}>
+      <div className="skill__img" {...Utils.cursorHoverEffect(props.color)}>
         <WebPicture
           src={props.src}
           srcType={props.srcType}
