@@ -11,22 +11,13 @@ import Map from './Map';
 import React from 'react';
 import Utils from 'shared/Utils';
 import { contact } from 'assets/index';
-import useElementOnScreen from 'shared/useElementOnScreen';
 
 const Contact = ({handleArrowUp}) => {
 
-  const [ containerRef, isVisible ] = useElementOnScreen({ threshold: 0.5 });
-
-  const props = useSpring({ 
-    y: isVisible ? 0 : 200, 
-    opacity: isVisible ? 1 : -0.3,
-    config: config.molasses 
-  });
-
   return (
-    <section className="contact-container" ref={containerRef as React.MutableRefObject<any>}>
+    <section className="contact-container">
       <Curve style={{top: 0, bottom: 'auto', transform: 'translateY(-98%)'}} upper={false}/>
-      <animated.div className="contact" style={props}>
+      <div className="contact">
         <a href={contact.cv} target="_blank" rel="noopener noreferrer" > 
           <button
             className="contact--resume"
@@ -44,7 +35,7 @@ const Contact = ({handleArrowUp}) => {
         <div className="contact--map">
           <Map />
         </div>
-      </animated.div>
+      </div>
       <ArrowUp scrollTop={handleArrowUp}/>
     </section>
   );
