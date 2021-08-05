@@ -10,7 +10,6 @@ import About from 'components/About/About';
 import Background from 'components/Background/Background';
 import Contact from 'components/Contact/Contact';
 import Curve from 'components/Curve';
-import Education from 'components/Education/Education';
 import Header from 'components/Header/Header';
 import Logo from 'components/Navbar/Logo';
 import Projects from 'components/Projects/Projects';
@@ -64,7 +63,6 @@ export default function IndexPage() {
             { !touchDevice && <Background trail={trail}/> }
             <About/>
             <Skills/>
-            {/* <Education/> */}
             <Projects />
             <Contact handleArrowUp={handleArrowUp}/>
             <Curve upper={false}/>

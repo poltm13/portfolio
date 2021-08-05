@@ -1,7 +1,3 @@
-import LabelsPreview from './labelsPreview.jpg';
-import LabelsPreviewWebp from './labelsPreview.webp';
-import LabelsRoom from './labelsRoom.png';
-import LabelsRoomWebp from './labelsRoom.webp';
 import P from './P.svg';
 import agario from './agario.gif';
 import agarioWebp from './agario.webp';
@@ -18,10 +14,8 @@ import beach from './beach.png';
 import c from './c.png';
 import camping from './camping.png';
 import chip from './chip.png';
-import clauBday from './clauBday.png';
-import clauBdayWebp from './happybday.webp';
-import clauPreview from './clauPreview.png';
-import clauPreviewWebp from './clauPreview.webp';
+import clauBday from './static-projects/clauBday.webp';
+import clauBdayLogo from './clauBdayLogo.webp';
 import codigo from './codigo.png';
 import cook from './cook.png';
 import css from './css.png';
@@ -34,10 +28,12 @@ import etsetb from './etsetb.png';
 import figma from './figma.png';
 import git from './git.png';
 import html from './html.png';
-import invaders from './invaders.gif';
-import invadersWebp from './invaders.webp';
+import invaders from './invaders.webp';
+import invadersLogo from './invadersLogo.png';
 import java from './java.png';
 import js from './js.png';
+import labelsRoom from './static-projects/labelsRoom.webp';
+import labelsRoomLogo from './labelsRoomLogo.webp';
 import linkedIcon from './linked-in.png';
 import longboard from './longboard.png';
 import mail from './mail.png';
@@ -48,10 +44,8 @@ import matlab from './matlab.png';
 import moon from './moon.png';
 import movie from './movie.png';
 import music from './music.png';
-import native from './native.jpg';
-import nativePreview from './nativePreview.gif';
-import nativePreviewWebp from './nativePreview.webp';
-import nativeWebp from './native.webp';
+import native from './nativePreview.webp';
+import nativeLogo from './native.webp';
 import patines from './patines.png';
 import pong from './pong.gif';
 import pongWebp from './pong.webp';
@@ -59,7 +53,7 @@ import python from './python.png';
 import react from './react.png';
 import santoangel from './santoangel.png';
 import sass from './sass.png';
-import semte from './semte.webp';
+import semte from './static-projects/semte.webp';
 import semteLogo from './semteLogo.jpg';
 import seo from './seo.png';
 import snow from './snow.png';
@@ -231,30 +225,20 @@ export const education = {
 };
 
 export const _Projects = {
-  semteLogo: semteLogo,
-  semte: semte,
-  semtePreviewType: 'jpg',
+  semteLogo,
+  semte,
 
-  clauBday: clauBdayWebp,
-  clauBday_original: clauBday,
-  clauBdayType: 'png',
-  clauPreview: clauPreviewWebp,
-  clauPreview_original: clauPreview,
-  clauPreviewType: 'png',
+  clauBdayLogo,
+  clauBday,
 
-  labelsRoom: LabelsRoomWebp,
-  labelsRoom_original: LabelsRoom,
-  labelsRoomType: 'png',
-  labelsPreview: LabelsPreviewWebp,
-  labelsPreview_original: LabelsPreview,
-  labelsPreviewType: 'jpeg',
+  labelsRoom,
+  labelsRoomLogo,
 
-  native: nativeWebp,
-  native_original: native,
-  nativeType: 'jpeg',
-  nativePreview: nativePreviewWebp,
-  nativePreview_original: nativePreview,
-  nativePreviewType: 'gif',
+  native,
+  nativeLogo,
+  
+  invaders,
+  invadersLogo,
 
   others: codigo,
   agario: agarioWebp,
@@ -263,9 +247,6 @@ export const _Projects = {
   asteroids: asteroidsWebp,
   asteroids_original: asteroids,
   asteroidsType: 'gif',
-  invaders: invadersWebp,
-  invaders_original: invaders,
-  invadersType: 'gif',
   pong: pongWebp,
   pong_original: pong,
   pongType: 'gif'

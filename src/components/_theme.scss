@@ -25,6 +25,14 @@
     }
   }
 
+  .project-card--content {
+    background-color: #212121;
+
+    &--tags span {
+      background: rgba(85, 206, 214, 1);
+    }
+  }
+
   h1,
   .skill__chart--tooltiptext span,
   li {
@@ -66,36 +74,6 @@
     color: $dark-primary;
   }
 
-  .headerContainer.sticky header .typewriter h1 {
-    color: $accent;
-  }
-
-  .sticky .faceContainer {
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-  .education .timeline .educationFirst:checked ~ ul .l1,
-  .education .timeline .educationSecond:checked ~ ul .l2,
-  .education .timeline .educationThird:checked ~ ul .l3,
-  .education .timeline ul li:hover {
-    color: white;
-  }
-
-  .education .timeline ul li::after {
-    border-color: white;
-    background-color: $dark-section-background;
-  }
-
-  .education .timeline .content .firstContent,
-  .education .timeline .content .secondContent,
-  .education .timeline .content .thirdContent {
-    background: linear-gradient(180deg, $accent 0%, $accent-darker 100%);
-    h3,
-    h2 {
-      color: black;
-    }
-  }
-
   .about svg path {
       fill: white;
   }
@@ -113,21 +91,5 @@
       box-shadow: none;
       background: transparent;
     }
-  }
-
-  .projects .projectContent .semteContent,
-  .projects .projectContent .clauBdayContent,
-  .projects .projectContent .labelsContent,
-  .projects .projectContent .nativeContent,
-  .projects .projectContent .othersContent {
-    background: linear-gradient(180deg, $dark-primary 0%, #191919 100%);
-
-    &::after {
-      border-bottom-color: $dark-primary;
-    }
-  }
-
-  .projects .projectContent .semteContent .oldPage span {
-    fill: #ffffff99;
   }
 }

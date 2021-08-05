@@ -1,5 +1,3 @@
-import { animated, config, useSpring } from 'react-spring';
-
 import ArrowUp from 'components/ArrowUp';
 import Curve from 'components/Curve';
 import DownloadIcon from './DownloadIcon';

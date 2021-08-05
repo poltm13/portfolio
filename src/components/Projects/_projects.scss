@@ -2,34 +2,66 @@
   max-width: 1500px;
   margin: auto;
   min-height: 80vh;
-  padding: 100px 10px 10px;
+  padding: 100px 0 100px 0;
+  position: relative;
 
   @include min-width($xs) {
-    padding: 120px 10px 10px;
+    padding: 120px 0 120px 0;
   }
   
   @include min-width($s) {
-    padding: 140px 10px 10px;
+    padding: 140px 0 140px 0;
+  }
+
+  .blob-container {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    transform: translateY(10%);
+
+    @include min-width($xs) {
+      transform: translateY(30%);
+    }
+    
+    @include min-width($s) {
+      transform: translateY(45%);
+    }
+
+    svg {
+      width: 100%;
+      max-width: 800px;
+      transition: transform 0.5s ease-in-out 0.5s;
+      transform: scale(0);
+
+      &.visible {
+        transform: scale(1);
+      }
+    }
   }
 
   h1 {
     @include underline();
-    margin-bottom: 70px;
-    margin: 0px 20px 20px;
+    margin: 0px 0px 30px 30px;
 
     @include min-width($xs) {
-      margin: 0px 30px 30px;
+      margin: 0px 0px 40px 40px;
     }
     
     @include min-width($s) {
-      margin: 0px 40px 40px;
+      margin: 0px 0px 50px 50px;
     }
   }
 
-  & > div {
+  .projects--cards-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px 0 10px;
   }
 
   .project-card {
@@ -56,7 +88,7 @@
     @include min-width($m) {
       width: 200px;
       height: 250px;
-      margin: 20px;
+      margin: 30px;
     }
 
     &--container {
@@ -64,6 +96,7 @@
       width: 100%;
       height: 100%;
       position: relative;
+      border-radius: 20px;
     }
 
     &--image {
@@ -73,6 +106,19 @@
       border-radius: 20px;
       img {
         width: 100%;
+
+        &#invaders {
+          transform: scale(1.05);
+          @include min-width($m) {
+            transform: translateY(-30px);
+          }
+        }
+
+        &#bday {
+          @include min-width($m) {
+            transform: translateY(-30px);
+          }
+        }
       }
     }
     
@@ -81,32 +127,66 @@
       position: absolute;
       bottom: 0;
       border-radius: 20px;
-      padding: 10px;
       height: 100%;
       width: 100%;
       transition: all 0.3s ease-in-out;
       transform: translateY(100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 5px;
+
+      @include min-width($xs) {
+        padding: 10px;
+      }
       
       &--title {
+        text-align: center;
+        white-space: nowrap;
+        font-weight: bold;
         font-size: 0.8rem;
+        margin-bottom: 2px;
 
         @include min-width($xs) {
           font-size: 0.9rem;
+          margin-bottom: 2px;
         }
         
         @include min-width($s) {
-          font-size: 1.2rem;
+          font-size: 1.1rem;
+          margin-bottom: 8px;
         }
         
         @include min-width($m) {
           font-size: 1.2rem;
+          margin-bottom: 10px;
         }
       }
       
       &--description {
-        font-size: 0.7rem;
-        max-height: 70%;
+        height: 100%;
+        padding: 1px 0px;
         overflow: auto;
+      }
+
+      &--link {
+        display: flex;
+        justify-content: flex-start;
+        color: $accent-darker;
+        font-weight: 600;
+
+        span {
+          transform: translateX(3px);
+          transition: all 0.3s;
+        }
+
+        &:hover span {
+          transform: translateX(20px);
+        }
+      }
+      
+      &--description, &--link {
+        font-size: 0.7rem;
 
         @include min-width($xs) {
           font-size: 0.8rem;
@@ -114,7 +194,6 @@
         
         @include min-width($s) {
           font-size: 1rem;
-          overflow: hidden;
         }
         
         @include min-width($m) {
@@ -123,9 +202,6 @@
       }
       
       &--tags {
-        position: absolute;
-        bottom: 0;
-        padding: 0 10px 10px 0;
         display: flex;
         flex-wrap: wrap;
         font-size: 0.5rem;
@@ -165,6 +241,7 @@
 
       img {
         border-radius: 100%;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         width: 25px;
         height: 25px;
@@ -212,3 +289,4 @@
     }
   }
 }
+
