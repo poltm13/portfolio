@@ -1,3 +1,14 @@
+@keyframes moveX {
+  0% {transform: translateX(-20%)};
+  20% {transform: translateX(20%)};
+  100% {transform: translateX(-20%)};
+}
+@keyframes moveY {
+  0% {transform: translateY(-20%)};
+  20% {transform: translateY(20%)};
+  100% {transform: translateY(-20%)};
+}
+
 .backgroundBlobs {
   pointer-events: none;
   filter: url('#goo');
@@ -14,12 +25,20 @@
     &::after {
       content: '';
       position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 15px;
-      height: 15px;
+      top: 10%;
+      left: 10%;
+      width: 40%;
+      height: 40%;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.8);
+    }
+
+    &.move-x {
+      animation: moveX 12s ease-in-out 0s infinite;
+    }
+
+    &.move-y {
+      animation: moveY 10s ease-in-out 3s infinite;
     }
   }
 }

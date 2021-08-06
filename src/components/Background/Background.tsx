@@ -30,13 +30,13 @@ const Background = () => {
         </ParallaxLayer>
 
         <ParallaxLayer offset={0} speed={0.5}>
-          <div className="bg-blob" style={{width: '50px', height: '50px', top: '90%', left: '78%'}}></div>
+          <div className="bg-blob move-y" style={{width: '50px', height: '50px', top: '90%', left: '68%'}}></div>
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={0.5}>
-          <div className="bg-blob" style={{width: '30px', height: '30px', top: '88%', left: '80%'}}></div>
+          <div className="bg-blob move-x" style={{width: '30px', height: '30px', top: '88%', left: '70%'}}></div>
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={1.5}>
-          <div className="bg-blob" style={{width: '30px', height: '30px', top: '93%', left: '80%'}}></div>
+          <div className="bg-blob" style={{width: '30px', height: '30px', top: '93%', left: '70%'}}></div>
         </ParallaxLayer>
 
         <ParallaxLayer offset={0.5} speed={0.1}>

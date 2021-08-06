@@ -62,6 +62,7 @@ export default function IndexPage() {
         <ParallaxLayer className="content-background" offset={1} speed={0.2}>
           <Curve upper={true}/>
           <Parallax pages={4} id='content'>
+
             <Background/>
             <ParallaxLayer offset={0}>
               <About/>
@@ -72,14 +73,14 @@ export default function IndexPage() {
             <ParallaxLayer offset={2}>              
               <Projects />
             </ParallaxLayer>
-            <ParallaxLayer offset={3}>              
+            <ParallaxLayer sticky={{start: 3, end: 3}} style={{zIndex: 3}}>              
               <Contact handleArrowUp={handleArrowUp}/>
             </ParallaxLayer>
+            <ParallaxLayer sticky={{start: 0, end: 3}} style={{zIndex: 2, pointerEvents: 'none'}}>
+              <Curve upper={false}/>
+            </ParallaxLayer>
+            
           </Parallax>
-          {/*  
-            // TODO: Fix z-index in contact  
-          */}
-          <Curve upper={false}/>
         </ParallaxLayer>
 
       </Parallax>
