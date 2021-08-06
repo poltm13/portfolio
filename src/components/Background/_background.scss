@@ -1,3 +1,30 @@
+.backgroundBlobs {
+  pointer-events: none;
+  filter: url('#goo');
+
+  .bg-blob {
+    position: absolute;
+    will-change: transform;
+    border-radius: 50%;
+    background: #7af2ff;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    opacity: 0.6;
+    transform: translate(-50%, -50%);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+
 .cursorMain {
   transform: scale(0.5);
   position: absolute;
@@ -7,7 +34,7 @@
   height: 200%;
   top: -50%;
   left: -50%;
-  filter: url('#goo');
+  filter: url('#cursor-goo');
   overflow: hidden;
   background: transparent;
   -webkit-touch-callout: none;
@@ -63,5 +90,9 @@
   &.hover-invisible > div {
     opacity: 0;
     transition: opacity 1s;
+  }
+
+  &.hover-big > div {
+    box-shadow: 10px 10px 5px 70px rgba(64, 224, 208, 0.5);
   }
 }

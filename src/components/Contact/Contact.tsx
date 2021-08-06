@@ -14,27 +14,29 @@ const Contact = ({handleArrowUp}) => {
 
   return (
     <section className="contact-container">
-      <Curve style={{top: 0, bottom: 'auto', transform: 'translateY(-98%)'}} upper={false}/>
-      <div className="contact">
-        <a href={contact.cv} target="_blank" rel="noopener noreferrer" > 
-          <button
-            className="contact--resume"
-            {...Utils.cursorHoverEffect()}
-          >
-            <span><DownloadIcon /></span>Download my resume
-          </button>
-        </a>
-        <div className="contact--media">
-          <span {...Utils.cursorHoverEffect('#F1C71D')}><MailIcon /></span>
-          <span {...Utils.cursorHoverEffect('#211F1F')}><GithubIcon /></span>
-          <span {...Utils.cursorHoverEffect('#2867B2')}><LinkedInIcon /></span>
-          <span {...Utils.cursorHoverEffect('#C13584')}><InstagramIcon /></span>
+      <div>
+        <Curve style={{top: 0, bottom: 'auto', transform: 'translateY(-98%)'}} upper={false}/>
+        <div className="contact">
+          <a href={contact.cv} target="_blank" rel="noopener noreferrer" >
+            <button
+              className="contact--resume"
+              {...Utils.cursorHoverEffect()}
+            >
+              <span><DownloadIcon /></span>Download my resume
+            </button>
+          </a>
+          <div className="contact--media">
+            <span {...Utils.cursorHoverEffect('#F1C71D')}><MailIcon /></span>
+            <span {...Utils.cursorHoverEffect('#211F1F')}><GithubIcon /></span>
+            <span {...Utils.cursorHoverEffect('#2867B2')}><LinkedInIcon /></span>
+            <span {...Utils.cursorHoverEffect('#C13584')}><InstagramIcon /></span>
+          </div>
+          <div className="contact--map">
+            <Map />
+          </div>
         </div>
-        <div className="contact--map">
-          <Map />
-        </div>
+        <ArrowUp scrollTop={handleArrowUp}/>
       </div>
-      <ArrowUp scrollTop={handleArrowUp}/>
     </section>
   );
 };

@@ -1,5 +1,6 @@
 .skills {
   @include content();
+  @include content-padding();
   overflow: hidden;
 
   h1 {

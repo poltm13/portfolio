@@ -1,17 +1,6 @@
 .projects {
-  max-width: 1500px;
-  margin: auto;
-  min-height: 80vh;
-  padding: 100px 0 100px 0;
   position: relative;
-
-  @include min-width($xs) {
-    padding: 120px 0 120px 0;
-  }
-  
-  @include min-width($s) {
-    padding: 140px 0 140px 0;
-  }
+  @include content();
 
   .blob-container {
     position: absolute;

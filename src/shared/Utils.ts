@@ -1,6 +1,6 @@
 export default class Utils {
 
-  static hoverEffect = (selector: string, className: string): React.DOMAttributes<HTMLElement> => ({
+  static hoverEffect = (selector: string, className: string): React.DOMAttributes<any> => ({
     onMouseOver: () => document.querySelectorAll(selector).forEach((item) => item.classList.toggle(className, true)),
     onMouseOut: () => document.querySelectorAll(selector).forEach((item) => item.classList.toggle(className, false))
   })

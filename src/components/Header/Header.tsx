@@ -5,6 +5,7 @@ import Avatar from './Avatar';
 import { ParallaxLayer } from '@react-spring/parallax';
 import { ParallaxProps } from 'shared/ParallaxProps';
 import React from 'react';
+import Utils from 'shared/Utils';
 import { arrowUp } from 'assets/index';
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
@@ -87,7 +88,7 @@ export default function Header(props: ParallaxProps) {
         </ParallaxLayer>
       </header>
       <ParallaxLayer offset={props.offset} speed={-1.5} style={{ zIndex: 100 }}>
-        <div className="downArrowContainer" onClick={() => props.scrollTo()}>
+        <div className="downArrowContainer" onClick={() => props.scrollTo()} {...Utils.cursorHoverEffect('black')}>
           <img
             alt=" "
             className="downArrow"

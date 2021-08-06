@@ -7,10 +7,10 @@ const eyebrowMovement = (_, y) => {
   return foo < 0 ? `translateY(${foo * 12 - 2}px)` : `translateY(${-2}px)`;
 };
 
+// TODO: Add smile on arrow hover
 export default function Avatar(props) {
   const hairColor = '#715140';
   const skinColor = '#F0C59E';
-  // const hoodieColor = '#262E33';
   const hoodieColor = '#FFDEB5';
   const eyesColor = '#0D4404';
 

@@ -7,15 +7,21 @@
 @mixin content {
   max-width: 1500px;
   margin: auto;
-  padding: 100px 30px 30px;
-  min-height: 80vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin content-padding {
+  padding: 0 30px 0;
 
   @include min-width($xs) {
-    padding: 120px 40px 40px;
+    padding: 0 40px 0;
   }
   
   @include min-width($s) {
-    padding: 140px 50px 50px;
+    padding: 0 50px 0;
   }
 }
 

@@ -1,14 +1,7 @@
-import { SpringValue, animated } from 'react-spring';
-
+import { ParallaxLayer } from '@react-spring/parallax';
 import React from 'react';
 
-const trans = (x: number, y: number) => `translate3d(${2*x}px,${2*y}px,0) translate3d(-50%,-50%,0)`;
-
-interface background {
-  trail: { xy: SpringValue<number[]>; }[]
-}
-
-const Background = (props: background) => {
+const Background = () => {
   
   return (
     <>
@@ -25,10 +18,37 @@ const Background = (props: background) => {
           />
         </filter>
       </svg>
-      <div className="cursorMain">
-        {props.trail.map((spring, index) => (
-          <animated.div key={index} style={{ transform: spring.xy.to(trans) }} />
-        ))}
+      {/* 
+      // TODO: Finish this
+       */}
+      <div className="backgroundBlobs">
+        <ParallaxLayer offset={0} speed={0.4}>
+          <div className="bg-blob" style={{width: '40px', height: '40px', top: '90%', left: '90%'}}></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0}>
+          <div className="bg-blob" style={{width: '100px', height: '100px', top: '90%', left: '90%'}}></div>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={0} speed={0.5}>
+          <div className="bg-blob" style={{width: '50px', height: '50px', top: '90%', left: '78%'}}></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.5}>
+          <div className="bg-blob" style={{width: '30px', height: '30px', top: '88%', left: '80%'}}></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={1.5}>
+          <div className="bg-blob" style={{width: '30px', height: '30px', top: '93%', left: '80%'}}></div>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={0.5} speed={0.1}>
+          <div className="bg-blob" style={{width: '35px', height: '35px', top: '60%', left: '40%'}}></div>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1} speed={1.5}>
+          <div className="bg-blob" style={{width: '50px', height: '50px', top: '10%', left: '85%'}}></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={1} speed={1}>
+          <div className="bg-blob" style={{width: '35px', height: '35px', top: '10%', left: '82%'}}></div>
+        </ParallaxLayer>
       </div>
     </>
   );

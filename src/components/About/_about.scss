@@ -1,5 +1,6 @@
 .about {
   @include content();
+  @include content-padding();
 
   .waving-hand {
     display: inline-block;

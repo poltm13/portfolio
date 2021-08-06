@@ -1,6 +1,8 @@
 import { Moon, Sun } from 'assets/index';
 import React, { useEffect, useState } from 'react';
 
+import Utils from 'shared/Utils';
+
 export default function ThemeToggler(props) {
   const [darkTheme, setTheme] = useState(
     // typeof window !== 'undefined' ? window.matchMedia('(prefers-color-scheme: dark)').matches : false
@@ -48,6 +50,7 @@ export default function ThemeToggler(props) {
 
   return (
     <div
+      {...Utils.hoverEffect('.cursorMain', 'hover-big')}
       style={darkTheme ? { ...toggler, ...togglerDark } : toggler}
       className={props.className}
       onClick={toggleHandler}

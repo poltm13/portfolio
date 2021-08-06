@@ -1,5 +1,6 @@
 .education {
   @include content();
+  @include content-padding();
   padding-left: 0;
   padding-right: 0;
   position: relative;

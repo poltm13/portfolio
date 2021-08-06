@@ -9,6 +9,7 @@ import { config, useTrail } from 'react-spring';
 import About from 'components/About/About';
 import Background from 'components/Background/Background';
 import Contact from 'components/Contact/Contact';
+import Cursor from 'components/Background/Cursor';
 import Curve from 'components/Curve';
 import Header from 'components/Header/Header';
 import Logo from 'components/Navbar/Logo';
@@ -49,9 +50,10 @@ export default function IndexPage() {
   }, []);
 
   return (
-    <div onMouseMove={handleMouseMove}>
+    <div onMouseMove={handleMouseMove} style={{cursor: `${!touchDevice ? 'none' : 'auto'}`}}>
       <Logo className="sticky-nav--element sticky-nav--logo" scrollTop={handleArrowUp}/>
       <ThemeToggler className="sticky-nav--element sticky-nav--toggler"/>
+      <Cursor trail={trail} isTouchDevice={touchDevice}/>
 
       <Parallax className="parallax-main" enabled={false} ref={parallax} pages={2} config={config.molasses}>
       
@@ -59,14 +61,25 @@ export default function IndexPage() {
         
         <ParallaxLayer className="content-background" offset={1} speed={0.2}>
           <Curve upper={true}/>
-          <div id='content' style={{cursor: `${!touchDevice ? 'none' : 'auto'}`}}>
-            { !touchDevice && <Background trail={trail}/> }
-            <About/>
-            <Skills/>
-            <Projects />
-            <Contact handleArrowUp={handleArrowUp}/>
-            <Curve upper={false}/>
-          </div>
+          <Parallax pages={4} id='content'>
+            <Background/>
+            <ParallaxLayer offset={0}>
+              <About/>
+            </ParallaxLayer>
+            <ParallaxLayer offset={1}>              
+              <Skills/>
+            </ParallaxLayer>
+            <ParallaxLayer offset={2}>              
+              <Projects />
+            </ParallaxLayer>
+            <ParallaxLayer offset={3}>              
+              <Contact handleArrowUp={handleArrowUp}/>
+            </ParallaxLayer>
+          </Parallax>
+          {/*  
+            // TODO: Fix z-index in contact  
+          */}
+          <Curve upper={false}/>
         </ParallaxLayer>
 
       </Parallax>
