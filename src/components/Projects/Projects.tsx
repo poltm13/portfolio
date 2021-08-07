@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import { animated, config, useSpring, useTrail } from 'react-spring';
 
-import BlobBackground from './BlobBackground';
 import { CardProps } from 'shared/CardProps';
 import ProjectCard from './ProjectCard';
+import Utils from 'shared/Utils';
 import { _Projects } from 'assets/index';
 import useElementOnScreen from 'shared/useElementOnScreen';
 
 export default function Projects() {
 
-  const [ containerRef, isVisible ] = useElementOnScreen({ threshold: 0.5 });
+  const [ containerRef, isVisible ] = useElementOnScreen({ threshold: 0.7 });
 
   const props = useSpring({ 
     x: isVisible ? 0 : -200, 
@@ -21,13 +21,12 @@ export default function Projects() {
 
   useEffect(() => {
     api.start({scale: isVisible ? 1 : 0});
-    document.querySelector('.blob-container svg').classList.toggle('visible', isVisible as boolean);
+    Utils.toggleClass('.projects-blob-container > div', 'visible', isVisible as boolean);
   }, [isVisible]);
 
   return (
     <section ref={containerRef as React.MutableRefObject<any>}>
       <div className="projects" >
-        <BlobBackground />
         <animated.h1 style={props}>Projects</animated.h1>
         <div className="projects--cards-container">
           {trail.map((styles, i) =>

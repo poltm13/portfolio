@@ -18,9 +18,6 @@ const Background = () => {
           />
         </filter>
       </svg>
-      {/* 
-      // TODO: Finish this
-       */}
       <div className="backgroundBlobs">
         <ParallaxLayer offset={0} speed={0.4}>
           <div className="bg-blob" style={{width: '40px', height: '40px', top: '90%', left: '90%'}}></div>
@@ -69,14 +66,26 @@ const Background = () => {
         </ParallaxLayer>
 
         <ParallaxLayer offset={1.5} speed={0.1}>
-          <div className="bg-blob" style={{width: '35px', height: '35px', top: '60%', left: '20%'}}></div>
+          <div className="bg-blob" style={{width: '35px', height: '35px', top: '50%', left: '20%'}}></div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2} speed={1.5}>
-          <div className="bg-blob" style={{width: '50px', height: '50px', top: '10%', left: '60%'}}></div>
+        <ParallaxLayer offset={2} speed={1.2}>
+          <div className="bg-blob" style={{width: '50px', height: '50px', top: '0%', left: '60%'}}></div>
         </ParallaxLayer>
-        <ParallaxLayer offset={2} speed={1}>
-          <div className="bg-blob" style={{width: '35px', height: '35px', top: '10%', left: '58%'}}></div>
+        <ParallaxLayer offset={2} speed={1.5}>
+          <div className="bg-blob" style={{width: '35px', height: '35px', top: '0%', left: '58%'}}></div>
+        </ParallaxLayer>
+       
+        
+        <ParallaxLayer offset={2} speed={0} className="projects-blob-container">
+          <div>
+            <div className="bg-blob move-y"></div>
+            <div className="bg-blob move-x"></div>
+            <div className="bg-blob move-x"></div>
+            <div className="bg-blob move-y"></div>
+            <div className="bg-blob move-x"></div>
+            <div className="bg-blob move-x"></div>
+          </div>
         </ParallaxLayer>
       </div>
     </>

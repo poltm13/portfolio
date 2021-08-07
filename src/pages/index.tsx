@@ -33,8 +33,15 @@ export default function IndexPage() {
     page.current = to;
   };
   
+  // TODO: Add contrast on cursor in header
+  // TODO: React Helmet
+  // TODO: Clean assets
+  // TODO: Contact arrow hover small
+  // TODO: Fix built touchdevice detection
+  // TODO: Fix built theme toggler
   const handleArrowUp = () => {
     scrollTo(0);
+    Utils.toggleClass('.cursorMain', 'onHeader', true);
     Utils.toggleClass('#Smile', 'visible', false);
     Utils.toggleClass('.sticky-nav--element', 'sticky-nav--anim', false);
     setTimeout(() => Utils.resetContentScroll(), 1000);
@@ -42,11 +49,13 @@ export default function IndexPage() {
 
   const handleArrowDown = () => {
     scrollTo(1);
+    Utils.toggleClass('.cursorMain', 'onHeader', false);
     Utils.toggleClass('#Smile', 'visible', true);
     Utils.toggleClass('.sticky-nav--element', 'sticky-nav--anim', true);
   };
 
   useEffect(() => {
+    Utils.toggleClass('.cursorMain', 'onHeader', true);
     Utils.resetContentScroll();
     scrollTo(0);
   }, []);

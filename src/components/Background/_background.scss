@@ -9,12 +9,24 @@
   100% {transform: translateY(-40%)};
 }
 
+@keyframes moveX-small {
+  0% {transform: translate(-60%, -50%)};
+  50% {transform: translate(-40%, -50%)};
+  100% {transform: translate(-60%, -50%)};
+}
+@keyframes moveY-small {
+  0% {transform: translate(-50%, -60%)};
+  50% {transform: translate(-50%, -40%)};
+  100% {transform: translate(-50%, -60%)};
+}
+
 .backgroundBlobs {
   pointer-events: none;
   filter: url('#goo');
 
   .bg-blob {
     position: absolute;
+    transition: background 0.5s;
     will-change: transform;
     border-radius: 50%;
     background: #7af2ff;
@@ -43,6 +55,66 @@
   }
 }
 
+.projects-blob-container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  & > div {
+    width: 100%;
+    height: 100%;
+    transition: all 1s ease-in-out;
+    transform: scale(0.2);
+
+    &.visible {
+      transform: scale(1)
+    }
+  }
+
+  .bg-blob {
+    &::after {
+      background: #ffffff66
+    }
+    width: 50%;
+    height: 50%;
+    max-height: 100vw;
+
+    &.move-x {
+      animation: moveX-small 20s ease-in-out 0s infinite;
+    }
+
+    &.move-y {
+      animation: moveY-small 15s ease-in-out 3s infinite;
+    }
+
+    &:nth-child(1) {
+      width: 60%;
+      height: 60%;
+      top: 45%;
+      left: 35%;
+    }
+    &:nth-child(2) {
+      top: 40%;
+      left: 60%;
+    }
+    &:nth-child(3) {
+      top: 60%;
+      left: 40%;
+    }
+    &:nth-child(4) {
+      top: 60%;
+      left: 60%;
+    }
+    &:nth-child(5) {
+      top: 40%;
+      left: 50%;
+    }
+    &:nth-child(6) {
+      top: 60%;
+      left: 50%;
+    }
+  }
+}
 
 .cursorMain {
   transform: scale(0.5);
@@ -99,6 +171,10 @@
         height: 20px;
       }
     }
+  }
+  
+  &.onHeader > div {
+    background: #02a4b6;
   }
 
   &.hover-small > div:nth-child(2) {

@@ -42,10 +42,13 @@
         padding: 50px;
       }
   
-      .contact--resume {
+      &--resume {
+        text-transform: none;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
         inset: 0;
         margin: auto;
-        display: block;
         border-radius: 50px;
         padding: 5px 20px;
         border: none;
@@ -53,6 +56,10 @@
         cursor: none;
         text-align: center;
         color: black !important;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
   
         &:after {    
           background: none repeat scroll 0 0 transparent;
@@ -61,7 +68,7 @@
           display: block;
           height: 2px;
           left: 50%;
-          position: relative;
+          position: absolute;
           background: rgb(0, 0, 0);
           transition: width 0.3s ease 0s, left 0.3s ease 0s;
           width: 0;
@@ -79,7 +86,7 @@
         }
       }
   
-      .contact--media {
+      &--media {
         display: flex;
         align-items: center;
         justify-content: space-evenly;
@@ -104,7 +111,7 @@
   
       }
   
-      .contact--map {
+      &--map {
         padding: 0;
         width: 100%;
         @include flexCenter();

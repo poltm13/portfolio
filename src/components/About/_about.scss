@@ -70,7 +70,7 @@
   h3 {
     margin-bottom: 1rem;
 
-    @include min-width(500px) {
+    @include min-width($s) {
       margin-bottom: 1.2rem;
     }
   }

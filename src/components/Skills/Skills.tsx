@@ -1,7 +1,6 @@
 import React, { FC, useState } from 'react';
 import { animated, config, useSpring } from 'react-spring';
 
-import { Row } from 'react-bootstrap';
 import SkillChart from './SkillChart';
 import useElementOnScreen from 'shared/useElementOnScreen';
 
@@ -25,14 +24,14 @@ const Skills:FC = () => {
     <section ref={containerRef as React.MutableRefObject<any>}>
       <animated.div style={props} className="skills">
         <h1>Skills</h1>
-        <Row>
-          <SkillChart className="chartContainer col-xl-7 col-md-6 col-sm-12"
+        <div className="skills--container">
+          <SkillChart className="chartContainer"
             isVisible={isVisible} 
             selected={skillSelected}
             setSelected={setSelected}
             parentProps={parentProps}
           />
-          <animated.div className="skillText col-xl-5 col-md-6 col-sm-12"
+          <animated.div className="skillText"
             style={{ ...parentProps, paddingBottom: '100px'}}
           >
             <div>
@@ -43,7 +42,7 @@ const Skills:FC = () => {
               <h3>Good problem solver</h3>
             </div>
           </animated.div>
-        </Row>
+        </div>
       </animated.div>
     </section>
   );

@@ -20,6 +20,12 @@ export default class Utils {
           : 
           cursor.style.removeProperty('background');
       });
+      document.querySelectorAll('.bg-blob')?.forEach((blob: HTMLElement) => {
+        toggle ? 
+          blob.style.setProperty('background', color)
+          : 
+          blob.style.removeProperty('background');
+      });
     }
   }
 
