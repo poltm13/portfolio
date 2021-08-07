@@ -35,13 +35,15 @@ export default function IndexPage() {
   
   const handleArrowUp = () => {
     scrollTo(0);
-    document.querySelectorAll('.sticky-nav--element').forEach(el => el.classList.toggle('sticky-nav--anim', false));
+    Utils.toggleClass('#Smile', 'visible', false);
+    Utils.toggleClass('.sticky-nav--element', 'sticky-nav--anim', false);
     setTimeout(() => Utils.resetContentScroll(), 1000);
   };
 
   const handleArrowDown = () => {
     scrollTo(1);
-    document.querySelectorAll('.sticky-nav--element').forEach(el => el.classList.toggle('sticky-nav--anim', true));
+    Utils.toggleClass('#Smile', 'visible', true);
+    Utils.toggleClass('.sticky-nav--element', 'sticky-nav--anim', true);
   };
 
   useEffect(() => {

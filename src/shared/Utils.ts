@@ -1,8 +1,8 @@
 export default class Utils {
 
   static hoverEffect = (selector: string, className: string): React.DOMAttributes<any> => ({
-    onMouseOver: () => document.querySelectorAll(selector).forEach((item) => item.classList.toggle(className, true)),
-    onMouseOut: () => document.querySelectorAll(selector).forEach((item) => item.classList.toggle(className, false))
+    onMouseOver: () => this.toggleClass(selector, className, true),
+    onMouseOut: () => this.toggleClass(selector, className, false)
   })
 
   static cursorHoverEffect = (color?: string): React.DOMAttributes<HTMLElement> => ({
@@ -21,6 +21,10 @@ export default class Utils {
           cursor.style.removeProperty('background');
       });
     }
+  }
+
+  static toggleClass = (selector: string, className: string, toggle: boolean): void => {
+    document.querySelectorAll(selector).forEach((item) => item.classList.toggle(className, toggle));
   }
   
   static isTouchDevice = (): boolean => (typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0));

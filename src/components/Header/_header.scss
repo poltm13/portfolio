@@ -265,3 +265,11 @@ $logo-small-size: 30px;
 #Eyes {
   animation: blink 5s linear infinite 2s;
 }
+
+#Smile {
+  opacity: 0;
+
+  &.visible {
+    opacity: 1;
+  }
+}

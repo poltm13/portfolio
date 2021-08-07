@@ -9,7 +9,7 @@
     background-color: $dark-section-background;
   }
 
-  .cursorMain > div {
+  .cursorMain > div, .bg-blob {
     background: #2f9ca8;
   }
 
@@ -45,7 +45,7 @@
     color: rgba(255, 255, 255, 0.6);
   }
 
-  .contact-container {
+  .contact-container > div {
     background: linear-gradient(
       90deg,
       #54c7d3 0%,
