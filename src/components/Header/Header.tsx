@@ -3,7 +3,7 @@ import { innerHeaderLogos, outerHeaderLogos } from 'assets/index';
 
 import Avatar from './Avatar';
 import { ParallaxLayer } from '@react-spring/parallax';
-import { ParallaxProps } from 'shared/ParallaxProps';
+import { ParallaxProps } from 'shared/interfaces/ParallaxProps';
 import React from 'react';
 import Utils from 'shared/Utils';
 import { arrowUp } from 'assets/index';
@@ -54,7 +54,7 @@ export default function Header(props: ParallaxProps) {
         >
           <div className="headerLogosInner">
             {innerHeaderLogos.map((data, index) => {
-              return <img alt=" " src={data} key={index} />;
+              return <img alt="" src={data} key={index} />;
             })}
           </div>
         </animated.div>
@@ -68,7 +68,7 @@ export default function Header(props: ParallaxProps) {
         >
           <div className="headerLogosOuter">
             {outerHeaderLogos.map((data, index) => {
-              return <img alt=" " src={data} key={index} />;
+              return <img alt="" src={data} key={index} />;
             })}
           </div>
         </animated.div>
@@ -90,7 +90,7 @@ export default function Header(props: ParallaxProps) {
       <ParallaxLayer offset={props.offset} speed={-1.5} style={{ zIndex: 100 }}>
         <div className="downArrowContainer" onClick={() => props.scrollTo()} {...Utils.cursorHoverEffect('black')}>
           <img
-            alt=" "
+            alt=""
             className="downArrow"
             src={arrowUp}
           />

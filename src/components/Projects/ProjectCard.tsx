@@ -1,4 +1,4 @@
-import { CardProps } from 'shared/CardProps';
+import { CardProps } from 'shared/interfaces/CardProps';
 import React from 'react';
 import Utils from 'shared/Utils';
 
@@ -7,12 +7,12 @@ export default function ProjectCard(props: CardProps) {
     <div className="project-card" {...Utils.cursorHoverEffect()}>
       
       {props.logoSrc && <div className="project-card--logo">
-        <img src={props.logoSrc} alt="" />
+        <img src={props.logoSrc} alt="Project logo" />
       </div>}
 
       <div className="project-card--container">
         <div className="project-card--image">
-          <img src={props.imageSrc} alt="" id={props.id}/>
+          <img src={props.imageSrc} alt="Project preview" id={props.id}/>
         </div>
         <div className="project-card--content">
           <h3 className="project-card--content--title">{props.title}</h3>

@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
 import { animated, config, useSpring } from 'react-spring';
 
+import React from 'react';
 import useElementOnScreen from 'shared/useElementOnScreen';
 
-const About:FC = () => {
+export default function About() {
 
   const [ containerRef, isVisible ] = useElementOnScreen({ threshold: 0.5 });
 
@@ -68,6 +68,4 @@ const About:FC = () => {
       </animated.div>
     </section>
   );
-};
-
-export default About;
+}

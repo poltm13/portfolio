@@ -1,15 +1,12 @@
 import React from 'react';
+import { SkillProps } from 'shared/interfaces/SkillProps';
 import Utils from 'shared/Utils';
-import WebPicture from 'shared/WebPicture';
 
-export default function Skill(props) {
+export default function Skill(props: SkillProps) {
   return (
     <div style={{display: 'flex'}} className={props.focused ? 'focused' : ''}>
       <div className="skill__img" {...Utils.cursorHoverEffect(props.color)}>
-        <WebPicture
-          src={props.src}
-          srcType={props.srcType}
-        />
+        <img src={props.src} alt={props.name + ' logo'} />
       </div>
       <div className='skill__chart'>
         <div className="skill__chart--tooltiptext">

@@ -96,105 +96,90 @@ export const outerHeaderLogos = [
 export const skillLogos = [
   {
     src: js,
-    srcType: 'png',
     skill: '90%',
     color: '#F7DF1F',
     name: 'JavaScript'
   },
   {
     src: react,
-    srcType: 'png',
     skill: '80%',
     color: '#62DAFB',
     name: 'React JS'
   },
   {
     src: angular,
-    srcType: 'png',
     skill: '90%',
     color: '#E23237',
     name: 'Angular'
   },
   {
     src: typescript,
-    srcType: 'png',
     skill: '70%',
     color: '#3178C6',
     name: 'Typescript'
   },
   {
     src: html,
-    srcType: 'png',
     skill: '90%',
     color: '#E64D19',
     name: 'HTML'
   },
   {
     src: css,
-    srcType: 'png',
     skill: '90%',
     color: '#0196DC',
     name: 'CSS'
   },
   {
     src: sass,
-    srcType: 'png',
     skill: '80%',
     color: '#CD6799',
     name: 'SASS'
   },
   {
     src: git,
-    srcType: 'png',
     skill: '80%',
     color: '#F4511E',
     name: 'Git'
   },
   {
     src: seo,
-    srcType: 'png',
     skill: '60%',
     color: '#28B446',
     name: 'SEO'
   },
   {
     src: figma,
-    srcType: 'png',
     skill: '60%',
     color: '#A259FF',
     name: 'Figma'
   },
   {
     src: python,
-    srcType: 'png',
     skill: '50%',
     color: '#376F9E',
     name: 'Python'
   },
   {
     src: java,
-    srcType: 'png',
     skill: '50%',
     color: '#DE0B18',
     name: 'Java'
   },
   {
     src: matlab,
-    srcType: 'png',
     skill: '70%',
     color: '#FA5D07',
     name: 'Matlab'
   },
   {
     src: c,
-    srcType: 'png',
     skill: '60%',
     color: '#293693',
     name: 'C'
   },
   {
     src: arduino,
-    srcType: 'png',
     skill: '50%',
     color: '#1A989E',
     name: 'Arduino'

@@ -1,10 +1,10 @@
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import { animated, config, useSpring } from 'react-spring';
 
 import SkillChart from './SkillChart';
 import useElementOnScreen from 'shared/useElementOnScreen';
 
-const Skills:FC = () => {
+export default function Skills() {
   
   const [ containerRef, isVisible ] = useElementOnScreen({ threshold: 0.5 });
   const [skillSelected, setSelected] = useState(0);
@@ -46,6 +46,4 @@ const Skills:FC = () => {
       </animated.div>
     </section>
   );
-};
-
-export default Skills;
+}

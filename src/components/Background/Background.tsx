@@ -1,7 +1,7 @@
 import { ParallaxLayer } from '@react-spring/parallax';
 import React from 'react';
 
-const Background = () => {
+export default function Background() {
   
   return (
     <>
@@ -90,6 +90,4 @@ const Background = () => {
       </div>
     </>
   );
-};
-
-export default Background;
+}

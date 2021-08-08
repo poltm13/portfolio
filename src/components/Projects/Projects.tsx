@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { animated, config, useSpring, useTrail } from 'react-spring';
 
-import { CardProps } from 'shared/CardProps';
+import { CardProps } from 'shared/interfaces/CardProps';
 import ProjectCard from './ProjectCard';
 import Utils from 'shared/Utils';
 import { _Projects } from 'assets/index';

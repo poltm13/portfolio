@@ -1,3 +1,4 @@
+import { GridItem, SkillLogos } from 'shared/interfaces/SkillProps';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { animated, useSprings } from 'react-spring';
 
@@ -5,20 +6,6 @@ import Skill from './Skill';
 import { skillLogos } from 'assets/index';
 import useMeasure from 'react-use-measure';
 import useMedia from 'shared/useMedia';
-
-interface SkillLogos {
-  src: string,
-  srcType: string,
-  skill: string,
-  color: string,
-  name: string
-}
-
-interface GridItem extends SkillLogos {
-  xy: number[],
-  width: number,
-  height: number
-}
 
 const SkillChart = ({selected, setSelected, isVisible, className, parentProps}) => {
   

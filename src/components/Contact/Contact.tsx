@@ -17,7 +17,7 @@ const Contact = ({handleArrowUp}) => {
       <div>
         <Curve style={{top: 0, bottom: 'auto', transform: 'translateY(-98%)', display: 'flex'}} upper={false}/>
         <div className="contact">
-          <a href={contact.cv} target="_blank" rel="noopener noreferrer" >
+          <a href={contact.cv} target="_blank" rel="noopener noreferrer" aria-label="Resume download">
             <button
               className="contact--resume"
               {...Utils.cursorHoverEffect()}
