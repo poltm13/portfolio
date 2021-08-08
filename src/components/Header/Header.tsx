@@ -88,7 +88,7 @@ export default function Header(props: ParallaxProps) {
         </ParallaxLayer>
       </header>
       <ParallaxLayer offset={props.offset} speed={-1.5} style={{ zIndex: 100 }}>
-        <div className="downArrowContainer" onClick={() => props.scrollTo()} {...Utils.cursorHoverEffect('black')}>
+        <div className="downArrowContainer" onClick={() => props.scrollTo()} {...Utils.cursorHoverEffect()}>
           <img
             alt=""
             className="downArrow"

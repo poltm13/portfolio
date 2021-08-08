@@ -46,10 +46,12 @@
     }
 
     &.move-x {
+      transform: translateX(-40%);
       animation: moveX 12s ease-in-out 0s infinite;
     }
 
     &.move-y {
+      transform: translateY(-40%);
       animation: moveY 10s ease-in-out 3s infinite;
     }
   }

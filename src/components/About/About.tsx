@@ -37,7 +37,7 @@ export default function About() {
         </h1>
         <div>
           <h3 style={{marginBottom: '20px'}}>
-            Hi, I&apos;m Pol Tedesko 
+            Hi, I&apos;m Pol 
             <animated.span 
               style={{ rotate: waving.to({
                 range: [0, 0.125, 0.25, 0.375, 0.50, 0.625, 0.75],
@@ -52,13 +52,12 @@ export default function About() {
             specialized in Audiovisual Systems.
           </h3>
           <h3>
-            My main interest and experience is in Front-End Web Development, but I also have a passion for design
+            My main interest and experience is in Front-End Web Development, but I also have a passion for UX/UI design
             as well as voice and image processing. 
           </h3>
           <h3>
             I consider myself a passionate person about new technology and I&apos;m
-            always seeking to expand my training and knowledge in the workplace, so that I can 
-            eventually play a role as a Full Stack Web Developer.
+            always seeking to expand my training and knowledge in the workplace.
           </h3>
         </div>
         <p>Scroll down for more</p>

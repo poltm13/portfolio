@@ -259,6 +259,11 @@ $logo-small-size: 30px;
   .downArrow {
     width: 50px;
     height: 50px;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2)
+    }
   }
 }
 

@@ -3,7 +3,7 @@ import '@fontsource/bebas-neue';
 import '@fontsource/raleway';
 
 import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax';
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { config, useTrail } from 'react-spring';
 
 import About from 'components/About/About';
@@ -23,7 +23,7 @@ export default function IndexPage() {
 
   const parallax = useRef<IParallax>(null);
   const page = useRef(0);
-  const touchDevice = useMemo(() => Utils.isTouchDevice(), []);
+  const [touchDevice, isTouchDevice] = useState(false);
   const fastCursor = { duration: 50 }; // Alternative => { tension: 1200, friction: 60 };
   const slowCursor = { mass: 10, tension: 200, friction: 50 };
   const [trail, api] = useTrail(2, i => ({ xy: [0, 0], config: i === 0 ? fastCursor : slowCursor}));
@@ -34,12 +34,9 @@ export default function IndexPage() {
     page.current = to;
   };
   
-  // TODO: Accesibility
   // TODO: gatsby-plugin-manifest (PWA)
-  // TODO: Tweak 404
   // TODO: Clean assets
-  // TODO: Fix built touchdevice detection
-  // TODO: Fix built theme toggler
+  // TODO: Google Maps -> React.lazy()
   const handleArrowUp = () => {
     scrollTo(0);
     Utils.toggleClass('.cursorMain', 'onHeader', true);
@@ -59,6 +56,7 @@ export default function IndexPage() {
     Utils.toggleClass('.cursorMain', 'onHeader', true);
     Utils.resetContentScroll();
     scrollTo(0);
+    isTouchDevice(Utils.isTouchDevice());
   }, []);
 
   return (

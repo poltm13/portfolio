@@ -5,7 +5,15 @@
 
   h1 {
     @include underline();
-    margin-bottom: 70px;
+    margin-bottom: 40px;
+    
+    @include min-width($s) {
+      margin-bottom: 50px;
+    }
+    
+    @include min-width($m) {
+      margin-bottom: 70px;
+    }
   }
 
   &--container {
@@ -18,14 +26,7 @@
       max-height: 400px;
       padding-left: 0px;
       margin-top: 20px;
-
       width: 100%;
-      @include min-width($m) {
-        width: 49%;
-      }
-      @include min-width($xl) {
-        width: 41%;
-      }
       
       @include min-width($xs) {
         padding-left: 10px;
@@ -38,10 +39,15 @@
       @include min-width($m) {
         padding-left: 10px;
         margin-top: 0px;
+        width: 49%;
       }
       
       @include min-width($l) {
         padding-left: 80px;
+      }
+      
+      @include min-width($xl) {
+        width: 41%;
       }
       
       div {

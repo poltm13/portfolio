@@ -20,7 +20,7 @@ export default class Utils {
           : 
           cursor.style.removeProperty('background');
       });
-      document.querySelectorAll('.bg-blob')?.forEach((blob: HTMLElement) => {
+      document.querySelectorAll('.skills-blob')?.forEach((blob: HTMLElement) => {
         toggle ? 
           blob.style.setProperty('background', color)
           : 
@@ -33,7 +33,7 @@ export default class Utils {
     document.querySelectorAll(selector).forEach((item) => item.classList.toggle(className, toggle));
   }
   
-  static isTouchDevice = (): boolean => (typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0));
+  static isTouchDevice = (): boolean => ('ontouchstart' in window || navigator.maxTouchPoints > 0);
   
   static resetContentScroll = (): void => {document.getElementById('content')?.scrollTo(0, 0);};
 }
