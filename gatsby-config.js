@@ -7,6 +7,7 @@ module.exports = {
     title: 'portfolio'
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-root-import',
       options: {

@@ -61,14 +61,14 @@ html {
 }
 
 body, .content-background {
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", -apple-system, Roboto, sans-serif, serif;
   color: $text;
   background-color: $primary;
   transition: background 0.2s ease-out;
 }
 
 h1 {
-  font-family: "Bebas Neue", cursive;
+  font-family: "Bebas Neue", -apple-system, Roboto, sans-serif, serif;
   font-size: 1.5rem;
   font-weight: bold;
 

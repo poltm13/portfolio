@@ -14,6 +14,7 @@ import Curve from 'components/Curve';
 import Header from 'components/Header/Header';
 import Logo from 'components/Navbar/Logo';
 import Projects from 'components/Projects/Projects';
+import SEO from 'components/SEO';
 import Skills from 'components/Skills/Skills';
 import ThemeToggler from 'components/Navbar/ThemeToggler';
 import Utils from 'shared/Utils';
@@ -33,10 +34,10 @@ export default function IndexPage() {
     page.current = to;
   };
   
-  // TODO: Add contrast on cursor in header
-  // TODO: React Helmet
+  // TODO: Accesibility
+  // TODO: gatsby-plugin-manifest (PWA)
+  // TODO: Tweak 404
   // TODO: Clean assets
-  // TODO: Contact arrow hover small
   // TODO: Fix built touchdevice detection
   // TODO: Fix built theme toggler
   const handleArrowUp = () => {
@@ -62,6 +63,7 @@ export default function IndexPage() {
 
   return (
     <div onMouseMove={handleMouseMove} style={{cursor: `${!touchDevice ? 'none' : 'auto'}`}}>
+      <SEO/>
       <Logo className="sticky-nav--element sticky-nav--logo" scrollTop={handleArrowUp}/>
       <ThemeToggler className="sticky-nav--element sticky-nav--toggler"/>
       <Cursor trail={trail} isTouchDevice={touchDevice}/>

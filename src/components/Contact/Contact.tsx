@@ -1,4 +1,4 @@
-import ArrowUp from 'components/ArrowUp';
+import ArrowUp from './ArrowUp';
 import Curve from 'components/Curve';
 import DownloadIcon from './DownloadIcon';
 import GithubIcon from './GithubIcon';

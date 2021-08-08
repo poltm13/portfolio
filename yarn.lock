@@ -3859,16 +3859,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-runtime@npm:^6.26.0":
-  version: 6.26.0
-  resolution: "babel-runtime@npm:6.26.0"
-  dependencies:
-    core-js: ^2.4.0
-    regenerator-runtime: ^0.11.0
-  checksum: 5010bf1d81e484d9c6a5b4e4c32564a0dc180c2dc5a65f999729c3cb63b9c6e805d3d10c19a4ccc2112bce084e39e51e52daf5c21df0141ce8e6e37727af2e0b
-  languageName: node
-  linkType: hard
-
 "backo2@npm:^1.0.2, backo2@npm:~1.0.2":
   version: 1.0.2
   resolution: "backo2@npm:1.0.2"
@@ -4903,13 +4893,6 @@ __metadata:
   version: 3.14.0
   resolution: "core-js-pure@npm:3.14.0"
   checksum: 8afceb673f05fd3fa384783f063b69f20f4f9a7963a66ac2330e3c63c14cb1e63b520e0195eba7019ee64bc3d5c3389000ef225b612dbadc8e1cfce7de54c907
-  languageName: node
-  linkType: hard
-
-"core-js@npm:^2.4.0":
-  version: 2.6.12
-  resolution: "core-js@npm:2.6.12"
-  checksum: b865823ce9cb5bc63336856440f6525e4996bb91af30660081e82bf447d177f36104f0986906a34ea0c9c03cb8b3d960380848a478e2621dac30c9b8198d28da
   languageName: node
   linkType: hard
 
@@ -7240,6 +7223,18 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-react-helmet@npm:^4.11.0":
+  version: 4.11.0
+  resolution: "gatsby-plugin-react-helmet@npm:4.11.0"
+  dependencies:
+    "@babel/runtime": ^7.14.6
+  peerDependencies:
+    gatsby: ^3.0.0-next.0
+    react-helmet: ^5.1.3 || ^6.0.0
+  checksum: 567d36443d44fd674fb7fee1a0fee1069f43156cca1667e1e86eb8c3ac76198b2bbf4dbd6459d366000cb6e101f10738ceb023086d89f30fa33cc04ab7a15653
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-root-import@npm:^2.0.6":
   version: 2.0.6
   resolution: "gatsby-plugin-root-import@npm:2.0.6"
@@ -7274,16 +7269,6 @@ fsevents@~2.3.1:
   peerDependencies:
     gatsby: ^3.0.0-next.0
   checksum: 5bf628bb9079231e4b0535b8a98c6072f619f64df233391e81a480525008470f2459190d3042bef2c0e4aa59d57eae27d994f35a03ad6e41e96ff547ba57456b
-  languageName: node
-  linkType: hard
-
-"gatsby-plugin-web-font-loader@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "gatsby-plugin-web-font-loader@npm:1.0.4"
-  dependencies:
-    babel-runtime: ^6.26.0
-    webfontloader: ^1.6.28
-  checksum: 4ed4678a84bd505737e21714a8092a54d0dee3c620a94971e341da1dfed9255857e87aeed8255da1c580cb7ddb754955728b758e64081595f31733c1be8ba41b
   languageName: node
   linkType: hard
 
@@ -11553,10 +11538,11 @@ fsevents@~2.3.1:
     eslint-import-resolver-alias: ^1.1.2
     eslint-plugin-react: ^7.24.0
     gatsby: ^3.11.0
+    gatsby-plugin-react-helmet: ^4.11.0
     gatsby-plugin-root-import: ^2.0.6
-    gatsby-plugin-web-font-loader: ^1.0.4
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-helmet: ^6.1.0
     react-spring: ^9.2.4
     react-use-measure: ^2.0.4
     typescript: ^4.3.5
@@ -12366,6 +12352,27 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"react-fast-compare@npm:^3.1.1":
+  version: 3.2.0
+  resolution: "react-fast-compare@npm:3.2.0"
+  checksum: 6fe65c889eb4f326e97769135f97b3d63ac68737866f9c37f9625c9de4f5eaa9abed6f748eb3fd6a66808392118842916309cab7cfa99c67991f0c837433d6d2
+  languageName: node
+  linkType: hard
+
+"react-helmet@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "react-helmet@npm:6.1.0"
+  dependencies:
+    object-assign: ^4.1.1
+    prop-types: ^15.7.2
+    react-fast-compare: ^3.1.1
+    react-side-effect: ^2.1.0
+  peerDependencies:
+    react: ">=16.3.0"
+  checksum: 56fd795b0aecc89bac8d2733268751f0ef463bf6764090f8a801778741d4a6eaf135234cdaa50188bbda29c8e2d3ec43e9a42d1ec06b60092645c8754c7bad81
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.12.0, react-is@npm:^16.8.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -12384,6 +12391,15 @@ fsevents@~2.3.1:
   version: 0.9.0
   resolution: "react-refresh@npm:0.9.0"
   checksum: 300dc431389f4c532bdfec08d5bc59b591c8c440486a7d5770c8954adf3afe62501b659c5acbdb7831751e8be506eb90a6f72491fab40352f3b3fba16897acf6
+  languageName: node
+  linkType: hard
+
+"react-side-effect@npm:^2.1.0":
+  version: 2.1.1
+  resolution: "react-side-effect@npm:2.1.1"
+  peerDependencies:
+    react: ^16.3.0 || ^17.0.0
+  checksum: 5896f7c126b9e7147e3ea6cc967dab8e3a2f6c395bd5327d16483adb91177866eec47770500a92fece866ea551f395484f6e6e078796002293bc1b53b7e65b26
   languageName: node
   linkType: hard
 
@@ -12571,13 +12587,6 @@ fsevents@~2.3.1:
   version: 1.4.2
   resolution: "regenerate@npm:1.4.2"
   checksum: 54275a99effd8a439bcdd88942b61f68a769133df841e90d94df9ae7c250cb6537c0a28dd913116539772b3415edbcb3c8d81c22275595d3755cf0353976dfa4
-  languageName: node
-  linkType: hard
-
-"regenerator-runtime@npm:^0.11.0":
-  version: 0.11.1
-  resolution: "regenerator-runtime@npm:0.11.1"
-  checksum: d98d44b9f5c9c3c670dcb615c5f5374931f937f3075dc8338126f45231643aa8c47ed2bfdef6ae593e311be54ca02d25d943971ca86a3dc1fa99068c2e1b88b2
   languageName: node
   linkType: hard
 
@@ -15010,13 +15019,6 @@ typescript@^4.3.5:
   dependencies:
     minimalistic-assert: ^1.0.0
   checksum: 5916a49cb25fc8c70e4e7eb2d01955061132687a79879292fbdee632952f368c12bc5a641d0404794dbc0e3563f8b6e74dda04467b3e96be8bcd0b919bd47a8c
-  languageName: node
-  linkType: hard
-
-"webfontloader@npm:^1.6.28":
-  version: 1.6.28
-  resolution: "webfontloader@npm:1.6.28"
-  checksum: fea984c451eecc1566a13bdcaf04d50b0f38a032ed7c4b6d81d126f0b5434ea16a5e70d38075e21a8f6d300ff84637c329244a522f40719ebfc86bbb791f6ae3
   languageName: node
   linkType: hard
 
