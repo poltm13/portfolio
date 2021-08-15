@@ -2,7 +2,7 @@ import React from 'react';
 import { SkillProps } from 'shared/interfaces/SkillProps';
 import Utils from 'shared/Utils';
 
-export default function Skill(props: SkillProps) {
+const Skill = (props: SkillProps) => {
   return (
     <div style={{display: 'flex'}} className={props.focused ? 'focused' : ''}>
       <div className="skill__img" {...Utils.cursorHoverEffect(props.color)}>
@@ -22,4 +22,6 @@ export default function Skill(props: SkillProps) {
       </div>
     </div>
   );
-}
+};
+
+export default React.memo(Skill);

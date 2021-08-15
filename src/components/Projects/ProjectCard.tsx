@@ -2,7 +2,7 @@ import { CardProps } from 'shared/interfaces/CardProps';
 import React from 'react';
 import Utils from 'shared/Utils';
 
-export default function ProjectCard(props: CardProps) {
+const ProjectCard =(props: CardProps) => {
   return (
     <div className="project-card" {...Utils.cursorHoverEffect()}>
       
@@ -37,4 +37,6 @@ export default function ProjectCard(props: CardProps) {
 
     </div>
   );
-}
+};
+
+export default React.memo(ProjectCard);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { animated, config, useSpring } from 'react-spring';
 
 import SkillChart from './SkillChart';
@@ -7,7 +7,8 @@ import useElementOnScreen from 'shared/useElementOnScreen';
 export default function Skills() {
   
   const [ containerRef, isVisible ] = useElementOnScreen({ threshold: 0.5 });
-  const [skillSelected, setSelected] = useState(0);
+  const [skillSelected, setSelected] = useState(false);
+  const [firstRender, setFirstRender] = useState(false);
 
   const props = useSpring({ 
     x: isVisible ? 0 : -200, 
@@ -20,20 +21,23 @@ export default function Skills() {
     delay: 400
   });
 
+  useEffect(() => {
+    if (isVisible && !firstRender) {
+      setTimeout(() => {setFirstRender(s => !s);}, 500);
+    }
+  }, [isVisible]);
+
   return (
     <section ref={containerRef as React.MutableRefObject<any>}>
       <animated.div style={props} className="skills">
         <h1>Skills</h1>
-        <div className="skills--container">
+        <animated.div className="skills--container" style={{ ...parentProps, paddingBottom: '100px'}}>
           <SkillChart className="chartContainer"
-            isVisible={isVisible} 
+            firstRender={firstRender} 
             selected={skillSelected}
             setSelected={setSelected}
-            parentProps={parentProps}
           />
-          <animated.div className="skillText"
-            style={{ ...parentProps, paddingBottom: '100px'}}
-          >
+          <div className="skillText" style={{paddingBottom: '100px'}}>
             <div>
               <h3>Proactivity</h3>
               <h3>Good english level</h3>
@@ -41,8 +45,8 @@ export default function Skills() {
               <h3>Leadership and team working</h3>
               <h3>Good problem solver</h3>
             </div>
-          </animated.div>
-        </div>
+          </div>
+        </animated.div>
       </animated.div>
     </section>
   );

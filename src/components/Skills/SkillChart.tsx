@@ -7,14 +7,20 @@ import { skillLogos } from 'assets/index';
 import useMeasure from 'react-use-measure';
 import useMedia from 'shared/useMedia';
 
-const SkillChart = ({selected, setSelected, isVisible, className, parentProps}) => {
+const SkillChart = ({selected, setSelected, className, firstRender}) => {
   
   const focusElement = (index) => {
+    if(index === order[0] || !selected) {
+      setSelected((s) => !s);
+    }
     const newOrder = [...order];
     newOrder.unshift(...newOrder.splice(newOrder.indexOf(index), 1));
     setOrder(newOrder);
-    setSelected(index + 1 === selected ? 0 : index + 1);
   }; 
+
+  useEffect(() => {
+    if (firstRender) focusElement(0);
+  }, [firstRender]);
 
   // Tie media queries to the number of columns and item's height
   const [columns, itemHeight] = useMedia();
@@ -48,21 +54,13 @@ const SkillChart = ({selected, setSelected, isVisible, className, parentProps}) 
   // Define springs
   const springs = useSprings(gridItems.length, gridItems.map((item) => ({xy: item.xy, width: item.width})));
   const childProps = useSprings(gridItems.length, gridItems.map((_, i) => ({
-    y: selected === i + 1 ? -100 : 0,
-    scale: selected === i + 1 ? 1.7 : 1,
+    y: order[0] === i && selected ? -100 : 0,
+    scale: order[0] === i && selected ? 1.7 : 1,
     delay: 400
   })));
 
-  const rendered = useRef(false);
-  useEffect(() => {
-    if (isVisible && !rendered.current) {
-      rendered.current = true;
-      setTimeout(() => focusElement(0), 500);
-    }
-  }, [isVisible]);
-
   return (
-    <animated.div ref={measureRef} style={{...parentProps, height: maxHeight, position: 'relative'}} className={className}>
+    <div ref={measureRef} style={{height: maxHeight, position: 'relative'}} className={className}>
       {springs.map(({ xy, width }, i) => (
         <animated.div 
           style={{
@@ -78,7 +76,7 @@ const SkillChart = ({selected, setSelected, isVisible, className, parentProps}) 
           >
             <Skill
               src={gridItems[i].src}
-              focused={selected === i + 1 }
+              focused={order[0] === i && selected}
               skill={gridItems[i].skill}
               color={gridItems[i].color}
               name={gridItems[i].name}
@@ -86,8 +84,8 @@ const SkillChart = ({selected, setSelected, isVisible, className, parentProps}) 
           </animated.div>
         </animated.div>
       ))}
-    </animated.div>
+    </div>
   );
 };
 
-export default SkillChart;
+export default React.memo(SkillChart);
