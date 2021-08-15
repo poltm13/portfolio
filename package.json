@@ -23,7 +23,7 @@
     "@fontsource/raleway": "^4.5.0",
     "@react-google-maps/api": "^2.2.0",
     "@react-spring/parallax": "^9.2.4",
-    "gatsby": "^3.11.0",
+    "gatsby": "^3.11.1",
     "gatsby-plugin-react-helmet": "^4.11.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -33,11 +33,11 @@
     "typescript": "^4.3.5"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.29.0",
-    "@typescript-eslint/parser": "^4.29.0",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
     "eslint": "^7.32.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-react": "^7.24.0",
-    "gatsby-plugin-root-import": "^2.0.6"
+    "gatsby-plugin-root-import": "^2.0.7"
   }
 }
