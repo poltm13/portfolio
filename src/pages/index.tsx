@@ -36,6 +36,7 @@ export default function IndexPage() {
   
   // TODO: gatsby-plugin-manifest (PWA)
   // TODO: Clean assets
+  // TODO: Update resume
   // TODO: Google Maps -> React.lazy()
   const handleArrowUp = () => {
     scrollTo(0);
