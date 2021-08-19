@@ -64,6 +64,7 @@ export default function IndexPage() {
       <SEO/>
       <Logo className="sticky-nav--element sticky-nav--logo" scrollTop={handleArrowUp}/>
       <ThemeToggler className="sticky-nav--element sticky-nav--toggler"/>
+      <div className="sticky-nav--element sticky-nav--fadeout"></div>
       <Cursor trail={trail} isTouchDevice={touchDevice}/>
 
       <Parallax className="parallax-main" enabled={false} ref={parallax} pages={2} config={config.molasses}>

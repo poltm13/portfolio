@@ -5,6 +5,14 @@
     filter: none;
   }
 
+  .sticky-nav--fadeout {
+    background: linear-gradient(
+      0deg,
+      #ffffff00 0%,
+      $dark-background 100%
+    );
+  }
+
   .content-background {
     background-color: $dark-section-background;
   }
