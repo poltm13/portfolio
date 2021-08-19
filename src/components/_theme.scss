@@ -8,7 +8,7 @@
   .sticky-nav--fadeout {
     background: linear-gradient(
       0deg,
-      #ffffff00 0%,
+      $dark-background-transparent 0%,
       $dark-background 100%
     );
   }
