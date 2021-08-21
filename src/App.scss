@@ -1,32 +1,33 @@
-$primary: white;
-$accent: #7af2ff;
-$accent-lighter: #6FDCE8;
-$accent-darker: #2f9ca8;
-/* $accent: #B407DB;
-$accent-lighter: #DF00FF;
-$accent-darker: #890DB7; */
-$dark-primary: #272727;
-$dark-background: #121212;
-$dark-background-transparent: #12121200;
-$dark-section-background: #191919;
-$text: #272727;
+:root {
+  --accent: #7af2ff;
+  --accent-lighter: #6FDCE8;
+  --accent-darker: #2f9ca8;
+  --cursor-big-hover: rgba(64, 224, 208, 0.5);
+  --primary: white;
+  --dark-primary: #272727;
+  --dark-background: #121212;
+  --dark-background-transparent: #12121200;
+  --dark-section-background: #191919;
+  --text: #272727;
+}
+
 $native-font: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
 $gradient: linear-gradient(
   90deg,
-  $accent-lighter 0%,
-  $accent 50%,
-  $accent-darker 100%
+  var(--accent-lighter) 0%,
+  var(--accent) 50%,
+  var(--accent-darker) 100%
 );
 $dark-gradient: linear-gradient(
   90deg,
-  $accent 0%,
-  $accent-darker 100%
+  var(--accent) 0%,
+  var(--accent-darker) 100%
 );
 $down-gradient: linear-gradient(
   180deg,
-  $accent-lighter 0%,
-  $accent 40%,
-  $accent-darker 100%
+  var(--accent-lighter) 0%,
+  var(--accent) 40%,
+  var(--accent-darker) 100%
 );
 
 // Viewport breakpoints
@@ -63,8 +64,8 @@ html {
 
 body, .content-background {
   font-family: "Raleway", -apple-system, Roboto, sans-serif, serif;
-  color: $text;
-  background-color: $primary;
+  color: var(--text);
+  background-color: var(--primary);
 }
 
 h1 {
@@ -104,7 +105,7 @@ h3 {
 
 a,
 a:hover {
-  color: $text;
+  color: var(--text);
   cursor: none;
   text-decoration: none;
 }
@@ -120,7 +121,7 @@ a:hover {
   }
 
   path {
-    fill: $primary;
+    fill: var(--primary);
   }
 }
 

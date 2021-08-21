@@ -1,5 +1,9 @@
 .dark-mode {
-  color: $dark-primary;
+/*   --accent: #B407DB;
+  --accent-lighter: #DF00FF;
+  --accent-darker: #890DB7; */
+
+  color: var(--dark-primary);
 
   .sticky-nav--toggler:hover {
     filter: none;
@@ -8,13 +12,13 @@
   .sticky-nav--fadeout {
     background: linear-gradient(
       0deg,
-      $dark-background-transparent 0%,
-      $dark-background 100%
+      var(--dark-background-transparent) 0%,
+      var(--dark-background) 100%
     );
   }
 
   .content-background {
-    background-color: $dark-section-background;
+    background-color: var(--dark-section-background);
   }
 
   .cursorMain > div, .bg-blob {
@@ -23,7 +27,7 @@
 
   .upper-curve {
     path {
-      fill: $dark-section-background;
+      fill: var(--dark-section-background);
     }
   }
 
@@ -63,7 +67,7 @@
     @include min-width($s) {
       background: linear-gradient(
         90deg,
-        $accent 0%,
+        var(--accent) 0%,
         #54c7d3 100%
       );
     }
@@ -79,7 +83,7 @@
   }
 
   .headerContainer header .typewriter h1 {
-    color: $dark-primary;
+    color: var(--dark-primary);
   }
 
   .about svg path {

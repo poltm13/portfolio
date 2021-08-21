@@ -29,7 +29,7 @@
     transition: background 0.5s;
     will-change: transform;
     border-radius: 50%;
-    background: #7af2ff;
+    background: var(--accent);
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     opacity: 0.6;
     transform: translate(-50%, -50%);
@@ -143,7 +143,7 @@
     will-change: transform;
     border-radius: 50%;
     transition: background 1s, box-shadow 0.4s, opacity 1s;
-    background: #7af2ff;
+    background: var(--accent);
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     opacity: 0.6;
 
@@ -176,7 +176,7 @@
   }
   
   &.onHeader > div {
-    background: #02a4b6;
+    background: var(--accent-darker);
   }
 
   &.hover-small > div:nth-child(2) {
@@ -190,6 +190,6 @@
   }
 
   &.hover-big > div {
-    box-shadow: 10px 10px 5px 70px rgba(64, 224, 208, 0.5);
+    box-shadow: 10px 10px 5px 70px var(--cursor-big-hover);
   }
 }

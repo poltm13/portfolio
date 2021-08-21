@@ -33,12 +33,12 @@
 
   path { stroke-width: 3;}
   path:nth-child(1) {
-    stroke: $accent;
+    stroke: var(--accent);
     stroke-dasharray: 390;
     stroke-dashoffset: 390;
   }
   path:nth-child(2) {
-    stroke: $accent-darker;
+    stroke: var(--accent-darker);
     stroke-dasharray: 1741;
     stroke-dashoffset: 1741;
   }
@@ -103,7 +103,7 @@
     fill: transparent;
   }
   to {
-    fill: $accent-darker;
+    fill: var(--accent-darker);
   }
 }
 @keyframes fill-light-anim {
@@ -111,7 +111,7 @@
     fill: transparent;
   }
   to {
-    fill: $accent;
+    fill: var(--accent);
   }
 }
 

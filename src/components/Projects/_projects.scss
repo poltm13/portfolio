@@ -136,7 +136,7 @@
       &--link {
         display: flex;
         justify-content: flex-start;
-        color: $accent-darker;
+        color: var(--accent-darker);
         font-weight: 600;
 
         span {

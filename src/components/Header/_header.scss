@@ -31,7 +31,7 @@
     border-color: transparent;
   }
   50% {
-    border-color: $dark-primary;
+    border-color: var(--dark-primary);
   }
 }
 
@@ -104,9 +104,9 @@ header {
     border-radius: 50%;
     background: linear-gradient(
       180deg,
-      $accent 0%,
-      $accent 50%,
-      $accent-darker 100%
+      var(--accent) 0%,
+      var(--accent) 50%,
+      var(--accent-darker) 100%
     );
     
     @include max-width(767px) {
@@ -129,7 +129,7 @@ header {
 
     h1 {
       overflow: hidden;
-      border-right: 0.1em solid $dark-primary;
+      border-right: 0.1em solid var(--dark-primary);
       white-space: nowrap;
       margin: 0 auto;
       animation: typing 2s steps(27, end), blink-caret 0.75s step-end infinite;

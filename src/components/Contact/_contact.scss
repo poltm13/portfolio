@@ -13,15 +13,15 @@
 
     background: linear-gradient(
       90deg,
-      $accent 0%,
+      var(--accent) 0%,
       #48b8c5  100%
     );
     
     @include min-width($s) {
       background: linear-gradient(
         90deg,
-        $accent-lighter 0%,
-        $accent 100%,
+        var(--accent-lighter) 0%,
+        var(--accent) 100%,
       );
     }
     
