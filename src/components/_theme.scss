@@ -1,7 +1,14 @@
 .dark-mode {
+  --text: #ffffffcc;
 /*   --accent: #B407DB;
   --accent-lighter: #DF00FF;
-  --accent-darker: #890DB7; */
+  --accent-darker: #890DB7;
+  --cursor-big-hover: rgba(152, 46, 223, 0.5); */
+
+/*   --accent: #C70039;
+  --accent-lighter: #FF5733;
+  --accent-darker: #900C3F;
+  --cursor-big-hover: #FF5733; */
 
   color: var(--dark-primary);
 
@@ -22,7 +29,7 @@
   }
 
   .cursorMain > div, .bg-blob {
-    background: #2f9ca8;
+    background: var(--accent-darker);
   }
 
   .upper-curve {
@@ -41,20 +48,8 @@
     background-color: #212121;
 
     &--tags span {
-      background: rgba(85, 206, 214, 1);
+      background: var(--accent-lighter);
     }
-  }
-
-  h1,
-  .skill__chart--tooltiptext span,
-  li {
-    color: rgba(255, 255, 255, 0.87);
-  }
-
-  h2,
-  h3,
-  p {
-    color: rgba(255, 255, 255, 0.6);
   }
 
   .contact-container > div {
@@ -77,7 +72,7 @@
     }
 
     & ul .contactItem a:hover {
-      color: #7af2ff;
+      color: var(--accent);
       text-decoration: none;
     }
   }

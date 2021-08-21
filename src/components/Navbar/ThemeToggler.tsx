@@ -12,11 +12,10 @@ export default function ThemeToggler(props) {
   };
 
   useEffect(() => {
-    /* const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefersDark) {
-      Utils.toggleClass('body', 'dark-mode', prefersDark);
-      setTheme(prefersDark);
-    } */
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      Utils.toggleClass('body', 'dark-mode', true);
+      setTheme(true);
+    }
   }, []);
 
   return (
@@ -37,7 +36,7 @@ export default function ThemeToggler(props) {
 const toggler: React.CSSProperties = {
   width: '45px',
   height: '22px',
-  background: '#7af2ff ',
+  background: 'var(--accent)',
   right: '0',
   borderRadius: '20px',
   transform: 'translate(-100%, -50%)',
@@ -45,7 +44,7 @@ const toggler: React.CSSProperties = {
 };
 
 const togglerDark: React.CSSProperties = {
-  background: '#2f9ca8'
+  background: 'var(--accent-darker)'
 };
 
 const toggle: React.CSSProperties = {
