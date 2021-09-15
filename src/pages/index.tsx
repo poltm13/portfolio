@@ -37,6 +37,7 @@ export default function IndexPage() {
   // TODO: gatsby-plugin-manifest (PWA)
   // TODO: Update resume
   // TODO: Google Maps -> React.lazy()
+  // TODO: Check fadeout div index over contact section
   const handleArrowUp = () => {
     scrollTo(0);
     Utils.toggleClass('.cursorMain', 'onHeader', true);
