@@ -19,6 +19,10 @@ import Skills from 'components/Skills/Skills';
 import ThemeToggler from 'components/Navbar/ThemeToggler';
 import Utils from 'shared/Utils';
 
+// TODO: gatsby-plugin-manifest (PWA)
+// TODO: Update resume
+// TODO: Google Maps -> React.lazy()
+// TODO: Check fadeout div index over contact section
 export default function IndexPage() {
 
   const parallax = useRef<IParallax>(null);
@@ -28,30 +32,9 @@ export default function IndexPage() {
   const slowCursor = { mass: 10, tension: 200, friction: 50 };
   const [trail, api] = useTrail(2, i => ({ xy: [0, 0], config: i === 0 ? fastCursor : slowCursor}));
   const handleMouseMove = e => (api.start({ xy: [e.clientX, e.clientY] }));
-
-  const scrollTo = (to: number) => { 
-    parallax?.current?.scrollTo(to);
-    page.current = to;
-  };
-  
-  // TODO: gatsby-plugin-manifest (PWA)
-  // TODO: Update resume
-  // TODO: Google Maps -> React.lazy()
-  // TODO: Check fadeout div index over contact section
-  const handleArrowUp = () => {
-    scrollTo(0);
-    Utils.toggleClass('.cursorMain', 'onHeader', true);
-    Utils.toggleClass('#Smile', 'visible', false);
-    Utils.toggleClass('.sticky-nav--element', 'sticky-nav--anim', false);
-    setTimeout(() => Utils.resetContentScroll(), 1000);
-  };
-
-  const handleArrowDown = () => {
-    scrollTo(1);
-    Utils.toggleClass('.cursorMain', 'onHeader', false);
-    Utils.toggleClass('#Smile', 'visible', true);
-    Utils.toggleClass('.sticky-nav--element', 'sticky-nav--anim', true);
-  };
+  const handleArrowUp = () => Utils.handleArrowUp(parallax, page);
+  const handleArrowDown = () => Utils.handleArrowDown(parallax, page);
+  const scrollTo = (to: number) => Utils.scrollTo(to, parallax, page);
 
   useEffect(() => {
     Utils.toggleClass('.cursorMain', 'onHeader', true);
