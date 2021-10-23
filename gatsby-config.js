@@ -17,6 +17,17 @@ module.exports = {
         assets: path.join(__dirname, 'src/assets'),
         shared: path.join(__dirname, 'src/shared')
       }
-    }
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Pol Tedesko | Front End Developer',
+        short_name: 'Portfolio',
+        start_url: '/',
+        display: 'standalone',
+        icon: 'static/pwa-icon.png'
+      }
+    },
+    'gatsby-plugin-offline'
   ]
 };
