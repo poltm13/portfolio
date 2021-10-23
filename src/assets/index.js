@@ -93,7 +93,7 @@ export const skillLogos = [
   },
   {
     src: typescript,
-    skill: '70%',
+    skill: '90%',
     color: '#3178C6',
     name: 'Typescript'
   },
@@ -117,13 +117,13 @@ export const skillLogos = [
   },
   {
     src: git,
-    skill: '80%',
+    skill: '90%',
     color: '#F4511E',
     name: 'Git'
   },
   {
     src: seo,
-    skill: '60%',
+    skill: '70%',
     color: '#28B446',
     name: 'SEO'
   },

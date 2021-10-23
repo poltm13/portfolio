@@ -10,7 +10,7 @@ const Skill = (props: SkillProps) => {
       </div>
       <div className='skill__chart'>
         <div className="skill__chart--tooltiptext">
-          <span>{`${props.name} (${props.skill})`}</span>
+          <span>{`${props.name}`}</span>
         </div>
         <div className="skill__chart--bar">
           <div>
