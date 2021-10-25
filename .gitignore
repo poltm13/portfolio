@@ -7,6 +7,7 @@ old
 
 # testing
 /coverage
+*.report.html
 
 # production
 public
