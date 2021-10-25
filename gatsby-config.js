@@ -25,7 +25,12 @@ module.exports = {
         short_name: 'Portfolio',
         start_url: '/',
         display: 'standalone',
-        icon: 'static/pwa-icon.png'
+        icon: 'static/pwa-icon.png',
+        theme_color: '#2f9ca8',
+        background_color: '#121212',
+        icon_options: {
+          purpose: 'any maskable'
+        }
       }
     },
     'gatsby-plugin-offline'
